@@ -10,7 +10,7 @@
 
   "phases": {
       "Building Blocks Mastery: Reading": [
-      "reading/instructions/building-blocks-mastery.md",
+      "reading/instructions/building-blocks-mastery-intro.md",
       "reading/know-The-Easy-Stuff-Cold.md",
       "reading/coding-Style-Guide.md"
     ],
