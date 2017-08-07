@@ -10,7 +10,8 @@ Here's an outline of approximately what sections you need to have done by when i
 * If you are accelerating beyond the recommended pacing, congrats! There is no speed limit. Keep working at your pace and let us know when you run out of content. We have plenty of resources to point you towards to keep your learning going.
 * We wanted to remind you that SSP is an experimental program that's undergoing changes. The schedule you see below may shift depending on a number of different of factors. We ask you to expect and embrace the changes. 
 
-[SCREENSHOT HERE]
+![Content Pacing1](http://imgur.com/PWLtIVZ)
+![Content Pacing2](http://imgur.com/h1HJP3m)
 
 
 ### Pre-requisite work
@@ -26,7 +27,7 @@ It's time for your first exercise doing something you will do almost daily as a 
      * Annotate your first and last name towards the top of the page
      * Pixelate the blue "Resume Learning" button in the top right corner
      * Draw a box around your percentage completion
-     * <a href="../public/img/udacity-screenshot.img" target="_blank">Here's a sample screenshot</a> of what the page should finally look like
+     * <a href="http://imgur.com/a/wMako" target="_blank">Here's a sample screenshot</a> of what the page should finally look like
  * Upload the image to an image hosting server
   * There are many free image hosting sites. We recommend <a href="http://imgur.com/upload" target="_blank">Imgur</a>.
  * Fill out <a href="https://goo.gl/forms/m8jg6poVJhMv9DPg2" target="_blank">this survey</a>
@@ -35,12 +36,12 @@ Haven't finished 100% of the pre-requisite yet? It's alright, go ahead and fill 
 
 ##### If you have finished 100% of the pre-requisite
 * Nice job!
-* Keep scrolling down and read the next section.
+* Keep scrolling down and read the next section, "How will you be assessed?"
 
 ##### If you have done less than 100% of the course and you will plan on finishing it
 * Awesome! We're glad you've decided to follow through.
 * Your goal should be to finish the Udacity course before the start of Week 2 Day 1 (W2D1)
-* If you finish before W2D1, great! Come back to this page and read the next section.
+* If you finish before W2D1, great! Come back to this page and read the next section, "How will you be assessed?"
 
 ##### If you have done less than 100% of the pre-requisite and you don't plan on finishing it
 * We recommend that you finish the entire pre-requisite, but you are free to continue reading the next section.
@@ -70,10 +71,10 @@ If we notice you underperforming in attendance or responsiveness, it's likely th
 
  * We withdraw you from the program (full refund if you withdraw yourself during the first week)
  * Push you to the next SSP round starting on 08/28/2017
-   * Fortunately, this round also targets the October Immersive start dates
-   * 5-week program instead of a 7-week
-   * Covers same content
-   * You will be expected to complete some additional work before starting SSP again
+  * Fortunately, this round also targets the October Immersive start dates
+  * 4-week program instead of a 7-week
+  * Covers same content
+  * You will be expected to complete some additional work before starting SSP again
 
 #### Self Assessments
 
