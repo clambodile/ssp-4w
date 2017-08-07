@@ -209,7 +209,7 @@ So yeah... that _works_ -- and sure that's admittedly kind of impressive if you 
 
 ## Phase 5: Implement!
 
-Now you do the stuff you've been doing in Module 2.
+Now you do the stuff you've been doing in the module, _Writing Code Well_.
 
 ### Make the skeleton and stubs.
 

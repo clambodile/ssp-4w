@@ -1,13 +1,6 @@
-# Reactor Prep Module 1: Building Blocks Review
+## SSP: Building Blocks Mastery
 
-Welcome to Module 1!
-
-This module's focus is "reviewing the building blocks".  It's the 2nd of 4 modules in the Reactor Prep program.
-
-
-### If it's the _2nd_ module, why call it "module _1_"?
-
-Since computers use binary math, in programming, you typically begin counting from 0, not from 1.  We are getting you used to programmer-speak.
+This module's focus is "mastering the building blocks".
 
 
 ## The Goal
@@ -20,13 +13,6 @@ Abe Lincoln said: "Give me six hours to chop down a tree and I will spend the fi
 
 You will read more on our philosophy in the next lesson, _Know theEasyStuffCold_.
 
-
-## What to do
-
-In order to gain access to the problems, start by clicking [this link](https://repl.it/classroom/invite/uLbweq).
-
-Once you have access, close the new window or tab and navigate through the problems using the left side bar. You can do problems in any order, but like last time, **please remember to click the _Complete and continue_ button** on the top right of your screen once you get each problem's tests to pass.
-
 Many of these questions will be simple, and others will involve a few steps. Throughout this process, you will refine your googling skills, get used to typing out javascript syntax, and analyzing failed tests, all of which are vital to your success as a software engineer.
 
 Please finish all of the assignments. Yes, there's a lot of them, but keep tackling them and you'll be fine.
@@ -34,7 +20,7 @@ Please finish all of the assignments. Yes, there's a lot of them, but keep tackl
 
 ## Things to keep in mind
 
-* You will need to complete 100% of these Module 1 assignments. 
+* You will need to complete 100% of these assignments. 
 * You will not be receiving direct feedback on the code that you submit in this Module. Progress is driven entirely by the automated tests.
 * Problems do not need to completed in any order.
 * If you get stuck on one...
@@ -76,4 +62,4 @@ Above all, please do **not** press `Submit Anyway` in Repl.it. If you truly can'
 
 ### What happens if I'm really struggling on multiple problems?
 
-Your best bet will be getting help from the community. Reach out on Slack, via the `#mod1_building_blocks` channel, and let's examine your situation. `**Paid Users:** You may also reach out to us on your private, dedicated support channel.`
+Your best bet will be getting help from the community. Submitting a HelpDesk ticket is your best bet.

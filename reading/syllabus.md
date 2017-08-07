@@ -70,10 +70,10 @@ If we notice you underperforming in attendance or responsiveness, it's likely th
 
  * We withdraw you from the program (full refund if you withdraw yourself during the first week)
  * Push you to the next SSP round starting on 08/28/2017
-  * Fortunately, this round also targets the October Immersive start dates
-  * 4-week program instead of a 7-week
-  * Covers same content
-  * You will be expected to complete some additional work before starting SSP again
+   * Fortunately, this round also targets the October Immersive start dates
+   * 5-week program instead of a 7-week
+   * Covers same content
+   * You will be expected to complete some additional work before starting SSP again
 
 #### Self Assessments
 

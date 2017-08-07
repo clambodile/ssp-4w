@@ -1,6 +1,4 @@
-# Reactor Prep Module 3: Live Performance
-
-Welcome to Module 3!
+# SSP: Live Performance
 
 This module's focus is taking all the good problem-solving and clean-code-writing skills you practiced in the previous module, and practicing those same skills in a live performance context.
 
@@ -42,19 +40,10 @@ The motivating theme behind the Live Performance module is that you can get a lo
 
 You know how your voice sounds "funny" to you when you hear a recording of it?  Well, watching and listening to a screencast of yourself attempting to solve a coding problem can be **pretty eye-opening**!  You will see all kinds of obvious ways to improve the way you're solving the problem and the way you're coming across to the audience as you do so.
 
-
-### 3) PAID FEATURE: Live mock interview(s)
-
-Talk to the staff on your private channel to find live mock interview slots.
-
-Pay careful attention to the _How to run your interview_ article in this section and start solving problems live.
-
 ## FAQ
 
 ### How do I record a screencast with audio?
 
 On a Mac, we suggest using the built-in Quicktime Player. Make sure to TURN ON AUDIO, like this:
 ![foo](http://i.imgur.com/Nto76Odm.png)
-
-
 

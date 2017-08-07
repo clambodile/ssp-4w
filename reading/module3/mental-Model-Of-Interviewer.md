@@ -68,7 +68,7 @@ You are comfortable "going wide".
 
 In the interview, demonstrate that you know how to build small programs, and furthermore can do so under pressure.
 
-Before the interview, **just practice -- a lot!** Build many small programs that work, first of all. (That's what you practiced in module 1 and module 2 of this course) Then build them under deadline and live-audience pressure. (That's what you're practicing in module 3 of this course.)
+Before the interview, **just practice -- a lot!** Build many small programs that work, first of all. (That's what you practiced in the first two modules of this course) Then build them under deadline and live-audience pressure. (That's what you're practicing in the thirds module of this course.)
 
 ## You care about how and why things really work
 

@@ -3,15 +3,16 @@
   "description": "Learn to Code",
   "author": "Fred, Tim, Muhammad <muhammad.meigooni@hackreactor.com>",
   "syllabus": [
-    "reading/syllabus.md"
+    "reading/syllabus.md",
+    "reading/video-library.md",
+    "lessons/exercise-list.md"
   ],
 
   "phases": {
-    "README first": [
-      "reading/syllabus.md"
-    ],
-    "Building Blocks Mastery: Reading": [
-      "lessons/content2.md"
+      "Building Blocks Mastery: Reading": [
+      "reading/instructions/building-blocks-mastery.md",
+      "reading/know-The-Easy-Stuff-Cold.md",
+      "reading/coding-Style-Guide.md"
     ],
     "Building Blocks Mastery: Exercises": [
       "lessons/content2.md"
