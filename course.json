@@ -17,11 +17,11 @@
       "lessons/content2.md"
     ],
     "Writing Code Well: Reading": [
-      "reading/instructions/module2.md",
+      "reading/instructions/writing-code-well-intro.md",
       "reading/memory.md",
       "reading/functions-And-Reliable-Systems.md",
-      "reading/cleanVersusUncleanCoding.md",
-      "reading/outliningAndStubs.md",
+      "reading/clean-Versus-Unclean-Coding.md",
+      "reading/outlining-And-Stubs.md",
       "reading/testing.md",
       "reading/tdd.md"
     ],
@@ -29,15 +29,15 @@
       "lessons/content2.md"
     ],
     "Live Performance: Reading": [
-      "reading/instructions/module3.md",
-      "reading/module3/mentalModelOfInterviewer.md",
-      "reading/module3/makeAPlan.md",
-      "reading/module3/avoidingAssumptions.md",
-      "reading/module3/glossaryOfTerms.md",
-      "reading/module3/rapportWithYourInterviewer.md",
-      "reading/module3/gettingUnstuck.md",
-      "reading/module3/typeFaster.md",
-      "reading/module3/howToRunYourInterview.md"
+      "reading/instructions/live-performance-intro.md",
+      "reading/module3/mental-Model-Of-Interviewer.md",
+      "reading/module3/make-A-Plan.md",
+      "reading/module3/avoiding-Assumptions.md",
+      "reading/module3/glossary-Of-Terms.md",
+      "reading/module3/rapport-With-Your-Interviewer.md",
+      "reading/module3/getting-Unstuck.md",
+      "reading/module3/type-Faster.md",
+      "reading/module3/how-To-Run-Your-Interview.md"
     ],
     "Live Performance: Exercises": [
       "lessons/content2.md"
