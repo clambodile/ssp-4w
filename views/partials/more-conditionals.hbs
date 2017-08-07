@@ -1,0 +1,122 @@
+<h1 id="logical-operators-more-conditionals">Logical Operators &amp; More Conditionals</h1>
+<h2 id="lesson">Lesson</h2>
+<h3 id="logical-operators">Logical Operators</h3>
+<iframe src="https://docs.google.com/presentation/d/1ObSwM793UeWRqXcsiswWP6NEvMfJoj4sju0ttALqpts/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+<h3 id="more-conditionals">More Conditionals</h3>
+<iframe src="https://docs.google.com/presentation/d/1A6z3r9xB9vJP5mdQfSfK47GF5e9QaHzInu8mJvX0aRA/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+<h2 id="exercises">Exercises</h2>
+<h3 id="basic-requirements">Basic Requirements</h3>
+<h4 id="logical-operators">Logical Operators</h4>
+<ol>
+<li><p>Is the <code>!</code> operator a <em>unary</em> operator, or <em>binary</em> operator?</p>
+</li>
+<li><p>Evaluate each of the following expressions first on a whiteboard, and then in
+a console:</p>
+<pre><code class="lang-js">!(<span class="hljs-number">2</span> &gt;= <span class="hljs-number">2</span>)
+!(<span class="hljs-number">4</span> === <span class="hljs-number">4</span>)
+!(<span class="hljs-number">5</span> !== <span class="hljs-number">5</span>)
+</code></pre>
+</li>
+<li><p>Evaluate each of the following expressions first on a whiteboard, and then in a
+console:</p>
+<pre><code class="lang-js"><span class="hljs-symbol">1 </span>&gt; <span class="hljs-number">2</span> || <span class="hljs-number">2</span> &gt; <span class="hljs-number">2</span> || <span class="hljs-number">3</span> &gt; <span class="hljs-number">2</span>
+<span class="hljs-symbol">5 </span>&lt; <span class="hljs-number">5</span> || <span class="hljs-number">75</span> &lt; <span class="hljs-number">74</span>
+</code></pre>
+</li>
+</ol>
+<h4 id="conditionals-else-if-else-">Conditionals: <code>else if</code> &amp; <code>else</code></h4>
+<ol>
+<li><p>This guy named &quot;Joe&quot; keeps blacking out at the bar that your function,
+<code>bouncer</code> (from the previous module), is in charge of; thus, management has
+decided to add him to the &quot;blacklist&quot; -- modify the <code>bouncer</code> function from
+the previous section so that the person named &quot;Joe&quot; is rejected with an
+appropriate message, regardless of his age.</p>
+</li>
+<li><p>Write a function called <code>scoreToGrade</code> that accepts a <em>number</em> as a parameter
+and returns a <em>string</em> representing a letter grade corresponding to that
+score.</p>
+<p>For example, the following grades should be returned given these scores:</p>
+<ul>
+<li>&#39;A&#39; &gt; 90</li>
+<li>&#39;B&#39; &gt;= 80</li>
+<li>&#39;C&#39; &gt;= 70</li>
+<li>&#39;D&#39; &gt;= 60</li>
+<li>&#39;F&#39; &lt; 60</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">scoreToGrade</span><span class="hljs-params">(score)</span> </span>{
+  <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> your code here</span>
+}
+scoreToGrade(<span class="hljs-number">95</span>); <span class="hljs-comment">// =&gt; 'A'</span>
+scoreToGrade(<span class="hljs-number">72</span>); <span class="hljs-comment">// =&gt; 'C'</span>
+</code></pre>
+</li>
+<li><p>Modify the <code>scoreToGrade</code> function so that it returns <code>&#39;INVALID SCORE&#39;</code> if
+the score is greater than <code>100</code> or less than <code>0</code>.</p>
+</li>
+</ol>
+<h3 id="more-practice">More Practice</h3>
+<ol>
+<li><p>Think of at least three activities that you enjoy doing outdoors and the
+range of temperatures and weather patterns (<em>e.g</em> sunny, windy, snowy, rainy,
+etc.) that are best for these activities. Write a function <code>whatToDoOutside</code>
+that accepts a <em>temperature</em> and <em>condition</em> as parameters and outputs a
+string of the format: &quot;The weather is ideal for: ACTIVITY&quot; (where ACTIVITY is
+an actual activity). Make sure to include an <code>else</code> that indicates what
+should be done if the conditions do not match any activities. If you&#39;re short
+on inspiration, here are some ideas:</p>
+<ul>
+<li><strong>Snow Sports:</strong> snowboarding, skiing</li>
+<li><strong>Water Sports:</strong> surfing, sailing, paddle boarding, swimming</li>
+<li><strong>Team Sports:</strong> basketball, baseball, football (American or everywhere
+else), etc.</li>
+</ul>
+</li>
+<li><p>The <code>guessMyNumber</code> function from the <strong>Booleans &amp; Conditionals</strong> module
+(<strong>More Practice</strong> section) accepts a guess <code>n</code> and checks it against a
+random number from <code>0</code> to <code>5</code> -- if the guess <code>n</code> is greater than <code>5</code>, output
+a different message indicating that the guess is out of bounds.</p>
+<ul>
+<li><strong>NOTE:</strong> It will be helpful to <em>first</em> write a <code>randInt</code> function that
+accepts a number <code>n</code> and computes a random integer from <code>0</code> to <code>n</code>; then,
+you can use this function in <code>guessMyNumber</code>.</li>
+</ul>
+</li>
+<li><p>Modify the <code>scoreToGrade</code> function so that it returns <code>&#39;A+/A-&#39;</code> for
+scores of 98-100/90-92 respectively. Apply the same logic for all other
+letter grades.</p>
+</li>
+</ol>
+<h3 id="advanced">Advanced</h3>
+<ol>
+<li><p>The bar that employs our <code>bouncer</code> function has decided to do live music on
+Friday and Saturday nights, and will be admitting those that are over 18 to
+the bar on those nights; the catch however, is that all who are 21 or older
+will need to be given a wristband to distinguish them from the minors. Modify
+your <code>bouncer</code> function to handle this situation.</p>
+</li>
+<li><p>You should have noticed a large amount of repetitive code when modifying
+<code>scoreToGrade</code> to accommodate <code>+</code> or <code>-</code> grades. When we do lots of repetitive
+things, that&#39;s a clear signal that there&#39;s a better way. Write a helper function
+<code>letterGrade</code> that accepts two arguments, <em>letter</em> and <em>score</em>, and works as
+follows:</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">letterGrade</span><span class="hljs-params">(letter, score)</span> </span>{
+  <span class="hljs-comment">// your code here</span>
+}
+<span class="hljs-comment">// These are examples of what a *working* function would output.</span>
+letterGrade(<span class="hljs-string">'A'</span>, <span class="hljs-number">95</span>); <span class="hljs-comment">// =&gt; 'A'</span>
+letterGrade(<span class="hljs-string">'A'</span>, <span class="hljs-number">91</span>); <span class="hljs-comment">// =&gt; 'A-'</span>
+letterGrade(<span class="hljs-string">'B'</span>, <span class="hljs-number">88</span>); <span class="hljs-comment">// =&gt; 'B+'</span>
+letterGrade(<span class="hljs-string">'monkey'</span>, <span class="hljs-number">160</span>); <span class="hljs-comment">// =&gt; 'monkey-'</span>
+</code></pre>
+<p>Finally, use <code>letterGrade</code> to remove the repetition in <code>scoreToGrade</code>.</p>
+</li>
+<li><p>It turns out that we can write logical <em>and</em> and logical <em>or</em> in terms of each
+other and logical <em>not</em> using <a href="https://en.wikipedia.org/wiki/De_Morgan%27s_laws" target="_blank">De Morgan&#39;s Laws</a>.</p>
+<ul>
+<li>Write a function <code>or</code> that works like <code>||</code>, but only uses <code>!</code> and <code>&amp;&amp;</code>.</li>
+<li>Write a function <code>and</code> that works like <code>&amp;&amp;</code>, but only uses <code>!</code> and <code>||</code>.</li>
+</ul>
+</li>
+</ol>

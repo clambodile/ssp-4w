@@ -1,0 +1,50 @@
+<h1 id="improved-each-iterating-over-objects">Improved <code>each</code>: Iterating Over Objects</h1>
+<h2 id="lesson">Lesson</h2>
+<iframe src="https://docs.google.com/presentation/d/1IfC_KHc2kZNUeHcTMJPhfGGs6kgI4vMOA53EVwDPEFY/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+<h2 id="exercises">Exercises</h2>
+<pre><code class="lang-js">function each(coll, <span class="hljs-function"><span class="hljs-keyword">func</span>) {</span>
+  <span class="hljs-keyword">if</span> (Array.<span class="hljs-built_in">isArray</span>(coll)) {
+    <span class="hljs-keyword">for</span> (var i = <span class="hljs-number">0</span><span class="hljs-comment">; i &lt; coll.length; i++) {</span>
+      <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">(coll[i], i)</span>;</span>
+    }
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">for</span> (var key <span class="hljs-keyword">in</span> coll) {
+      <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">(coll[key], key)</span>;</span>
+    }
+  }
+}
+</code></pre>
+<h3 id="basic-requirements">Basic Requirements</h3>
+<ol>
+<li><p>Using our updated version of <code>each</code>, write the following functions:</p>
+<ul>
+<li><code>values</code>: accepts an object as a parameter, and outputs an array of the
+object&#39;s <em>values</em>.</li>
+<li><code>keys</code>: accepts an object as a parameter, and outputs an array of the
+object&#39;s <em>keys</em>.</li>
+</ul>
+</li>
+<li><p>Write a function called <code>keysLongerThan</code> that accepts two parameters -- an
+<em>object</em> and a <em>number</em> -- and returns a new object with only the key/value
+pairs in the input object whose keys are longer than the numeric argument,
+<em>e.g.</em>:</p>
+<pre><code class="lang-js"><span class="hljs-selector-tag">keysLongerThan</span>({<span class="hljs-attribute">name</span>: <span class="hljs-string">"Annyeong"</span>, <span class="hljs-attribute">age</span>: <span class="hljs-number">25</span>, <span class="hljs-attribute">favoriteColor</span>: <span class="hljs-string">"blue"</span>}, <span class="hljs-number">3</span>);
+<span class="hljs-comment">// =&gt; {name: "Annyeong", favoriteColor: "blue"}</span>
+<span class="hljs-selector-tag">keysLongerThan</span>({<span class="hljs-attribute">name</span>: <span class="hljs-string">"Annyeong"</span>, <span class="hljs-attribute">age</span>: <span class="hljs-number">25</span>, <span class="hljs-attribute">favoriteColor</span>: <span class="hljs-string">"blue"</span>}, <span class="hljs-number">4</span>);
+<span class="hljs-comment">// =&gt; {favoriteColor: "blue"}</span>
+</code></pre>
+<p>Make sure to use the new version of <code>each</code> for this.</p>
+</li>
+<li><p>Write a function called <code>incrementValues</code> that accepts an object as a
+parameter, and outputs an object with all of its numeric values incremented
+by one. You&#39;ll want to use the updated version of <code>each</code> for this, and you
+will need to check the type of each value to determine whether or not it
+should be incremented.</p>
+<p><strong>HINT:</strong> Try entering the following expressions in to your console:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">typeof</span> <span class="hljs-string">"hello"</span>; <span class="hljs-comment">// =&gt; "string"</span>
+<span class="hljs-keyword">typeof</span> <span class="hljs-number">1</span>; <span class="hljs-comment">// =&gt; "number"</span>
+<span class="hljs-keyword">typeof</span> <span class="hljs-literal">true</span>; <span class="hljs-comment">// =&gt; "boolean"</span>
+</code></pre>
+</li>
+</ol>

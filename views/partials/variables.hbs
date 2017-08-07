@@ -1,0 +1,191 @@
+<h1 id="introduction-to-variables">Introduction to Variables</h1>
+<h2 id="lesson">Lesson</h2>
+<iframe src="https://docs.google.com/presentation/d/1vmntTuByzHT4XK9uzJkBs-HCkBdCiPqDFo0Nj7-JtYU/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+<h2 id="exercises">Exercises</h2>
+<h3 id="basic-requirements">Basic Requirements</h3>
+<ol>
+<li><p>Fix each of the following variable declarations in a console -- some are
+syntactically invalid, some are disobey style guidelines, and some are just
+weird.</p>
+<pre><code class="lang-js"><span class="hljs-variable"><span class="hljs-keyword">var</span> "animal"</span> = <span class="hljs-string">"monkey"</span>;
+<span class="hljs-variable"><span class="hljs-keyword">var</span> "monkey"</span> = animal;
+<span class="hljs-variable"><span class="hljs-keyword">var</span> x</span>= <span class="hljs-number">15</span>;
+<span class="hljs-variable"><span class="hljs-keyword">var</span> y</span> =<span class="hljs-number">10</span>;
+<span class="hljs-variable"><span class="hljs-keyword">var</span> <span class="hljs-keyword">var</span></span> = <span class="hljs-string">"huh?"</span>;
+<span class="hljs-variable"><span class="hljs-keyword">var</span> true</span> = <span class="hljs-literal">false</span>;
+<span class="hljs-variable"><span class="hljs-keyword">var</span> isTenEven</span> = <span class="hljs-number">10</span> % <span class="hljs-number">2</span> = <span class="hljs-number">0</span>;
+</code></pre>
+</li>
+<li><p>Perform the following in the console:</p>
+<ul>
+<li>Create a variable <code>firstName</code> and assign your first name to it.</li>
+<li>Create another variable, <code>lastName</code>, and assign your last name to it.</li>
+<li>Have a middle name? If so, repeat the process.</li>
+<li>Now, create a variable <code>fullName</code> and assign your full name to it by using
+the above variables.</li>
+</ul>
+</li>
+<li><p>For each of the following code blocks, <strong>use a whiteboard</strong> to reason about
+what the value of <code>x</code> is supposed to be on the last line. Once you have
+arrived at a conclusion that you are comfortable with, enter the lines into a
+console and check your answer. Was your hypothesis correct? If not, ensure
+that you understand why (talk with a classmate, or ask for help).</p>
+<pre><code class="lang-js">var <span class="hljs-keyword">x</span> = <span class="hljs-number">5</span><span class="hljs-comment">;</span>
+<span class="hljs-keyword">x</span> + <span class="hljs-number">10</span><span class="hljs-comment">;</span>
+<span class="hljs-keyword">x</span><span class="hljs-comment">; // =&gt; ???</span>
+</code></pre>
+<pre><code class="lang-js">var <span class="hljs-keyword">x</span> = <span class="hljs-number">17</span><span class="hljs-comment">;</span>
+<span class="hljs-keyword">x</span> = (<span class="hljs-keyword">x</span> + <span class="hljs-number">1</span>) / <span class="hljs-number">2</span><span class="hljs-comment">;</span>
+<span class="hljs-keyword">x</span> * <span class="hljs-number">4</span><span class="hljs-comment">;</span>
+<span class="hljs-keyword">x</span><span class="hljs-comment">; // =&gt; ???</span>
+</code></pre>
+<pre><code class="lang-js">var x = <span class="hljs-number">5</span><span class="hljs-comment">;</span>
+var y = <span class="hljs-number">20</span><span class="hljs-comment">;</span>
+x = y<span class="hljs-comment">;</span>
+y = y + <span class="hljs-number">7</span><span class="hljs-comment">;</span>
+x<span class="hljs-comment">; // =&gt; ???</span>
+</code></pre>
+<pre><code class="lang-js">var <span class="hljs-keyword">x</span> = <span class="hljs-number">10</span><span class="hljs-comment">;</span>
+var y = <span class="hljs-number">5</span><span class="hljs-comment">;</span>
+<span class="hljs-keyword">x</span> = (<span class="hljs-keyword">x</span> * <span class="hljs-number">4</span>) - <span class="hljs-number">3</span><span class="hljs-comment">;</span>
+<span class="hljs-keyword">x</span> + <span class="hljs-number">17</span><span class="hljs-comment">;</span>
+<span class="hljs-keyword">x</span> = <span class="hljs-keyword">x</span> + y<span class="hljs-comment">;</span>
+<span class="hljs-keyword">x</span><span class="hljs-comment">; // =&gt; ???</span>
+</code></pre>
+</li>
+<li><p>Write a function called <code>counter</code> that, when invoked, always returns a number
+that is <em>one more</em> than the previous invocation. For instance:</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">counter</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> your code here</span>
+}
+counter(); <span class="hljs-comment">// =&gt; 1</span>
+counter(); <span class="hljs-comment">// =&gt; 2</span>
+counter(); <span class="hljs-comment">// =&gt; 3</span>
+<span class="hljs-comment">// etc.</span>
+</code></pre>
+<p><strong>HINT:</strong> You&#39;ll need a variable for this. <em>Where</em> should the variable be
+declared?</p>
+</li>
+</ol>
+<h3 id="more-practice">More Practice</h3>
+<p><strong>All of the following exercises involve augmenting the <code>guessMyNumber</code> function.</strong></p>
+<ol>
+<li><p>In a previous module you wrote a function called <code>guessMyNumber</code> that
+simulated a guessing game: the idea is that the function picks a random
+number between <code>0</code> and <code>5</code>, and you invoke the function with your guess -- if
+you and the function are thinking of the same number, you win! Otherwise, the
+function informs you that your guess was incorrect. A version of this game
+might look like this (the <code>randInt</code> function is included for convenience):</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">guessMyNumber</span>(<span class="hljs-params">n</span>) </span>{
+  <span class="hljs-keyword">if</span> (n &gt; <span class="hljs-number">5</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"Out of bounds! Please try a number between 0 and 5."</span>;
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (n === randInt(<span class="hljs-number">5</span>)) {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"You guessed my number!"</span>;
+  }
+  <span class="hljs-keyword">return</span> <span class="hljs-string">"Nope! That wasn't it!"</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">randInt</span>(<span class="hljs-params">n</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * (n + <span class="hljs-number">1</span>))
+}
+</code></pre>
+<p>Read and test both of the functions in your console (copy or write the code
+into your <code>main.js</code> file, and then invoke the functions from the console) and
+affirm that you understand how they work; then, answer the following
+questions:</p>
+<ul>
+<li>At present, the guess should be between <code>0</code> and <code>5</code>. We can think of <code>5</code> as
+the <em>upper bound</em> of the guess. How many times is the <em>upper bound</em>
+repeated? What if we wanted to change the upper bound to <code>6</code>? How many
+changes would be required?</li>
+<li>Create a variable called <code>upperBound</code> to hold the upper bound, and then
+reference <strong>it</strong> instead of the number <code>5</code>. If you were asked to change the
+upper bound to some other number (<em>e.g.</em> <code>7</code>), you should only have to make
+<em>one</em> change.</li>
+<li>Modify <code>guessMyNumber</code> so that if the guess is incorrect, <code>guessMyNumber</code>
+includes the correct guess in its output, <em>e.g.</em> <code>&quot;Nope! The correct number
+was: X&quot;</code> (where <code>X</code> would have been the correct number).</li>
+</ul>
+</li>
+<li><p>At present, the guessing game picks a new random number every time it is
+&quot;played&quot; (invoked). Now that you know how to make information <em>persistent</em>
+between function invocations, change the guessing game so that it picks a
+random number <strong>once</strong> and allows you to guess until you get the correct
+answer.</p>
+</li>
+<li><p>It would be really cool if, after the answer was guessed, the message
+included the number of guesses it had taken to find the answer; for example,
+&quot;You guessed my number in 3 guesses.&quot;</p>
+<ul>
+<li><p><strong>Tangent Problem:</strong> What happens if you get the number right on the
+first try? Does it say, &quot;You guessed my number in 1 guesses.&quot;? If so,
+perhaps the wording should be different? Some better ideas are:</p>
+<ul>
+<li>&quot;You guessed my number in 1 guess.&quot;</li>
+<li>&quot;Congratulations! You guessed my number on the first try!&quot;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Implement a way to <strong>limit</strong> the number of guesses that can be made so that a
+player loses after exceeding the limit.</p>
+</li>
+<li><p>Keep track of a <strong>high score</strong> (the lowest number of guesses) between games,
+and, when the correct number has been guessed in a record number of times,
+include in the message something that indicates that a new high score has
+been set.</p>
+</li>
+<li><p>Whenever a player wins, <strong>increase the difficulty</strong> by increasing the
+<code>upperBound</code>; whenever a player loses, <strong>decrease the difficulty</strong> by
+decreasing the <code>upperBound</code>.</p>
+</li>
+<li><p>Implement a <strong>high/low hinting system</strong> to tell the the user that the guess
+is either too high or too low. You may want to increase the <code>upperBound</code> on
+the guess.</p>
+</li>
+</ol>
+<h3 id="advanced">Advanced</h3>
+<p>There is an optimal way to play this game that works like this, given
+<em>upperBound</em> as the upper bound, <em>lowerBound</em> as the lower bound, and <em>guess</em> as
+the guess:</p>
+<ol>
+<li><p>Initialize the starting values:</p>
+<ul>
+<li><em>guess</em> as half of the <em>upperBound</em></li>
+<li><em>lowerBound</em> as 0</li>
+</ul>
+</li>
+<li><p>Execute <em>guessMyNumber</em> with <em>guess</em>:</p>
+<ul>
+<li>If the guess was <strong>too high</strong>, repeat (2) where:<ul>
+<li>the new <em>guess</em> is half of the difference of <em>guess</em> and <em>lowerBound</em></li>
+<li>the new <em>upperBound</em> is <em>guess</em></li>
+</ul>
+</li>
+<li>If the guess was <strong>too low</strong>, repeat (2) where:<ul>
+<li>The new <em>guess</em> is half of the difference of <em>upperBound</em> and <em>guess</em></li>
+<li>The new <em>lowerBound</em> is <em>guess</em></li>
+</ul>
+</li>
+<li>If the guess was <strong>correct</strong> stop.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Your task</strong> is to write a function that implements the above algorithm
+to play the game on your behalf. The first thing that you will need to
+do is create another version of <code>guessMyNumber</code> that returns output that
+will be easier for another function to work with, <em>e.g.</em> use <code>1</code> for too
+high, <code>-1</code> for too low, <code>0</code> for correct.</p>
+<p>Relative to <em>upperBound</em>, how many guesses does it take on average to
+guess correctly?</p>
+<p>Some recommendations:</p>
+<ul>
+<li>Make use of a whiteboard.</li>
+<li>Play the existing game yourself using the above steps to get an
+idea of how the algorithm works.</li>
+<li>Work with a partner.</li>
+<li>Read about <code>console.log</code> on
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/Console/log">MDN</a>
+and use it to help with debugging.</li>
+</ul>

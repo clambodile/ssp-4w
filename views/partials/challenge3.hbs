@@ -1,0 +1,86 @@
+<h1 id="self-challenge">Self Challenge</h1>
+<h2 id="instructions">Instructions</h2>
+<ol>
+<li>First, start a new project for the warmup by right-clicking
+<a href="https://github.com/jalehman/rp-starter/archive/master.zip">this link</a> and &quot;Save
+Link As...&quot; to your Desktop (or somewhere else).</li>
+<li>Complete this exercise <strong>individually, not in pairs</strong>.</li>
+<li><strong>If you need help understanding the instructions, please ask for help! The
+instructor and TA(s) are happy to help clarify the instructions.</strong></li>
+<li><strong>Attempt to complete each exercise -- if you are working on an exercise for
+longer than ten minutes, move on to the next one.</strong></li>
+<li>Afterwards, please <strong>submit your answers</strong> via Slack (we&#39;ll cover how to do
+this after the time is up)!</li>
+</ol>
+<h2 id="exercises">Exercises</h2>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">each</span><span class="hljs-params">(array, func)</span> </span>{
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-keyword">array</span>.length; i++) {
+    func(<span class="hljs-keyword">array</span>[i], i);
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">reduce</span><span class="hljs-params">(array, func, start)</span> </span>{
+  <span class="hljs-keyword">var</span> acc = start;
+  each(<span class="hljs-keyword">array</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(element, i)</span> </span>{
+    acc = func(acc, element, i);
+  });
+  <span class="hljs-keyword">return</span> acc;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">filter</span><span class="hljs-params">(array, predicate)</span> </span>{
+  <span class="hljs-keyword">var</span> acc = [];
+  each(<span class="hljs-keyword">array</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(element, i)</span> </span>{
+    <span class="hljs-keyword">if</span> (predicate(element, i)) {
+      acc.push(element);
+    }
+  });
+  <span class="hljs-keyword">return</span> acc;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">map</span><span class="hljs-params">(array, func)</span> </span>{
+  <span class="hljs-keyword">var</span> acc = [];
+  each(<span class="hljs-keyword">array</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(element, i)</span> </span>{
+    acc.push(func(element, i));
+  });
+  <span class="hljs-keyword">return</span> acc;
+}
+</code></pre>
+<ol>
+<li><p>The following function <code>wordLengths</code> accepts a string as a parameter and
+returns an array of the lengths of each word in the string. Rewrite
+<code>wordLengths</code> using <code>each</code> (written above for your convenience); that is,
+replace the <code>for</code> loop.</p>
+<pre><code class="lang-js">function wordLengths(string) {
+  var acc = []<span class="hljs-comment">;</span>
+  var words = string.<span class="hljs-keyword">split</span>(<span class="hljs-string">" "</span>)<span class="hljs-comment">;</span>
+  <span class="hljs-keyword">for</span> (var i = <span class="hljs-number">0</span><span class="hljs-comment">; i &lt; words.length; i++) {</span>
+    acc.push(words[i].<span class="hljs-keyword">length</span>)<span class="hljs-comment">;</span>
+  }
+  <span class="hljs-keyword">return</span> acc<span class="hljs-comment">;</span>
+}
+wordLengths(<span class="hljs-string">"The quick brown fox jumps over the lazy dog."</span>)
+<span class="hljs-comment">// =&gt; [ 3, 5, 5, 3, 5, 4, 3, 4, 4 ]</span>
+</code></pre>
+</li>
+<li><p><code>wordLengths</code> involves <em>transforming</em> every word into its length, which makes
+this function an ideal use-case of the <code>map</code> abstraction. Using <code>map</code> (also
+written above for convenience), rewrite <code>wordLengths</code> (but write a new
+function, <em>e.g.</em> <code>wordLengthsMap</code>) again -- but this time using <code>map</code>.</p>
+</li>
+<li><p>Write a function called <code>wordsLongerThanThree</code> using <code>filter</code> that, given a
+<strong>string</strong> as input, returns an <strong>array</strong> of the words in the original string
+that are longer than three (have <code>length</code> greater than three).</p>
+</li>
+<li><p>Write a function called <code>concat</code> that takes two arrays as parameters and
+returns an <strong>array</strong> with all of the elements of the second one added to the
+first one -- your implementation should use <code>reduce</code>. It should work like
+this:</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">concat</span><span class="hljs-params">(arr1, arr2)</span> {</span>
+  <span class="hljs-comment">// ...</span>
+}
+<span class="hljs-built_in">concat</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]); <span class="hljs-comment">// =&gt; [1, 2, 3, 4, 5, 6]</span>
+<span class="hljs-built_in">concat</span>([], [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]); <span class="hljs-comment">// =&gt; [3, 4, 5]</span>
+<span class="hljs-built_in">concat</span>([], []); <span class="hljs-comment">// =&gt; []</span>
+</code></pre>
+</li>
+</ol>

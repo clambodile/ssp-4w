@@ -1,0 +1,92 @@
+<h1 id="introduction-to-abstraction">Introduction to Abstraction</h1>
+<h2 id="lesson">Lesson</h2>
+<iframe src="https://docs.google.com/presentation/d/1BZKemtwteNQTW6t9nqIE_9dsIb0ItDgXrMwiygq35MA/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+<h2 id="exercises">Exercises</h2>
+<pre><code class="lang-js">function each(coll, <span class="hljs-function"><span class="hljs-keyword">func</span>) {</span>
+  <span class="hljs-keyword">if</span> (Array.<span class="hljs-built_in">isArray</span>(coll)) {
+    <span class="hljs-keyword">for</span> (var i = <span class="hljs-number">0</span><span class="hljs-comment">; i &lt; coll.length; i++) {</span>
+      <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">(coll[i], i)</span>;</span>
+    }
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">for</span> (var key <span class="hljs-keyword">in</span> coll) {
+      <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">(coll[key], key)</span>;</span>
+    }
+  }
+}
+</code></pre>
+<h3 id="more-practice">More Practice</h3>
+<ol>
+<li><p>Write a function called <code>select</code> that, given an object and an array of
+strings representing keys, returns a new object consisting of just the keys
+(and values) specified in the array of strings.</p>
+<pre><code class="lang-js"><span class="hljs-selector-tag">function</span> <span class="hljs-selector-tag">select</span>(object, keys) {
+  <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> your code here</span>
+}
+<span class="hljs-selector-tag">select</span>({<span class="hljs-attribute">a</span>: <span class="hljs-number">1</span>, <span class="hljs-attribute">b</span>: <span class="hljs-number">2</span>, <span class="hljs-attribute">c</span>: <span class="hljs-number">3</span>}, [<span class="hljs-string">"a"</span>, <span class="hljs-string">"b"</span>]); <span class="hljs-comment">// =&gt; {a: 1, b: 2}</span>
+</code></pre>
+</li>
+<li><p>Write a function called <code>pluck</code> that, given an <strong>array of objects</strong> as its
+first parameter and a <em>string</em> representing a key as its second parameter,
+returns an array of all the values found in each object in the array by using
+<em>string</em> as a key.</p>
+<pre><code class="lang-js"><span class="hljs-built_in">var</span> people = [
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Alyssa"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"P."</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Hacker"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">26</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Louis"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Reasoner"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">21</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Ben"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Bitdiddle"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">34</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Eva"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"Lu"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Ator"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">40</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Lem"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"E."</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Tweakit"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">45</span>}
+];
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">pluck</span>(<span class="hljs-params">array, key</span>) </span>{
+  <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> your code here</span>
+}
+pluck(people, <span class="hljs-string">"age"</span>); <span class="hljs-comment">// =&gt; [26, 21, 34, 40, 45]</span>
+</code></pre>
+</li>
+<li><p>Write a function called <code>extend</code> that accepts two parameters, a <em>destination</em>
+object and a <em>source</em> object. <code>extend</code> should copy all of the keys and values
+from the <em>source</em> object (the second parameter) to the <em>destination</em> object
+(the first parameter), and return the <em>destination</em> object afterwards. You&#39;ll
+want to use our new version of <code>each</code> for this.</p>
+<pre><code class="lang-js">extend({<span class="hljs-string">a:</span> <span class="hljs-number">1</span>, <span class="hljs-string">b:</span> <span class="hljs-number">2</span>}, {<span class="hljs-string">c:</span> <span class="hljs-number">3</span>, <span class="hljs-string">d:</span> <span class="hljs-number">4</span>});
+<span class="hljs-comment">// =&gt; {a: 1, b: 2, c: 3, d: 4}</span>
+extend({<span class="hljs-string">name:</span> <span class="hljs-string">"Eva Lu Ator"</span>, <span class="hljs-string">age:</span> <span class="hljs-number">40</span>}, {<span class="hljs-string">name:</span> <span class="hljs-string">"Louis Reasoner"</span>});
+<span class="hljs-comment">// =&gt; {name: "Louis Reasoner", age: 40}</span>
+</code></pre>
+</li>
+<li><p>Complete the below function called <code>zip</code> that takes two <strong>arrays</strong> as
+parameters and combines them to form a single <strong>object</strong>. The first array
+parameter represents the <em>keys</em> of the object, and the second parameter
+represents the <em>values</em> (you can assume the two arrays are the same length).</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">zip</span><span class="hljs-params">(keys, values)</span> </span>{
+  <span class="hljs-comment">// YOUR CODE HERE</span>
+}
+</code></pre>
+<p>You should be able to use it like this:</p>
+<pre><code class="lang-js">zip([<span class="hljs-string">"a"</span>, <span class="hljs-string">"b"</span>, <span class="hljs-string">"c"</span>], [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]); // =&gt; {a: <span class="hljs-number">1</span>, b: <span class="hljs-number">2</span>, c: <span class="hljs-number">3</span>}
+zip([<span class="hljs-string">"first"</span>, <span class="hljs-string">"last"</span>], [<span class="hljs-string">"Ben"</span>, <span class="hljs-string">"Bitdiddle"</span>]); // =&gt; {first: <span class="hljs-string">"Ben"</span>, last: <span class="hljs-string">"Bitdiddle"</span>}
+zip([], []); // =&gt; {}
+</code></pre>
+</li>
+</ol>
+<h3 id="advanced">Advanced</h3>
+<ol>
+<li><p>Write a function <code>deepPluck</code>, where its <code>key</code> parameter can be written in
+<em>dot notation</em> -- if the key is written this way, <code>deepPluck</code> will perform a
+nested lookup, <em>e.g.</em></p>
+<pre><code class="lang-js"><span class="hljs-built_in">var</span> people = [
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Alyssa"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"P."</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Hacker"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">26</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Louis"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Reasoner"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">21</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Ben"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Bitdiddle"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">34</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Eva"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"Lu"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Ator"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">40</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Lem"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"E."</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Tweakit"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">45</span>}
+];
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">deepPluck</span>(<span class="hljs-params">array, key</span>) </span>{
+  <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> your code here</span>
+}
+pluck(people, <span class="hljs-string">"name.first"</span>); <span class="hljs-comment">// =&gt; ["Alyssa", "Louis", "Ben", "Eva", "Lem"]</span>
+</code></pre>
+</li>
+</ol>

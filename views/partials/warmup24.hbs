@@ -1,0 +1,51 @@
+<h1 id="warmup">Warmup</h1>
+<h2 id="instructions">Instructions</h2>
+<ol>
+<li>Start a new project for today by right-clicking
+<a href="https://github.com/jalehman/rp-starter/archive/master.zip">this link</a> and
+&quot;Save Link As...&quot; to your Desktop (or somewhere else). Don&#39;t forget to rename
+the folder to something meaningful!</li>
+<li>Find a partner (preferably one that you have not yet worked with), and work
+through the following exercises as a pair.</li>
+</ol>
+<h2 id="exercises">Exercises</h2>
+<ol>
+<li><p>Discuss the purpose of objects with your partner until you are confident that
+you could explain what kind of problems are solved by objects, and why
+objects provide a better solution than other approaches. Put this into
+writing.</p>
+</li>
+<li><p>Represent at least two of the following using an object (create variables
+with objects as their values):</p>
+<ul>
+<li>Your car (or a favorite model)</li>
+<li>The system specs of your computer (RAM, CPU, storage, etc.)</li>
+<li>Your pet</li>
+<li>Another person that you know</li>
+<li>An activity that you enjoy</li>
+</ul>
+<p>It will help to first think about the various <em>aspects</em> (<em>i.e.</em> properties,
+attributes) that are important to each of these things.</p>
+</li>
+<li><p>Write a function called <code>squareNumericValues</code> that takes an <em>object</em> as a
+parameter and returns an object with all of the numeric values in the object
+squared, <em>e.g.</em></p>
+<pre><code class="lang-js"><span class="hljs-selector-tag">function</span> <span class="hljs-selector-tag">squareNumericValues</span>(obj) {
+  <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> Your code here</span>
+}
+<span class="hljs-selector-tag">squareNumericValues</span>({<span class="hljs-attribute">a</span>: <span class="hljs-number">4</span>, <span class="hljs-attribute">b</span>: <span class="hljs-number">7</span>, <span class="hljs-attribute">c</span>: <span class="hljs-number">2</span>}); <span class="hljs-comment">// =&gt; {a: 16, b: 49, c: 4}</span>
+<span class="hljs-selector-tag">squareNumericValues</span>({<span class="hljs-attribute">name</span>: <span class="hljs-string">"Phuong"</span>, <span class="hljs-attribute">age</span>: <span class="hljs-number">25</span>}); <span class="hljs-comment">// =&gt; {name: "Phuong", age: 625}</span>
+</code></pre>
+<p>One observation to make when writing this function is that you&#39;ll need to
+only square the values that are actually <em>numbers</em> -- notice how in the
+second example invocation above (<code>squareNumericValues({name: &quot;Phuong&quot;, age:
+25})</code>) the value <em>&quot;Phuong&quot;</em> is unchanged because its value is a <em>string</em>.</p>
+<p>To handle this, you will need to use the <code>typeof</code> operator to determine each
+value&#39;s type. Enter the following into a console to get an idea of how
+<code>typeof</code> works:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">typeof</span> <span class="hljs-number">1</span>; <span class="hljs-comment">// =&gt; "number"</span>
+<span class="hljs-keyword">typeof</span> <span class="hljs-string">"hello"</span>; <span class="hljs-comment">// =&gt; "string"</span>
+<span class="hljs-keyword">typeof</span> <span class="hljs-literal">true</span>; <span class="hljs-comment">// =&gt; "boolean"</span>
+</code></pre>
+</li>
+</ol>

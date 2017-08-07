@@ -1,0 +1,91 @@
+<h1 id="filter">Filter</h1>
+<h2 id="lesson">Lesson</h2>
+<iframe src="https://docs.google.com/presentation/d/16lqFtoGd41QgkclAwS6VeOsvJhZ3qmUT4kJfJ33nXAU/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+<h2 id="exercises">Exercises</h2>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">each</span>(<span class="hljs-params">coll, f</span>) </span>{
+  <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Array</span>.isArray(coll)) {
+    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">var</span> i = <span class="hljs-number">0</span>; i &lt; coll.length; i++) {
+      f(coll[i], i);
+    }
+  } <span class="hljs-decorator"><span class="hljs-keyword">else</span></span> {
+    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">var</span> key <span class="hljs-keyword">in</span> coll) {
+      f(coll[key], key);
+    }
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">filter</span>(<span class="hljs-params">array, predicate</span>) </span>{
+  <span class="hljs-built_in">var</span> acc = [];
+  each(array, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">element, i</span>) </span>{
+    <span class="hljs-keyword">if</span> (predicate(element, i)) {
+      acc.push(element);
+    }
+  });
+  <span class="hljs-keyword">return</span> acc;
+}
+</code></pre>
+<h3 id="basic-requirements">Basic Requirements</h3>
+<p>Use <code>filter</code> to write the following functions:</p>
+<ol>
+<li><p>Write a function called <code>evens</code> that takes an array of <strong>numbers</strong> as a
+parameter, and returns <strong>an array of only the even numbers</strong> in the parameter.</p>
+</li>
+<li><p>Write a function called <code>multiplesOfThree</code> that takes an array of <strong>numbers</strong> as a
+parameter, and returns an array of only the numbers that are multiples of
+three.</p>
+</li>
+<li><p>Write a function called <code>positives</code> that takes an array of <strong>numbers</strong> as a
+parameter, and returns an array of only the numbers that are positive.</p>
+</li>
+<li><p>Write a function called <code>evenLength</code> that takes an array of <strong>strings</strong> and
+returns an array of only the strings with an even length.</p>
+</li>
+</ol>
+<h3 id="more-practice">More Practice</h3>
+<ol>
+<li><p>Use <code>filter</code> to write the following functions:</p>
+<ul>
+<li><code>odds</code>: Accepts an array of numbers, and returns the <em>odd</em> ones.</li>
+<li><code>negatives</code>: Like <code>positives</code>, but with negatives!</li>
+<li><code>largerThanSix</code>: given an array of numbers, returns those larger than 6.</li>
+</ul>
+</li>
+<li><p>Using <code>filter</code>, write a function <code>startsWithChar</code> that accepts two parameters:
+an array of strings, and a character (<em>e.g.</em> &quot;a&quot;), and returns an array of
+only the strings that start with that character:</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">startsWithChar</span><span class="hljs-params">(strings, character)</span> </span>{
+  <span class="hljs-comment">// ...</span>
+}
+<span class="hljs-keyword">var</span> words = <span class="hljs-string">"the quick brown fox jumps over the lazy dog"</span>.split(<span class="hljs-string">" "</span>);
+startsWithChar(words, <span class="hljs-string">"q"</span>); <span class="hljs-comment">// =&gt; ["quick"]</span>
+startsWithChar(words, <span class="hljs-string">"t"</span>); <span class="hljs-comment">// =&gt; ["the", "the"]</span>
+</code></pre>
+</li>
+<li><p>Extend the <code>filter</code> function to pass the <em>index</em> of each element to the
+predicate; then, complete the following:</p>
+<p>Write a function called <code>evenIndexedEvenLengths</code> (yeah, a bit of a mouthful)
+that accepts an array of strings as a parameter, and returns only the strings
+that are found at an even index that <em>also</em> have an even length, <em>e.g.</em>:</p>
+<pre><code class="lang-js">function evenIndexedEvenLengths(strings) {
+  // <span class="hljs-symbol">TODO</span>: your code here
+}
+evenIndexedEvenLengths([<span class="hljs-string">"lion"</span>, <span class="hljs-string">"monkey"</span>, <span class="hljs-string">"aardvaark"</span>, <span class="hljs-string">"cat"</span>, <span class="hljs-string">"doge"</span>]);
+// =&gt; [<span class="hljs-string">"lion"</span>, <span class="hljs-string">"doge"</span>]
+evenIndexedEvenLengths([<span class="hljs-string">"red"</span>, <span class="hljs-string">"green"</span>, <span class="hljs-string">"purple"</span>, <span class="hljs-string">"blue"</span>, <span class="hljs-string">"yellow"</span>]);
+// =&gt; [<span class="hljs-string">"purple"</span>, <span class="hljs-string">"yellow"</span>]
+</code></pre>
+<p><strong>HINT:</strong> You&#39;ll need to ensure that your version of <code>filter</code> also passes
+each elements&#39; <em>index</em> (or <em>key</em> in the case of objects) to the predicate.</p>
+</li>
+<li><p>Write a version of <code>filter</code> that works on arrays <strong>and</strong> objects; then, use
+your updated version of <code>filter</code> to filter an object with values of mixed
+types to an object with <em>only</em> numeric values. You should be able to use your
+modified version of <code>filter</code> as follows:</p>
+<pre><code class="lang-js">filter({<span class="hljs-attribute">a</span>: <span class="hljs-number">1</span>, <span class="hljs-attribute">b</span>: <span class="hljs-string">"dog"</span>, <span class="hljs-attribute">c</span>: <span class="hljs-literal">true</span>}, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">typeof</span> value === <span class="hljs-string">"number"</span>;
+});
+<span class="hljs-comment">// =&gt; {a: 1}</span>
+</code></pre>
+</li>
+</ol>

@@ -1,0 +1,124 @@
+<h1 id="booleans-comparisons-conditionals">Booleans, Comparisons &amp; Conditionals</h1>
+<h2 id="lesson">Lesson</h2>
+<iframe src="https://docs.google.com/presentation/d/1rYPio9W3IphRi12KXjsAa8sTZmbSJMrFeKTByCRWFqw/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+<h2 id="exercises">Exercises</h2>
+<h3 id="basic-requirements">Basic Requirements</h3>
+<h4 id="comparison-operators">Comparison Operators</h4>
+<ol>
+<li><p>Type the two boolean values -- <code>true</code> and <code>false</code> -- into your console.</p>
+</li>
+<li><p>Use the console to accomplish the following:</p>
+<ul>
+<li>Write an expression using <code>&gt;</code> that will evaluate to <code>false</code></li>
+<li>Write an expression using <code>&gt;</code> that will evaluate to <code>true</code></li>
+<li>Write an expression using <code>&lt;</code> that will evaluate to <code>false</code></li>
+<li>Write an expression using <code>&lt;</code> that will evaluate to <code>true</code></li>
+<li>Write an expression using two numbers and <code>===</code> that will evaluate to <code>true</code></li>
+<li>Write an expression using two numbers and <code>===</code> that will evaluate to <code>false</code></li>
+<li>Write an expression using two strings and <code>===</code> that will evaluate to <code>true</code></li>
+<li>Write an expression using two strings and <code>===</code> that will evaluate to <code>false</code></li>
+</ul>
+</li>
+<li><p>Fill in the <code>???</code> with the following operators or values to make the statements
+output the expected Boolean value.</p>
+<pre><code class="lang-js"><span class="hljs-number">12</span> ??? <span class="hljs-number">78</span>
+<span class="hljs-comment">// =&gt; true</span>
+
+<span class="hljs-number">24</span> ??? <span class="hljs-number">16</span>
+<span class="hljs-comment">// =&gt; false</span>
+
+<span class="hljs-number">45</span> !== ???
+<span class="hljs-comment">// =&gt; true</span>
+
+<span class="hljs-string">"45"</span> ??? <span class="hljs-number">45</span>
+<span class="hljs-comment">// =&gt; false</span>
+
+<span class="hljs-string">"6"</span> ??? <span class="hljs-string">"six"</span>
+<span class="hljs-comment">// =&gt; true</span>
+</code></pre>
+</li>
+<li><p>Write a function <code>oldEnoughToDrink</code> that takes an <code>age</code> as an argument and
+returns <code>true</code> if the person with that age is old enough to drink.</p>
+</li>
+<li><p>There&#39;s an easy way to figure out how long a string is by adding <code>.length</code> to
+the end of it. Try this out in the console:</p>
+<pre><code class="lang-js"><span class="hljs-string">"hello"</span>.<span class="hljs-keyword">length</span><span class="hljs-comment">;</span>
+<span class="hljs-string">""</span>.<span class="hljs-keyword">length</span><span class="hljs-comment">;</span>
+<span class="hljs-string">"John Doe"</span>.<span class="hljs-keyword">length</span><span class="hljs-comment">;</span>
+</code></pre>
+<p>Write a function <code>sameLength</code> that accepts two strings as arguments, and
+returns <code>true</code> if those strings have the same length, and <code>false</code> otherwise.</p>
+</li>
+<li><p>Write a function <code>passwordLongEnough</code> that accepts a &quot;password&quot; as a
+parameter and returns <code>true</code> if that password is <em>long enough</em> -- you get to
+decide what constitutes <em>long enough</em>.</p>
+</li>
+</ol>
+<h4 id="conditionals-if-">Conditionals: <code>if</code></h4>
+<ol>
+<li><p>Write a function <code>bouncer</code> that accepts a person&#39;s name and age as arguments,
+and returns either &quot;Go home, NAME.&quot;, or &quot;Welcome, NAME!&quot; (where NAME is the
+parameter that represents the person&#39;s name) depending on whether or not the
+person is old enough to drink.</p>
+</li>
+<li><p>Write a function <code>max</code> that takes two numbers as arguments, and returns the
+larger one.</p>
+</li>
+<li><p>Write a function <code>min</code> that takes two numbers as arguments, and returns the
+smaller one.</p>
+</li>
+<li><p>Write functions <code>larger</code> and <code>smaller</code> that each accept two strings as
+arguments, and return the <em>larger</em> and <em>smaller</em> strings, respectively.</p>
+</li>
+</ol>
+<h3 id="more-practice">More Practice</h3>
+<ol>
+<li><p>Fill in the <code>???</code> with the following operators or values to make the statements
+output the expected Boolean value.</p>
+<pre><code class="lang-js"><span class="hljs-number">106</span> ??? <span class="hljs-number">12</span>
+<span class="hljs-comment">// =&gt; false</span>
+
+<span class="hljs-string">"wiz"</span> ??? <span class="hljs-string">"wiz"</span>
+<span class="hljs-comment">// =&gt; true</span>
+
+<span class="hljs-number">7</span> * <span class="hljs-number">7</span>  ??? <span class="hljs-number">49</span>
+<span class="hljs-comment">// =&gt; true</span>
+
+<span class="hljs-number">12</span> ??? <span class="hljs-comment">(24 / 2)</span>
+<span class="hljs-comment">// =&gt; false</span>
+
+<span class="hljs-comment">(20 % 2)</span> &lt;= ???
+<span class="hljs-comment">// =&gt; true</span>
+
+<span class="hljs-comment">(9 / 3)</span> + <span class="hljs-comment">(5 * 5)</span> === ???
+<span class="hljs-comment">// =&gt; true</span>
+</code></pre>
+</li>
+<li><p>Write the following functions that each accept a single number as an
+argument:</p>
+<ul>
+<li><code>even</code>: returns <code>true</code> if its argument is even, and <code>false</code> otherwise.</li>
+<li><code>odd</code>: the opposite of the above.</li>
+<li><code>positive</code>: returns <code>true</code> if its argument is positive, and <code>false</code> otherwise.</li>
+<li><code>negative</code>: the opposite of the above.</li>
+</ul>
+</li>
+<li><p>A couple of other useful built-in mathematical functions are <code>Math.random</code>,
+<code>Math.floor</code> and <code>Math.ceil</code>. Look these functions up on
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math">MDN</a>
+to learn how they work, and use them to implement the following functions:</p>
+<ul>
+<li><code>randInt</code>: Should accept a single numeric argument (<code>n</code>), and return a
+number from <code>0</code> to <code>n</code>.</li>
+<li><p><code>guessMyNumber</code>: Should accept a single numeric argument and compare it to
+a random number between <code>0</code> and <code>5</code>. It should return one of the following
+strings:</p>
+<ul>
+<li>&quot;You guessed my number!&quot; if the argument matches the random number.</li>
+<li>&quot;Nope! That wasn&#39;t it!&quot; if the argument did not match the random number.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>

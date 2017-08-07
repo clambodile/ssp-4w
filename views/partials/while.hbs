@@ -1,0 +1,154 @@
+<h1 id="iteration-with-the-while-loop">Iteration with the <code>while</code> Loop</h1>
+<h2 id="lesson">Lesson</h2>
+<iframe src="https://docs.google.com/presentation/d/1U5PoyOCRJOeLWagTxRW2F-FoujmdL3pQq-DVo0KqOnI/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+<h2 id="exercises">Exercises</h2>
+<h3 id="basic-requirements">Basic Requirements</h3>
+<ol>
+<li><p><strong>Summation to <code>n</code>:</strong> Let&#39;s implement the function <code>sum</code> that takes a single
+parameter <code>n</code>, and computes the sum of all integers up to <code>n</code> starting from
+<code>0</code>, <em>e.g.</em>:</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sum</span><span class="hljs-params">(n)</span> {</span>
+  <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> your code here</span>
+}
+<span class="hljs-built_in">sum</span>(<span class="hljs-number">3</span>); <span class="hljs-comment">// =&gt; 6</span>
+<span class="hljs-built_in">sum</span>(<span class="hljs-number">4</span>); <span class="hljs-comment">// =&gt; 10</span>
+<span class="hljs-built_in">sum</span>(<span class="hljs-number">5</span>); <span class="hljs-comment">// =&gt; 15</span>
+</code></pre>
+</li>
+<li><p><strong>Factorial of <code>n</code>:</strong> The factorial of <code>n</code> is the <em>product</em> of all the
+integers preceding <code>n</code>, starting with <code>1</code>, <em>e.g.</em>:</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">factorial</span><span class="hljs-params">(n)</span> </span>{
+  <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> your code here</span>
+}
+factorial(<span class="hljs-number">3</span>); <span class="hljs-comment">// =&gt; 6</span>
+factorial(<span class="hljs-number">4</span>); <span class="hljs-comment">// =&gt; 24</span>
+factorial(<span class="hljs-number">5</span>); <span class="hljs-comment">// =&gt; 120</span>
+</code></pre>
+</li>
+<li><p><strong>Repeating a String <code>n</code> Times:</strong> Let&#39;s write a function called
+<code>repeatString</code> that takes two parameters: a string <code>str</code>, which is the string
+to be repeated, and <code>count</code> -- a number representing how many times the
+string <code>s</code> should be repeated, <em>e.g.</em></p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">repeatString</span><span class="hljs-params">(str, count)</span> </span>{
+  <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> your code here</span>
+}
+repeatString(<span class="hljs-string">'dog'</span>, <span class="hljs-number">0</span>); <span class="hljs-comment">// =&gt; ''</span>
+repeatString(<span class="hljs-string">'dog'</span>, <span class="hljs-number">1</span>); <span class="hljs-comment">// =&gt; 'dog'</span>
+repeatString(<span class="hljs-string">'dog'</span>, <span class="hljs-number">2</span>); <span class="hljs-comment">// =&gt; 'dogdog'</span>
+repeatString(<span class="hljs-string">'dog'</span>, <span class="hljs-number">3</span>); <span class="hljs-comment">// =&gt; 'dogdogdog'</span>
+</code></pre>
+<p>Your task is to implement the <code>repeatString</code> function using a <code>while</code> loop.</p>
+</li>
+</ol>
+<h3 id="more-practice">More Practice</h3>
+<ol>
+<li><p>Modify your <code>sum</code> function from the <strong>Basic Requirements</strong> section to accept
+<em>two</em> parameters, <code>start</code> and <code>end</code>: <code>sum</code> should now compute the sum of the
+numbers from <code>start</code> to <code>end</code>, <em>e.g.</em></p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sum</span><span class="hljs-params">(start, end)</span> {</span>
+  <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> your code here</span>
+}
+<span class="hljs-built_in">sum</span>(<span class="hljs-number">2</span>, <span class="hljs-number">7</span>); <span class="hljs-comment">// =&gt; 2 + 3 + 4 + 5 + 6 + 7 =&gt; 27</span>
+<span class="hljs-built_in">sum</span>(<span class="hljs-number">3</span>, <span class="hljs-number">5</span>); <span class="hljs-comment">// =&gt; 3 + 4 + 5 =&gt; 12</span>
+</code></pre>
+<ul>
+<li>What happens if <code>start</code> is larger than <code>end</code>? Modify <code>sum</code> to check for this
+case and, when found, swap the <code>start</code> and <code>end</code> arguments.</li>
+</ul>
+</li>
+<li><p>Let&#39;s pretend for a moment that JavaScript does not have the addition
+operator <code>+</code> -- instead, it comes with two functions called <code>inc</code> and <code>dec</code>
+that perform <em>increment</em> and <em>decrement</em> respectively:</p>
+<pre><code class="lang-js"><span class="hljs-comment">// ignore the fact that inc makes use of +</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">inc</span><span class="hljs-params">(x)</span> </span>{
+  <span class="hljs-keyword">return</span> x + <span class="hljs-number">1</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">dec</span><span class="hljs-params">(x)</span> </span>{
+  <span class="hljs-keyword">return</span> x - <span class="hljs-number">1</span>;
+}
+</code></pre>
+<p>Your task is to write a function called <code>add</code> that takes two numbers as
+parameters, <code>x</code> and <code>y</code>, and adds them together. The catch is that you can
+<em>only</em> use <code>inc</code> and <code>dec</code> to accomplish this.</p>
+</li>
+<li><p>Write a function called <code>isEven</code> that, given a number <code>n</code> as a parameter,
+returns <code>true</code> if that number is <em>even</em>, and <code>false</code> otherwise; however, you
+need to do this <strong>without using the <code>%</code> operator.</strong></p>
+</li>
+<li><p>Write a function called <code>multiply</code> that accepts two numbers as parameters,
+and multiplies them together -- but without using the <code>*</code> operator; instead,
+you&#39;ll need to use repeated addition.</p>
+</li>
+</ol>
+<h3 id="advanced">Advanced</h3>
+<ol>
+<li><p><strong>Compute the <code>n</code>th Fibonacci Number:</strong> The fibonacci numbers are represented by the
+following sequence:</p>
+<pre><code class="lang-js">// fib(n): 1 1 2 3 5 8 13 21
+//         |<span class="hljs-string"> </span>|<span class="hljs-string"> </span>|<span class="hljs-string"> </span>|<span class="hljs-string"> </span>|<span class="hljs-string"> </span>|<span class="hljs-string">  </span>|<span class="hljs-string">  </span>|
+//      n: 0 1 2 3 4 5  6  7
+</code></pre>
+<p>That is, <code>fib(0)</code> is 1, <code>fib(1)</code> is 1, <code>fib(2)</code> is 2, <code>fib(3)</code> is 3, <code>fib(4)</code>
+is 5, etc.</p>
+<p>Notice that each fibonacci number can be computed by adding the <strong>previous
+two</strong> fibonacci numbers, with the exception of the first two: <code>fib(0)</code> and
+<code>fib(1)</code>. More succinctly,</p>
+<ul>
+<li><code>fib(0)</code> is <code>1</code></li>
+<li><code>fib(1)</code> is <code>1</code></li>
+<li><code>fib(n)</code> is <code>fib(n - 1) + fib(n - 2)</code></li>
+</ul>
+<p>Write a function called <code>fib</code> that accepts a number <code>n</code> as a parameter and
+computes the <code>n</code>th fibonacci number using the above rules.</p>
+</li>
+<li><p>By now you should have worked with the <code>length</code> property of strings, <em>e.g.</em>
+<code>&quot;hello&quot;.length</code>. Your task is to write a function called <code>stringLength</code> that
+accepts a string as a parameter and computes the length of that string;
+however, as you may have guessed, you are not allowed to use the <code>length</code>
+property of the string!</p>
+<p>Instead, you&#39;ll need to make use of the string method called <code>slice</code>. To
+get an idea of how <code>slice</code> works, try the following at a console:</p>
+<pre><code class="lang-js"><span class="hljs-string">"hello"</span>.slice<span class="hljs-comment">(0)</span>;
+<span class="hljs-string">"hello"</span>.slice<span class="hljs-comment">(1)</span>;
+<span class="hljs-string">""</span>.slice<span class="hljs-comment">(1)</span>;
+</code></pre>
+<p>For our purposes, we can consider <code>slice</code> as taking one argument -- the
+<strong>index</strong> to begin slicing from, and returns a new string starting from that
+index onwards.</p>
+<p><strong>Indices</strong> are <em>positions</em> of characters within strings, and they always
+begin counting from 0, <em>e.g.</em>:</p>
+<pre><code class="lang-js">// <span class="hljs-string">"h e l l o"</span> (spaces added for clarity)
+//  |<span class="hljs-string"> </span>|<span class="hljs-string"> </span>|<span class="hljs-string"> </span>|<span class="hljs-string"> </span>|
+//  0 1 2 3 4
+</code></pre>
+<p>The <code>&quot;h&quot;</code> character has index (position) <code>0</code> in the string <code>&quot;hello&quot;</code>, <code>&quot;e&quot;</code>
+has index <code>1</code>, <code>l</code> has index <code>2</code>, etc.</p>
+</li>
+<li><p>The &quot;modulo&quot; operator (<code>%</code>) computes the <em>remainder</em> after dividing its left
+operand by its right one, <em>e.g.</em></p>
+<pre><code class="lang-js"><span class="hljs-symbol">5 </span>% <span class="hljs-number">2</span>; // =&gt; <span class="hljs-number">1</span>
+<span class="hljs-symbol">8 </span>% <span class="hljs-number">10</span>; // =&gt; <span class="hljs-number">8</span>
+<span class="hljs-symbol">7 </span>% <span class="hljs-number">5</span>; // =&gt; <span class="hljs-number">2</span>
+</code></pre>
+<p>Write a function called <code>modulo</code> that works like the <code>%</code> operator, but
+without using it.</p>
+</li>
+<li><p>Write a function called <code>countChars</code> that accepts two parameters: a <code>string</code>
+and a <code>character</code>. This function should return a number representing the
+number of times that the <code>character</code> appears in <code>string</code>. To access the
+<em>first</em> element of a string, you can use the following syntax:</p>
+<pre><code class="lang-js">// access <span class="hljs-keyword">the</span> <span class="hljs-keyword">element</span> <span class="hljs-keyword">at</span> index <span class="hljs-number">0</span>
+<span class="hljs-string">"hello"</span>[<span class="hljs-number">0</span>];<span class="hljs-comment"> // =&gt; "h"</span>
+<span class="hljs-string">"dog"</span>[<span class="hljs-number">0</span>];<span class="hljs-comment"> // =&gt; "d"</span>
+</code></pre>
+<p><strong>HINT:</strong> You&#39;ll also need to make use of the <code>slice</code> method as shown above
+in the exercise on computing the length of a string.</p>
+</li>
+<li><p>Implement a function called <code>indexOf</code> that accepts two paramters: a <code>string</code>
+and a <code>character</code>, and returns the <em>first</em> index of <code>character</code> in the
+<code>string</code>. You&#39;ll need to make use of the techniques for accessing the <em>first</em>
+element of a string and the <em>rest</em> of the string (<code>slice</code>) as before.</p>
+</li>
+</ol>

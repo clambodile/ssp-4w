@@ -1,0 +1,211 @@
+<h1 id="data-modeling-with-closures">Data Modeling with Closures</h1>
+<p><strong>Start a new project for today by right-clicking
+<a href="https://github.com/jalehman/rp-closures/archive/master.zip">this link</a> and
+&quot;Save Link As...&quot; to your Desktop (or somewhere else). Don&#39;t forget to rename
+the folder to something meaningful!</strong></p>
+<h2 id="lesson">Lesson</h2>
+<iframe src="https://docs.google.com/presentation/d/1dRqjDcJ767vvhvMTdtInrUsR53Zkfgm3PXFlHeF2kYs/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+<h2 id="exercises">Exercises</h2>
+<h3 id="building-a-todo-list">Building a Todo List</h3>
+<h4 id="basic-requirements">Basic Requirements</h4>
+<ol>
+<li><p>In your starter code, there is a global variable called <code>todos</code> that is
+currently set to an empty array. Decide how to model a single todo item, and
+then add a few todos into the <code>todos</code> array (you may want to consider writing
+a <em>factory function</em>).</p>
+<p>Your <code>todo</code> objects should have <em>at least</em> the following properties:</p>
+<ul>
+<li><code>id</code>: a unique id for the todo (use the <code>generateID</code> function to create a
+unique id)</li>
+<li><code>completed</code>: indicates whether or not the todo is completed</li>
+<li><code>task</code>: a string describing what is to be done</li>
+</ul>
+</li>
+<li><p>First, find the comment marked <strong>EXERCISE 2</strong>. Here we&#39;ll be completing the
+implementation of the <code>displayTodo</code> function that accepts a single <code>todo</code> as
+a parameter, and should output a <strong>string</strong> that represents the <code>todo</code>. Make
+sure to include the <code>id</code> of the todo!</p>
+</li>
+<li><p>The <code>display</code> method of the returned object in <code>makeList</code> should display
+<em>all</em> of the <code>todos</code> in the list. <code>display</code> should use your <code>displayTodo</code>
+function to <strong>transform</strong> all of the <code>todos</code> into strings, join them together
+with newline characters (<code>&#39;\n&#39;</code>) to form a single string, and then output
+them.</p>
+<p>If you can, use <code>map</code> for this!</p>
+<p><strong>HINT:</strong> The output will look nicer if you <code>console.log</code> the resulting
+string instead of <code>return</code>ing it.</p>
+</li>
+<li><p>We&#39;ll need a way to add new todos to the list. Add another method to the
+object returned from <code>makeList</code> called <code>add</code> that accepts a string as a
+parameter, creates a new <code>todo</code> object, and adds it to the (internal) <code>todos</code>
+array.</p>
+<p>Verify that the todo was successfully added using the <code>display</code> method.</p>
+</li>
+<li><p>Finally, we need a way to mark our todos as completed! In order to reference
+a specific todo, we&#39;ll use its <code>id</code> key. Implement another method called
+<code>complete</code> that accepts an <code>id</code> as a parameter, finds the <code>todo</code> in the list
+with that <code>id</code>, and sets it to completed.</p>
+</li>
+</ol>
+<h4 id="more-practice">More Practice</h4>
+<ol>
+<li><p>It&#39;s often nice to be able to <em>toggle</em> a todo between complete/incomplete.
+Change your <code>complete</code> method to <code>toggleComplete</code> that toggles a todo between
+complete/incomplete.</p>
+</li>
+<li><p>It would be nice if you could <em>clear</em> all of the completed todos. Add another
+method that allows you to clear out (remove) all of the todos that are
+completed.</p>
+</li>
+<li><p>Instead of just deleting all of the completed todos, it might be nice to have
+some sort of <em>archival</em> system -- that is, instead of having completed todos
+be completely removed (like in the previous exercise), they get put into an
+<em>archive</em>. To properly implement this mechanism, you&#39;ll need to add a few
+more methods:</p>
+<ul>
+<li><code>unarchive</code>: Given a todo&#39;s <code>id</code>, moves it from the archive <em>back</em> to the
+list of todos.</li>
+<li><code>displayArchived</code>: Displays the archived todos.</li>
+<li><code>clearArchived</code>: Actually deletes the archived todos.</li>
+</ul>
+</li>
+</ol>
+<h4 id="advanced">Advanced</h4>
+<ol>
+<li><p>Implement a way to <em>reorder</em> todos in the list. In order to help make this
+work, you might <em>first</em> want to ensure that your <code>display</code> method shows the
+indices at which the todos appear.</p>
+<p>You&#39;ll likely want to implement something like a <code>move</code> method, that accepts
+two parameters, <code>from</code> and <code>to</code>, each of which are indices of todos. When a
+todo moves to a new position, make sure that the rest of the todos move
+accordingly.</p>
+<p><strong>HINT:</strong> You may want to read about the array <code>splice</code> method on MDN.</p>
+</li>
+<li><p>Implement a <em>priority system</em>, such that todos can have different priorities
+that affect the way in which they are presented. Higher priority todos should
+be shown before those with lower priorities. As a bonus, extend the <code>display</code>
+method to have the capability to display <em>only</em> todos with a specific
+priority.</p>
+</li>
+</ol>
+<h3 id="book-store-shopping-cart">Book Store &amp; Shopping Cart</h3>
+<h4 id="basic-requirements-book-store">Basic Requirements: Book Store</h4>
+<ol>
+<li><p>This exercise provides a helper function to generate a book store called
+<code>generateBooks</code>. Experiment with it at the console by trying the following:</p>
+<pre><code class="lang-js">generateBooks(<span class="hljs-number">5</span>)<span class="hljs-comment">;</span>
+generateBooks(<span class="hljs-number">10</span>)<span class="hljs-comment">;</span>
+generateBooks()<span class="hljs-comment">;</span>
+</code></pre>
+<p>What keys and values do the books have? Note that some of the fields are
+randomly generated. Which ones?</p>
+<p>Create a function called <code>makeStore</code> that creates an internal variable of
+generated books (use <code>generateBooks</code>), and returns an empty object. Then,
+create a book store in the global scope, <em>e.g.</em></p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makeStore</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-comment">// YOUR CODE HERE</span>
+}
+
+<span class="hljs-keyword">var</span> bookStore = makeStore();
+</code></pre>
+</li>
+<li><p>Our first goal will be to create a <code>display</code> method for the <code>bookStore</code> so
+that we can view some books. Since there can potentially be quite a few of
+them, it would be best if we could specify how many books we&#39;d like to see,
+<em>e.g.</em>:</p>
+<pre><code class="lang-js">bookStore.display(<span class="hljs-number">3</span>);
+<span class="hljs-number">1.</span> Lucky Jim, by Kingsley Amis <span class="hljs-regexp">/ CATEGORY: self help /</span> <span class="hljs-string">PRICE:</span> <span class="hljs-number">22.77</span> / <span class="hljs-string">ID:</span> <span class="hljs-number">0</span>
+<span class="hljs-number">2.</span> Money, by Martin Amis <span class="hljs-regexp">/ CATEGORY: classic /</span> <span class="hljs-string">PRICE:</span> <span class="hljs-number">32.34</span> / <span class="hljs-string">ID:</span> <span class="hljs-number">1</span>
+<span class="hljs-number">3.</span> The Information, by Martin Amis <span class="hljs-regexp">/ CATEGORY: classic /</span> <span class="hljs-string">PRICE:</span> <span class="hljs-number">23.1</span> / <span class="hljs-string">ID:</span> <span class="hljs-number">2</span>
+</code></pre>
+<p><strong>STEP 1:</strong> Inside of <code>makeStore</code>, write a function called <code>displayBook</code> that
+accepts a book as a parameter and returns a string representing the relevant
+fields of that book (something like what you see above).</p>
+<p><strong>STEP 2:</strong> Also inside of <code>makeStore</code>, write another function called
+<code>displayBooks</code> that accepts an array of books as a parameter, and outputs a
+<em>single string</em> consisting of all the books&#39; string representations,
+separated by the newline character (<code>&quot;\n&quot;</code>).</p>
+<p>This can be achieved elegantly using <code>map</code> and <code>join</code>. The version of <code>map</code>
+that you will be using passes the index of each element as the second
+parameter to its function argument:</p>
+<pre><code class="lang-js">nums = map([<span class="hljs-string">"the"</span>, <span class="hljs-string">"quick"</span>, <span class="hljs-string">"brown"</span>, <span class="hljs-string">"fox"</span>], <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(s, i)</span> </span>{
+  <span class="hljs-keyword">return</span> i;
+});
+nums; <span class="hljs-comment">// =&gt; [0, 1, 2, 3]</span>
+</code></pre>
+<p><strong>STEP 3:</strong> Finally, use <code>displayBooks</code> to implement the <code>display</code> method of
+the object returned by <code>makeStore</code> so that you can display <code>n</code> books to the
+console. <strong>HINT:</strong> You&#39;ll want to use <code>console.log</code> (to make it look nice in the
+console) and <code>slice</code>.</p>
+</li>
+<li><p>The following function <code>isMatch</code> takes a book and a <em>query</em> as a parameter,
+and returns <code>true</code> if the book matches the query, and <code>false</code> otherwise:</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isMatch</span><span class="hljs-params">(book, query)</span> </span>{
+  <span class="hljs-keyword">var</span> s = (book.title + book.author + book.category).toLowerCase();
+  <span class="hljs-keyword">return</span> s.indexOf(query.toLowerCase()) &gt;= <span class="hljs-number">0</span>;
+}
+</code></pre>
+<p>Using <code>isMatch</code>, implement a <code>search</code> method on the store object that accepts
+a <em>query</em> as a parameter, and then displays only matching books. <strong>HINT:</strong>
+You&#39;ll want to use the <code>displayBooks</code> function that you&#39;ve written to display
+the matching books in the same way as you did in the <code>display</code> method.</p>
+<p><code>filter</code> is particularly well-suited to perform this search. If you can, try
+using <code>filter</code>. To get an idea of how it works, try the following at your
+console:</p>
+<pre><code class="lang-js">filter([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>], <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(number)</span></span> {
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">number</span> % <span class="hljs-number">2</span> === <span class="hljs-number">0</span>;
+});
+</code></pre>
+</li>
+<li><p>Implement a method called <code>getBook</code> that accepts a book&#39;s <code>id</code> as a parameter,
+finds that book in the internal <code>books</code> array, and returns the book object.</p>
+</li>
+<li><p>Implement another method called <code>removeBook</code> that also accepts a book&#39;s <code>id</code>
+as a parameter, but <em>removes</em> the book from the internal <code>books</code> array.</p>
+<p>There are multiple ways to do this -- you can use a normal loop and <code>splice</code>,
+or there&#39;s a more elegant (arguably) approach using <code>filter</code>.</p>
+</li>
+</ol>
+<h4 id="more-practice-shopping-cart">More Practice: Shopping Cart</h4>
+<ol>
+<li><p>Implement a function called <code>makeCart</code> that maintains an internal variable
+<code>cart</code> that will hold books added to it. <code>makeCart</code> should return an object,
+the methods for which we will implement in subsequent exercises.</p>
+<p>Finally, create a <code>cart</code> object in the global scope using <code>makeCart</code>
+(similarly to how you did with <code>makeStore</code>).</p>
+</li>
+<li><p>Add a method to the object returned by <code>makeCart</code> called <code>addBook</code>, that
+accepts a book as a parameter and adds that book to the internal <code>cart</code>
+variable.</p>
+</li>
+<li><p>Add another method called <code>display</code> that displays the contents of the cart.
+You may want to consider re-using the <code>displayBooks</code> logic from <code>makeStore</code>,
+or implement new functionality that displays only information relevant in the
+context of shopping carts -- namely, the book&#39;s <code>title</code>, <code>price</code> and <code>id</code>.</p>
+</li>
+<li><p>Add another method called <code>removeBook</code> that, given a book&#39;s <code>id</code>, removes
+that book from the cart.</p>
+</li>
+<li><p>Search your <code>bookStore</code> for a book or two, and add them to the <code>cart</code> using
+the methods you&#39;ve created. Try removing some books too to verify that it
+works.</p>
+</li>
+<li><p>Implement a <code>total</code> method that takes no arguments and returns the total
+price of all the books in the cart (use <code>reduce</code> for this).</p>
+</li>
+<li><p>Finally, implement a <code>checkout</code> method that accepts the <code>store</code> on your cart that does the following:</p>
+<ul>
+<li>Accepts the <code>bookStore</code> as a parameter</li>
+<li>Removes each book in the cart from the store (since you&#39;ve now bought it)</li>
+<li>Clears the cart</li>
+<li>Returns all the book objects in the cart.</li>
+</ul>
+</li>
+</ol>
+<h4 id="advanced-integrate-a-bank-account">Advanced: Integrate a Bank Account</h4>
+<p>Using the bank account example from yesterday, modify the <code>checkout</code> method in
+the shopping cart to also accept a bank account object as a parameter. The
+<code>checkout</code> method should only succeed if there are sufficient funds in the
+account, and if it should succeed, the total of the books should be <em>deducted</em>
+from the bank account.</p>

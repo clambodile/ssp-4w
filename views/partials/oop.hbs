@@ -1,0 +1,164 @@
+<h1 id="object-oriented-programming">Object Oriented Programming</h1>
+<h2 id="lesson">Lesson</h2>
+<iframe src="https://docs.google.com/presentation/d/1voTatjK2UFZXJcrihRjLmhI5JtY2w6KI1F3ePfZHlMI/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+<h2 id="exercises">Exercises</h2>
+<h3 id="basic-requirements">Basic Requirements</h3>
+<ol>
+<li><p>The old bank account example from lecture looked as follows:</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makeAccount</span>(<span class="hljs-params">initial</span>) </span>{
+  <span class="hljs-built_in">var</span> balance = initial;
+
+  <span class="hljs-keyword">return</span> {
+    <span class="hljs-attribute">withdraw</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">amount</span>) </span>{
+      <span class="hljs-keyword">if</span> (balance - amount &gt;= <span class="hljs-number">0</span>) {
+        balance = balance - amount;
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"Here’s your money: $"</span> + amount;
+      }
+      <span class="hljs-keyword">return</span> <span class="hljs-string">"Insufficient funds."</span>;
+    },
+    <span class="hljs-attribute">deposit</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">amount</span>) </span>{
+      balance = balance + amount;
+      <span class="hljs-keyword">return</span> <span class="hljs-string">"Your balance is: $"</span> + balance;
+    }
+  };
+}
+</code></pre>
+<p>Refactor the above as an <code>Account</code> class that <em>shares</em> its methods across
+different instances.</p>
+</li>
+<li><p>Our stopwatch exercise looked like this when complete:</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makeStopwatch</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-built_in">var</span> stop;
+  <span class="hljs-built_in">var</span> time = <span class="hljs-number">0</span>;
+
+  <span class="hljs-keyword">return</span> {
+    <span class="hljs-attribute">start</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+      stop = setInterval(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        time = time + <span class="hljs-number">1</span>;
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Elapsed time: "</span> + time + <span class="hljs-string">"s."</span>);
+      }, <span class="hljs-number">1000</span>);
+    },
+    <span class="hljs-attribute">stop</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+      clearInterval(stop);
+    },
+    <span class="hljs-attribute">reset</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+      clearInterval(stop);
+      time = <span class="hljs-number">0</span>;
+    }
+  };
+}
+</code></pre>
+<p>As before, refactor the <code>makeStopwatch</code> into a <code>Stopwatch</code> class with shared
+methods.</p>
+</li>
+</ol>
+<h3 id="more-practice">More Practice</h3>
+<p>In this exercise we are going to make a <code>Toaster</code> class, and our <code>Toaster</code> is
+going to toast bread (because that&#39;s what toasters do). Here&#39;s a template for
+getting started on the <code>Toaster</code> class:</p>
+<pre><code class="lang-js">function Toaster() {
+  var<span class="hljs-built_in"> instance </span>= {};
+
+  // TODO: your code here
+
+ <span class="hljs-built_in"> return </span>instance;
+}
+</code></pre>
+<p>Your task will be to implement methods that actually make this toaster work!</p>
+<ol>
+<li><p><strong><code>addToast</code></strong>: This method should accept a string representing &quot;toast&quot; as a
+parameter, <em>e.g.</em> <code>&quot;white bread&quot;</code>, and set the <code>toast</code> property of the
+<code>Toaster</code> instance to that piece of toast.</p>
+</li>
+<li><p><strong><code>eject</code></strong>: This method should accept <em>no</em> parameters, and return one of two
+things:</p>
+<ul>
+<li>If there is <strong>no toast</strong> in the toaster, it should return a string indicating
+that the toaster is empty.</li>
+<li>If there <strong>is</strong> toast in the toaster, it should return the toast and then
+set the <code>toast</code> property of the instance to <code>undefined</code>.</li>
+</ul>
+</li>
+<li><p><strong><code>start</code></strong>: The <code>start</code> method is responsible for actually toasting the
+toast -- we can achieve this using the built-in <code>setTimeout</code> function that
+accepts two parameters: a <em>function</em> and a time (number) in milliseconds
+(<em>e.g.</em> <code>1000</code> represents one second) -- <code>setTimeout</code> will then invoke that
+function <em>once</em> after the time has passed. <code>setTimeout</code> also <em>returns</em> a
+number that can be passed to <code>clearTimeout</code> to cancel the invocation (it
+works almost identically to <code>setInterval</code>, but only executes its function
+argument <strong>once</strong> instead of repeatedly).</p>
+<p>The idea of <code>start</code> is to use <code>setTimeout</code> to:</p>
+<ul>
+<li><code>console.log(&quot;Ding!&quot;)</code> after some period of time (representing the time
+that the toast is being &quot;toasted&quot;)...</li>
+<li>and update the instance&#39;s <code>toast</code> property to reflect that the toast has
+been toasted (for instance, <code>&quot;white bread&quot;</code> should become <code>&quot;white bread
+(toasted)&quot;</code>.</li>
+</ul>
+<p>If there is no toast in the toaster at the time that <code>start</code> is invoked, it
+should return a string indicating that toast needs to be added before it can
+be toasted.</p>
+</li>
+<li><p><strong><code>stop</code></strong>: the <code>stop</code> method should cancel an in-progress toaster by using
+<code>clearTimeout</code> on the return value of the invocation of <code>setTimeout</code> from
+<code>start</code>.</p>
+</li>
+</ol>
+<h3 id="more-practice-extending-the-stopwatch">More Practice: Extending the Stopwatch</h3>
+<ol>
+<li><p>Provide a way to &quot;name&quot; a stopwatch when invoking <code>makeStopwatch</code>. That way,
+if we have multiple stopwatches running simultaneously, we know which one is
+which based on its name, <em>e.g.</em>:</p>
+<pre><code class="lang-js">var stopwatch1 = makeStopwatch(<span class="hljs-string">"Stopwatch 1"</span>)<span class="hljs-comment">;</span>
+var stopwatch2 = makeStopwatch(<span class="hljs-string">"Stopwatch 2"</span>)<span class="hljs-comment">;</span>
+stopwatch1.start()<span class="hljs-comment">;</span>
+<span class="hljs-comment">// =&gt; "Elapsed time: 1s (Stopwatch 1)"</span>
+<span class="hljs-comment">// =&gt; "Elapsed time: 2s (Stopwatch 1)"</span>
+stopwatch2.start()<span class="hljs-comment">;</span>
+<span class="hljs-comment">// =&gt; "Elapsed time: 1s (Stopwatch 2)"</span>
+<span class="hljs-comment">// =&gt; "Elapsed time: 3s (Stopwatch 1)"</span>
+<span class="hljs-comment">// etc.</span>
+</code></pre>
+</li>
+<li><p>Implement a &quot;lapping&quot; mechanism by providing another method in the returned
+object called <code>lap</code>. We will want a way to view the laps as well with a
+<code>laps</code> method, and the laps should be cleared when the stopwatch is reset.</p>
+<p>We should be able to use it like this:</p>
+<pre><code class="lang-js">var stopwatch<span class="hljs-number">1</span> = makeStopwatch<span class="hljs-comment">("Stopwatch 1")</span>;
+stopwatch<span class="hljs-number">1.</span>start<span class="hljs-comment">()</span>;
+<span class="hljs-comment">// =&gt; "Elapsed time: 1s (Stopwatch 1)"</span>
+<span class="hljs-comment">// =&gt; "Elapsed time: 2s (Stopwatch 1)"</span>
+stopwatch<span class="hljs-number">1.</span>lap<span class="hljs-comment">()</span>; <span class="hljs-comment">// =&gt; "Adding lap @ 2s (Stopwatch 1)"</span>
+<span class="hljs-comment">// =&gt; "Elapsed time: 3s (Stopwatch 1)"</span>
+stopwatch<span class="hljs-number">1.</span>lap<span class="hljs-comment">()</span>; <span class="hljs-comment">// =&gt; "Adding lap @ 3s (Stopwatch 1)"</span>
+stopwatch<span class="hljs-number">1.</span>stop<span class="hljs-comment">()</span>;
+stopwatch<span class="hljs-number">1.</span>laps<span class="hljs-comment">()</span>; <span class="hljs-comment">// =&gt; "1. 2s\n2. 3s"</span>
+stopwatch.reset<span class="hljs-comment">()</span>;
+stopwatch.laps<span class="hljs-comment">()</span>; <span class="hljs-comment">// =&gt; "No laps."</span>
+</code></pre>
+</li>
+<li><p>What happens if your stopwatch runs longer than a minute? It&#39;ll probably keep
+listing off the time in seconds, e.g. <code>Elapsed time: 72s</code>. It would be nice
+if it displayed minutes and seconds when the time ran beyond a single minute,
+<em>e.g.</em> <code>Elapsed time: 1m 12s</code>. Modify your stopwatch code to achieve this.</p>
+</li>
+</ol>
+<h3 id="advanced">Advanced</h3>
+<ol>
+<li><p>What should happen if we attempt to toast some toast that has already been
+toasted? <em>e.g.</em></p>
+<pre><code class="lang-js">var toaster = Toaster()<span class="hljs-comment">;</span>
+toaster.addToast(<span class="hljs-string">"white bread"</span>)<span class="hljs-comment">;</span>
+toaster.start()<span class="hljs-comment">;</span>
+<span class="hljs-comment">// ...some time elapses...</span>
+<span class="hljs-comment">// =&gt; "Ding!"</span>
+toaster.start()<span class="hljs-comment">;</span>
+</code></pre>
+<p>Modify <code>start</code> so that, if the toast is already toasted, it becomes <code>burnt</code>
+on subsequent invocations of <code>start</code>.</p>
+</li>
+<li><p>Refactor your exercises from the <strong>Data Modeling with Closures</strong> exercises to
+use OOP.</p>
+</li>
+</ol>

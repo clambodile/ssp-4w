@@ -1,0 +1,43 @@
+<h1 id="warmup">Warmup</h1>
+<h2 id="instructions">Instructions</h2>
+<ol>
+<li>Start a new project for today by right-clicking
+<a href="https://github.com/jalehman/rp-starter/archive/master.zip">this link</a> and
+&quot;Save Link As...&quot; to your Desktop (or somewhere else). Don&#39;t forget to rename
+the folder to something meaningful!</li>
+<li>Find a partner (preferably one that you have not yet worked with), and work
+through the following exercises as a pair.</li>
+</ol>
+<h2 id="exercises">Exercises</h2>
+<ol>
+<li><p>Discuss the differences between repetition with a <code>while</code> loop and the other
+form(s) of repetition that we have encountered with your partner until you
+are confident that you could describe these differences to the class.</p>
+</li>
+<li><p>The following function is <em>supposed</em> to compute the sum of the numbers from 0
+to <code>n</code>, but is currently broken (in multiple ways) -- fix it so that it works
+correctly.</p>
+<pre><code class="lang-js">function sum(n) {
+  <span class="hljs-keyword">var</span> <span class="hljs-literal">result</span>;
+  <span class="hljs-keyword">while</span> (n &gt; <span class="hljs-number">0</span>) {
+    <span class="hljs-literal">result</span> = n + n;
+    n = n + <span class="hljs-number">1</span>;
+  }
+}
+</code></pre>
+</li>
+<li><p>The <code>power_iter</code> function from the lecture looks like this:</p>
+<pre><code class="lang-js">function power_iter(base, exponent) {
+  <span class="hljs-keyword">var</span> <span class="hljs-literal">result</span> = <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">while</span> (exponent &gt; <span class="hljs-number">0</span>) {
+    <span class="hljs-literal">result</span> = <span class="hljs-literal">result</span> * base;
+    exponent = exponent - <span class="hljs-number">1</span>;
+  }
+  <span class="hljs-keyword">return</span> <span class="hljs-literal">result</span>;
+}
+</code></pre>
+<p>The <code>power_iter</code> function counts <strong>down</strong> from <code>exponent</code>, iterating as long
+as <code>exponent</code> is greater than <code>0</code>. Change the implementation so that
+<code>power_iter</code> counts <strong>up</strong> from <code>0</code> to <code>exponent</code>.</p>
+</li>
+</ol>

@@ -1,0 +1,71 @@
+<h1 id="array-iteration-with-while-for-">Array Iteration with <code>while</code> &amp; <code>for</code></h1>
+<h2 id="lesson">Lesson</h2>
+<iframe src="https://docs.google.com/presentation/d/1usoR4mGfC2q-xZPqqHD0657hLA8LHPotIXtQzM7P45w/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+<h2 id="exercises">Exercises</h2>
+<p>Try to write <em>all</em> of the exercises using <strong>both</strong> the <code>for</code> loop <em>and</em> <code>while</code>
+loop.</p>
+<h3 id="basic-requirements">Basic Requirements</h3>
+<ol>
+<li><p>Write a function <code>sum</code> that computes the sum of the numbers in an array.</p>
+</li>
+<li><p>Write a function <code>max</code> that accepts an array of numbers and returns the
+<em>largest</em> number in the array.</p>
+</li>
+<li><p>Try the following at a console:</p>
+<pre><code class="lang-js"><span class="hljs-string">"the quick brown fox jumped over the lazy dog"</span>.<span class="hljs-keyword">split</span>(<span class="hljs-string">" "</span>)<span class="hljs-comment">;</span>
+<span class="hljs-string">"Hello, world!"</span>.<span class="hljs-keyword">split</span>(<span class="hljs-string">""</span>)
+<span class="hljs-string">"1,2,3,4,5,6"</span>.<span class="hljs-keyword">split</span>(<span class="hljs-string">","</span>)
+</code></pre>
+<p>What is returned by <code>split</code> (You can read more about it
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split">here</a>),
+and how does it work?</p>
+<p>Use <code>split</code> to write a function <code>longestWord</code> that takes a string as an
+argument and returns the longest word.</p>
+</li>
+<li><p>Write a function <code>remove</code> that accepts an <em>array</em> and an <em>element</em>, and
+returns an array with all ocurrences of <em>element</em> removed.</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">remove</span><span class="hljs-params">(<span class="hljs-keyword">array</span>, element)</span> <span class="hljs-comment">{
+  // your code here
+}</span>
+<span class="hljs-title">remove</span><span class="hljs-params">([1, 3, 6, 2, 3], 3)</span>;</span> <span class="hljs-comment">// =&gt; [1, 6, 2]</span>
+</code></pre>
+</li>
+<li><p>Write a function <code>evens</code> that accepts an array as an argument, and returns
+an array consisting of all of the <em>even</em> numbers in that array.</p>
+</li>
+</ol>
+<h3 id="more-practice">More Practice</h3>
+<ol>
+<li><p>Write a function called <code>average</code> that takes an array of numbers as a
+parameter and returns the <em>average</em> of those numbers.</p>
+</li>
+<li><p>Write a function called <code>min</code> that finds the <em>smallest</em> number in an array of
+numbers.</p>
+</li>
+<li><p>Write a function <code>shortestWord</code> that works like <code>longestWord</code>, but returns
+the <em>shortest</em> word instead.</p>
+</li>
+<li><p>Write a function <code>countChar</code> that takes two arguments: any string, and a
+<em>character</em> (string of one letter), and returns the number of times that the
+character occurs in the string.</p>
+</li>
+<li><p>Write a function <code>evenLengthWords</code> that takes an array of <em>strings</em> as an
+argument, and returns an array of just the words that have an even length.</p>
+</li>
+</ol>
+<h3 id="advanced">Advanced</h3>
+<ol>
+<li><p>Read about the <code>join</code> method on
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join">MDN</a>
+and use it to implement a function that accepts a string as an argument and
+returns that string <em>reversed</em>.</p>
+</li>
+<li><p>Write a function <code>keep</code> that &quot;keeps&quot; certain elements in an array. The
+function will need to take <em>two</em> arguments, an array, and something else --
+the second argument will be what is used to determine which elements to keep.</p>
+<p>You should be able to use this function to write <code>evens</code>, <code>evenLengthWords</code>,
+a hypothetical <code>odds</code> function, or <code>oddLengthWords</code> <em>without changing the
+<code>keep</code> function</em>.</p>
+</li>
+</ol>

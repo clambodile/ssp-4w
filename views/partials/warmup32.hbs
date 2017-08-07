@@ -1,0 +1,64 @@
+<h1 id="warmup">Warmup</h1>
+<h2 id="instructions">Instructions</h2>
+<ol>
+<li>Start a new project for today by right-clicking
+<a href="https://github.com/jalehman/rp-starter/archive/master.zip">this link</a> and
+&quot;Save Link As...&quot; to your Desktop (or somewhere else). Don&#39;t forget to rename
+the folder to something meaningful!</li>
+<li>Find a partner (preferably one that you have not yet worked with), and work
+through the following exercises as a pair.</li>
+</ol>
+<h2 id="exercises">Exercises</h2>
+<ol>
+<li><p>Refactor the uses of <code>for</code> loops in the below functions to use <code>each</code>
+instead:</p>
+<pre><code class="lang-js"><span class="hljs-built_in">var</span> people = [
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Alyssa"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"P."</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Hacker"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">26</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Ben"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Bitdiddle"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">34</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Eva"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"Lu"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Ator"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">40</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Lem"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"E."</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Tweakit"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">45</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Louis"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Reasoner"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">21</span>}
+];
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ages</span>(<span class="hljs-params">people</span>) </span>{
+  <span class="hljs-built_in">var</span> acc = [];
+  <span class="hljs-keyword">for</span> (<span class="hljs-built_in">var</span> i = <span class="hljs-number">0</span>; i &lt; people.length; i++) {
+    acc.push(people[i].age);
+  }
+  <span class="hljs-keyword">return</span> acc;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">firstNames</span>(<span class="hljs-params">people</span>) </span>{
+  <span class="hljs-built_in">var</span> acc = [];
+  <span class="hljs-keyword">for</span> (<span class="hljs-built_in">var</span> i = <span class="hljs-number">0</span>; i &lt; people.length; i++) {
+    acc.push(people[i].name.first);
+  }
+  <span class="hljs-keyword">return</span> acc;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">lastNames</span>(<span class="hljs-params">people</span>) </span>{
+  <span class="hljs-built_in">var</span> acc = [];
+  <span class="hljs-keyword">for</span> (<span class="hljs-built_in">var</span> i = <span class="hljs-number">0</span>; i &lt; people.length; i++) {
+    acc.push(people[i].name.last);
+  }
+  <span class="hljs-keyword">return</span> acc;
+}
+
+ages(people); <span class="hljs-comment">// =&gt; [26, 34, 40, 45, 21]</span>
+firstNames(people); <span class="hljs-comment">// =&gt; ["Alyssa", "Ben", "Eva", "Lem", "Louis"]</span>
+lastNames(people); <span class="hljs-comment">// =&gt; ["Hacker", "Bitdiddle", "Ator", "Tweakit", "Reasoner"]</span>
+</code></pre>
+</li>
+<li><p>Write a function called <code>fullNames</code> that makes use of <code>each</code> to output an
+array of full names (<em>e.g.</em> &quot;Ben Bitdiddle&quot;) when given <code>people</code> as an
+argument. <strong>HINT:</strong> This function will look very similar to <code>firstNames</code> and
+<code>lastNames</code> from above.</p>
+</li>
+<li><p>Using the function <code>ages</code> from above and <code>each</code>, complete the function called
+<code>averageAge</code> below that should compute the average age of an array of people.</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">averageAge</span><span class="hljs-params">(people)</span> </span>{
+  <span class="hljs-comment">// YOUR CODE HERE</span>
+}
+</code></pre>
+</li>
+</ol>

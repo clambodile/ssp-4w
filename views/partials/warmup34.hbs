@@ -1,0 +1,67 @@
+<h1 id="warmup">Warmup</h1>
+<h2 id="instructions">Instructions</h2>
+<ol>
+<li>Start a new project for today by right-clicking
+<a href="https://github.com/jalehman/rp-starter/archive/master.zip">this link</a> and
+&quot;Save Link As...&quot; to your Desktop (or somewhere else). Don&#39;t forget to rename
+the folder to something meaningful!</li>
+<li>Find a partner (preferably one that you have not yet worked with), and work
+through the following exercises as a pair.</li>
+</ol>
+<h2 id="exercises">Exercises</h2>
+<p>Given the following array of <code>people</code>:</p>
+<pre><code class="lang-js"><span class="hljs-built_in">var</span> people = [
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Alyssa"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"P."</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Hacker"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">26</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Louis"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Reasoner"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">21</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Ben"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Bitdiddle"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">34</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Eva"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"Lu"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Ator"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">40</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Lem"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"E."</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Tweakit"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">45</span>}
+];
+</code></pre>
+<ol>
+<li><p>Discuss the purpose of <code>filter</code> with your partner until the two of you are
+confident in your abilities to explain the purpose of <code>filter</code> to the class;
+as usual, this is not <em>how</em> filter works -- rather, <em>what</em> its purpose is and what kinds of problems it is suitable to solve.</p>
+</li>
+<li><p>Use <code>filter</code> on the array of <code>people</code> above to return only the people older
+than <code>30</code>.</p>
+<pre><code class="lang-js">filter(people, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">person</span>) </span>{
+  <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> your code here</span>
+});
+<span class="hljs-comment">// =&gt; [</span>
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Ben"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Bitdiddle"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">34</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Eva"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"Lu"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Ator"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">40</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Lem"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"E."</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Tweakit"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">45</span>}
+]
+</code></pre>
+</li>
+<li><p>Use <code>filter</code> on the array of <code>people</code> above to return only the people whose
+first name starts with the letter <code>l</code>. <strong>HINT:</strong> You can use array access
+notation to get the first character of an array, <em>e.g.</em>:</p>
+<pre><code class="lang-js"><span class="hljs-string">"hello"</span><span class="hljs-string">[0]</span>; // =&gt; <span class="hljs-string">"h"</span>
+</code></pre>
+</li>
+<li><p>Discuss the purpose of <code>reduce</code> with your partner until both of you are
+confident that you could explain its purpose to the class. Try to describe
+<em>what</em> <code>reduce</code> does, not <em>how</em> it does it.</p>
+</li>
+<li><p>Rewrite the <code>sumCubes</code> function below using <code>reduce</code> instead of <code>each</code>:</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sumCubes</span><span class="hljs-params">(numbers)</span> </span>{
+  <span class="hljs-keyword">var</span> total = <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">each</span>(numbers, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(number)</span> </span>{
+    total = total + Math.pow(number, <span class="hljs-number">3</span>);
+  });
+  <span class="hljs-keyword">return</span> total;
+}
+</code></pre>
+</li>
+<li><p>Write a function called <code>smallestWords</code> that accepts two parameters, <code>string</code>
+and <code>threshold</code> (number), and returns an <em>array</em> containing all the words
+smaller than <code>threshold</code>. You should use <code>reduce</code> to complete this function.</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">smallestWords</span><span class="hljs-params">(string, threshold)</span> </span>{
+  <span class="hljs-comment">// YOUR CODE HERE</span>
+}
+smallestWords(<span class="hljs-string">"the quick brown fox"</span>, <span class="hljs-number">4</span>); <span class="hljs-comment">// =&gt; ["the", "fox"]</span>
+</code></pre>
+</li>
+</ol>

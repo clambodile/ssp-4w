@@ -1,0 +1,180 @@
+<h1 id="reduce">Reduce</h1>
+<h2 id="lesson">Lesson</h2>
+<iframe src="https://docs.google.com/presentation/d/1yu633rF1dKzorxKEw3IiVTTveDR0e9fXMtv4avtftd4/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+<h2 id="exercises">Exercises</h2>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">reduce</span><span class="hljs-params">(array, f, start)</span> </span>{
+  <span class="hljs-keyword">var</span> acc = start;
+  <span class="hljs-keyword">each</span>(array, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(element)</span> </span>{
+    acc = f(acc, element);
+  });
+  <span class="hljs-keyword">return</span> acc;
+}
+</code></pre>
+<h3 id="basic-requirements">Basic Requirements</h3>
+<ol>
+<li><p>We&#39;ve shown that we can write the function <code>sum</code> -- which sums an array of
+numbers -- using <code>reduce</code> like this (see slides for more):</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span></span> <span class="hljs-built_in">sum</span>(numbers) {
+  <span class="hljs-keyword">return</span> reduce(numbers, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(total, number)</span></span> {
+    <span class="hljs-keyword">return</span> total + <span class="hljs-keyword">number</span>;
+  }, <span class="hljs-number">0</span>);
+}
+</code></pre>
+<p>Replace the <code>???</code> below to complete the implementation of <code>product</code>, that
+returns the <em>product</em> of an array of numbers.</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span></span> <span class="hljs-built_in">product</span>(numbers) {
+  <span class="hljs-keyword">return</span> reduce(???, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(???, number)</span></span> {
+    <span class="hljs-keyword">return</span> ??? * <span class="hljs-keyword">number</span>;
+  }, ???);
+}
+</code></pre>
+</li>
+<li><p>Rewrite the <code>averageAge</code> function from the warmup using <code>reduce</code>. The
+function signature and people array are copied below for your convenience:</p>
+<pre><code class="lang-js"><span class="hljs-built_in">var</span> people = [
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Alyssa"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"P."</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Hacker"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">26</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Ben"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Bitdiddle"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">34</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Eva"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"Lu"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Ator"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">40</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Lem"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"E."</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Tweakit"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">45</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Louis"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Reasoner"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">21</span>}
+];
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">averageAge</span>(<span class="hljs-params">people</span>) </span>{
+  <span class="hljs-comment">// First you'll need to compute the sum of all the ages</span>
+  <span class="hljs-comment">// Second, divide the sum by the number of people (people.length)</span>
+
+  <span class="hljs-comment">// YOUR CODE HERE</span>
+}
+</code></pre>
+</li>
+<li><p>The <code>range</code> function from yesterday looks like this:</p>
+<pre><code class="lang-js">function range(start, <span class="hljs-keyword">end</span>) {
+  var acc = []<span class="hljs-comment">;</span>
+  <span class="hljs-keyword">for</span> (var i = start<span class="hljs-comment">; i &lt; end; i++) {</span>
+    acc.push(i)<span class="hljs-comment">;</span>
+  }
+  <span class="hljs-keyword">return</span> acc<span class="hljs-comment">;</span>
+}
+</code></pre>
+<p>Using <code>range</code> and <code>reduce</code>, complete the factorial function below that should
+compute the factorial of <code>n</code>.</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">factorial</span><span class="hljs-params">(n)</span> </span>{
+  <span class="hljs-comment">// YOUR CODE HERE</span>
+}
+</code></pre>
+<p><strong>HINT:</strong> If you cannot think of how to do this, it may help to <em>first</em> try
+writing the function using <code>each</code>, and then refactor it to use <code>range</code>
+&amp; <code>reduce</code>.</p>
+</li>
+</ol>
+<h3 id="more-practice">More Practice</h3>
+<ol>
+<li><p>The <code>sumBy</code> function from previous lessons can be implemented using <code>each</code>
+like this:</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span></span> sumBy(numbers, f) {
+  var <span class="hljs-built_in">sum</span> = <span class="hljs-number">0</span>;
+  each(numbers, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(number)</span></span> {
+    <span class="hljs-built_in">sum</span> = <span class="hljs-built_in">sum</span> + f(<span class="hljs-keyword">number</span>);
+  });
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">sum</span>;
+}
+</code></pre>
+<p>Rewrite <code>sumBy</code> using <code>reduce</code>.</p>
+</li>
+<li><p>The <code>max</code> function below takes an array of numbers as a parameter, and
+returns the maximum number in the array:</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span></span> <span class="hljs-built_in">max</span>(numbers) {
+  var <span class="hljs-built_in">max</span> = numbers[<span class="hljs-number">0</span>];
+  each(numbers, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(number)</span></span> {
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">number</span> &gt; <span class="hljs-built_in">max</span>) {
+      <span class="hljs-built_in">max</span> = <span class="hljs-keyword">number</span>;
+    }
+  });
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">max</span>;
+}
+</code></pre>
+<p>Rewrite <code>max</code> using <code>reduce</code>.</p>
+</li>
+<li><p>Write a function called <code>countOccurrences</code> that, given a string and a
+character (a string with length one) as parameters, returns the total number
+of times that character occurs in the string. For example:</p>
+<pre><code class="lang-js">countOccurrences(<span class="hljs-string">"hello"</span>, <span class="hljs-string">"l"</span>); <span class="hljs-comment">// =&gt; 2</span>
+countOccurrences(<span class="hljs-string">"the"</span>, <span class="hljs-string">"z"</span>); <span class="hljs-comment">// =&gt; 0</span>
+countOccurrences(<span class="hljs-string">"hello, world!"</span>, <span class="hljs-string">"l"</span>); <span class="hljs-comment">// =&gt; 3</span>
+</code></pre>
+</li>
+<li><p>In the lecture (see slides) we ran through a function called
+<code>everyNumberEven</code> -- write functions like it that do the following:</p>
+<ul>
+<li>Given an array of numbers, determine if every one of them is <strong>odd</strong></li>
+<li>Given an array of numbers, determine if every one of them is <strong>positive</strong></li>
+<li>Given an array of strings, determine if all of them have a length greather
+than 3.</li>
+<li>Given an array of strings, determines if all of them contain the letter &quot;e&quot;.</li>
+</ul>
+</li>
+<li><p>Write a function <code>every</code> that takes two parameters: an array and a
+<em>predicate</em> (a function that returns true or false). <code>every</code> should return
+<code>true</code> if the predicate returns <code>true</code> for every element in the array. You
+should be able to use it to write <code>everyNumberEven</code> like this:</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">everyNumberEven</span><span class="hljs-params">(numbers)</span> {</span>
+  <span class="hljs-keyword">return</span> every(numbers, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(number)</span> {</span>
+    <span class="hljs-keyword">return</span> number <span class="hljs-comment">% 2 === 0;</span>
+  });
+}
+</code></pre>
+<p>Test that it works by rewriting the functions in exercise (4) above using
+<code>every</code>.</p>
+</li>
+</ol>
+<h3 id="advanced">Advanced</h3>
+<ol>
+<li><p>Let&#39;s write a function called <code>join</code> that works just like the built-in
+<code>join</code>, but using <code>reduce</code>! If you&#39;re unfamiliar with the built-in version of
+join, this is how it works:</p>
+<pre><code class="lang-js">[<span class="hljs-string">"the"</span>, <span class="hljs-string">"quick"</span>, <span class="hljs-string">"brown"</span>, <span class="hljs-string">"fox"</span>].<span class="hljs-keyword">join</span>(<span class="hljs-string">" "</span>); <span class="hljs-comment">// =&gt; "the quick brown fox"</span>
+[<span class="hljs-string">"one"</span>, <span class="hljs-string">"two"</span>, <span class="hljs-string">"three"</span>].<span class="hljs-keyword">join</span>(<span class="hljs-string">":"</span>); <span class="hljs-comment">// =&gt; "one:two:three"</span>
+</code></pre>
+<p><strong>Part One:</strong> First, write a function called <code>joinWith</code> that takes three
+arguments: the string to join onto, the string that will be joined, and a
+separator. That is, it should work like this:</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">joinWith</span><span class="hljs-params">(onto, next, separator)</span> </span>{
+  <span class="hljs-comment">// YOUR CODE HERE</span>
+}
+joinWith(<span class="hljs-string">"the quick"</span>, <span class="hljs-string">"brown"</span>, <span class="hljs-string">" "</span>); <span class="hljs-comment">// =&gt; "the quick brown"</span>
+joinWith(<span class="hljs-string">"one:two"</span>, <span class="hljs-string">"three"</span>, <span class="hljs-string">":"</span>); <span class="hljs-comment">// =&gt; "one:two:three"</span>
+</code></pre>
+<p><strong>Part Two:</strong> Now, using <code>joinWith</code> and <code>reduce</code>, write <code>join</code>:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">function</span> <span class="hljs-keyword">join</span>(array, separator) {
+  <span class="hljs-comment">// YOUR CODE HERE</span>
+}
+<span class="hljs-keyword">join</span>([<span class="hljs-string">"the"</span>, <span class="hljs-string">"quick"</span>, <span class="hljs-string">"brown"</span>, <span class="hljs-string">"fox"</span>], <span class="hljs-string">" "</span>); <span class="hljs-comment">// =&gt; "the quick brown fox"</span>
+<span class="hljs-keyword">join</span>([<span class="hljs-string">"one"</span>, <span class="hljs-string">"two"</span>, <span class="hljs-string">"three"</span>], <span class="hljs-string">":"</span>); <span class="hljs-comment">// =&gt; "one:two:three"</span>
+</code></pre>
+</li>
+<li><p>Uses of <code>reduce</code> are not restricted to turning arrays into numbers -- use
+<code>reduce</code> to rewrite <code>map</code> (instead of using <code>each</code>).</p>
+</li>
+<li><p>We previously covered the function <code>countWords</code> that worked like this:</p>
+<pre><code class="lang-js">function countWords(s) {
+  var acc = {}<span class="hljs-comment">;</span>
+  var words = s.<span class="hljs-keyword">split</span>(<span class="hljs-string">" "</span>)<span class="hljs-comment">;</span>
+  <span class="hljs-keyword">for</span> (var i = <span class="hljs-number">0</span><span class="hljs-comment">; i &lt; words.length; i = i + 1) {</span>
+    var word = words[i]<span class="hljs-comment">;</span>
+    <span class="hljs-keyword">if</span> (acc[word] === undefined) {
+      acc[word] = <span class="hljs-number">1</span><span class="hljs-comment">;</span>
+    } <span class="hljs-keyword">else</span> {
+      acc[word]++<span class="hljs-comment">;</span>
+    }
+  }
+  <span class="hljs-keyword">return</span> acc<span class="hljs-comment">;</span>
+}
+</code></pre>
+<ul>
+<li>Rewrite <code>countWords</code> using <code>reduce</code>.</li>
+<li>Write the function <code>countChars</code> that works like <code>countWords</code>, but counts
+characters instead of words (using <code>reduce</code> of course).</li>
+</ul>
+</li>
+</ol>

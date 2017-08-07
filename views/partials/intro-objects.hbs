@@ -1,0 +1,280 @@
+<h1 id="introduction-to-objects">Introduction to Objects</h1>
+<h2 id="lesson">Lesson</h2>
+<iframe src="https://docs.google.com/presentation/d/1O7EJB_b2OEWnM24gYdoGz18yOD9QYLWvtOLrs_uzBfI/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+<h2 id="exercises">Exercises</h2>
+<h3 id="basic-requirements">Basic Requirements</h3>
+<h4 id="syntax-style">Syntax &amp; Style</h4>
+<p>Fix the syntax &amp; style issues with the three objects below:</p>
+<pre><code class="lang-js">{firstName <span class="hljs-string">"Josh"</span>, <span class="hljs-attribute">lastname</span>: <span class="hljs-string">"Lehman"</span> }
+{<span class="hljs-attribute">a</span>: <span class="hljs-number">1</span>, <span class="hljs-attribute">b</span>:<span class="hljs-number">2</span> <span class="hljs-attribute">c</span>: <span class="hljs-number">3</span> d <span class="hljs-number">4</span>}
+{
+    <span class="hljs-attribute">animal</span>: <span class="hljs-string">"dog"</span>
+    <span class="hljs-attribute">noise</span>: <span class="hljs-string">"bark"</span>,
+        <span class="hljs-attribute">age</span>: <span class="hljs-number">3</span>,
+  type <span class="hljs-string">"Labrador"</span>
+     <span class="hljs-attribute">color</span>: <span class="hljs-string">"Yellow"</span>,
+}
+</code></pre>
+<h4 id="creating-objects">Creating Objects</h4>
+<ol>
+<li><p>Create an object that represents <em>you</em>. It should contain your first name,
+last name, age and hometown.</p>
+</li>
+<li><p>Add three more key/value pairs to your object that represent other attributes
+of yourself. Ideas include (but are not limited to):</p>
+<ul>
+<li>Favorite TV Shows/Movies/Sports/Activities etc.</li>
+<li>Occupation</li>
+<li>Date of Birth</li>
+<li>Pets (number of pets, names of pets, etc.)</li>
+</ul>
+<p><strong>HINT:</strong> You can just modify the object that you created before.</p>
+</li>
+<li><p>The values in an object can be objects themselves, and in fact, this is a
+very common pattern. For example, consider the following object that
+represents a computer:</p>
+<pre><code class="lang-js"><span class="hljs-built_in">var</span> computer = {
+  <span class="hljs-attribute">brand</span>: <span class="hljs-string">"Apple"</span>,
+  <span class="hljs-attribute">year</span>: <span class="hljs-number">2014</span>,
+  <span class="hljs-attribute">model</span>: <span class="hljs-string">"MacBook Pro"</span>,
+  <span class="hljs-attribute">size</span>: <span class="hljs-string">"15-inch"</span>,
+  <span class="hljs-attribute">specs</span>: {
+    <span class="hljs-attribute">processor</span>: <span class="hljs-string">"2.3GHz Intel Core i7"</span>,
+    <span class="hljs-attribute">memory</span>: <span class="hljs-string">"16 GB 1600 MHz DDR3"</span>,
+    <span class="hljs-attribute">graphics</span>: <span class="hljs-string">"Intel Iris Pro 1536 MB"</span>
+  }
+}
+</code></pre>
+<p>You should notice that the <code>specs</code> key in the <code>computer</code> object is an object
+itself! We could access information about the processor using dot-notation
+like so:</p>
+<pre><code class="lang-js">computer.specs.processor; <span class="hljs-regexp">//</span> =&gt; <span class="hljs-string">"2.3GHz Intel Core i7"</span>
+</code></pre>
+<p>Change your object to have a <code>name</code> key, the value of which is an <em>object</em>
+&#x2013; this object should have <code>first</code>, <code>last</code> and <code>middle</code> keys
+containing your first, last, and middle names respectively (make sure to
+<em>remove</em> the <code>firstName</code> and <code>lastName</code> keys that you added before). You
+should be able to access your <em>last name</em> afterwards like so (assuming your
+object is called <code>you</code>):</p>
+<pre><code class="lang-js">you.<span class="hljs-built_in">name</span>.last; <span class="hljs-comment">// =&gt; YOUR LAST NAME</span>
+</code></pre>
+</li>
+<li><p>Look up your favorite movie on IMDB, and make an object that represents some
+aspects of that movie, <em>e.g.</em>:</p>
+<ul>
+<li>Title</li>
+<li>Director</li>
+<li>Year released</li>
+<li>Rating</li>
+<li>Actors</li>
+</ul>
+<p><strong>HINT:</strong> Most movies have multiple actors. What data-structure do we use to
+represent a collection of similar things?</p>
+</li>
+</ol>
+<h4 id="creating-new-key-value-pairs">Creating New Key/Value Pairs</h4>
+<p><strong>Perform these exercises in a console!</strong></p>
+<ol>
+<li><p>Create a new empty object in your console called <code>obj</code> like this:</p>
+<pre><code class="lang-js"><span class="hljs-variable"><span class="hljs-keyword">var</span> obj</span> = {};
+</code></pre>
+</li>
+<li><p>Add a new key/value pair to the object <code>obj</code> by <em>assigning</em> a new value to a
+new key like so:</p>
+<pre><code class="lang-js">obj.hello = <span class="hljs-string">"world"</span><span class="hljs-comment">;</span>
+obj[<span class="hljs-string">"number"</span>] = <span class="hljs-number">25</span><span class="hljs-comment">;</span>
+</code></pre>
+</li>
+<li><p>Now, check the value of <code>obj</code> in the console and ensure that it has the two
+key/value pairs added above. This is how we create new key/value pairs in
+existing objects.</p>
+</li>
+<li><p>In the console attached to your <code>main.js</code> file, add a <code>favoriteColor</code>
+key/value pair to the object that represents you.</p>
+</li>
+</ol>
+<h4 id="accessing-values-by-key">Accessing Values by Key</h4>
+<ol>
+<li><p>Fix the attempts to access values in the <code>person</code> object:</p>
+<pre><code class="lang-js"><span class="hljs-built_in">var</span> key = <span class="hljs-string">"name"</span>;
+<span class="hljs-built_in">var</span> person = {
+    <span class="hljs-attribute">name</span>: <span class="hljs-string">"Alyssa P. Hacker"</span>,
+    <span class="hljs-attribute">age</span>: <span class="hljs-number">26</span>,
+    <span class="hljs-attribute">hometown</span>: <span class="hljs-string">"somewhere"</span>
+};
+person[age]; <span class="hljs-comment">// =&gt; 26</span>
+person.key; <span class="hljs-comment">// =&gt; "Alyssa P. Hacker"</span>
+</code></pre>
+</li>
+<li><p>Write a function <code>fullName</code> that takes a person object as an argument, and
+returns that person&#39;s full name as a string. By <em>person object</em>, we mean an
+object that has the structure of the object you created to represent
+yourself above, for example:</p>
+<pre><code class="lang-js"><span class="hljs-built_in">var</span> alyssa = {
+  <span class="hljs-attribute">name</span>: {
+    <span class="hljs-attribute">first</span>: <span class="hljs-string">"Alyssa"</span>,
+    <span class="hljs-attribute">middle</span>: <span class="hljs-string">"P."</span>,
+    <span class="hljs-attribute">last</span>: <span class="hljs-string">"Hacker"</span>
+  },
+  <span class="hljs-attribute">age</span>: <span class="hljs-number">26</span>
+};
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fullName</span>(<span class="hljs-params">person</span>) </span>{
+  <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> your code here</span>
+}
+
+fullName(alyssa); <span class="hljs-comment">// =&gt; "Alyssa P. Hacker"</span>
+</code></pre>
+</li>
+<li><p>What happens if you pass a person object to <code>fullName</code> that doesn&#39;t have a
+middle name?</p>
+<pre><code class="lang-js"><span class="hljs-selector-tag">fullName</span>({<span class="hljs-selector-tag">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"John"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Doe"</span>}}); <span class="hljs-comment">// =&gt; "John Doe"</span>
+</code></pre>
+<p>Your <code>fullName</code> function should work correctly regardless of whether or not
+the person has a middle name -- if it doesn&#39;t produce the output shown above
+when given the object <code>{name: {first: &quot;John&quot;, last: &quot;Doe&quot;}}</code>, fix it so that
+it does.</p>
+</li>
+<li><p>We often deal with <strong>arrays of objects</strong>; below is an example of an array of
+objects, where each object represents a <em>person</em>:</p>
+<pre><code class="lang-js"><span class="hljs-built_in">var</span> people = [
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Alyssa"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"P."</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Hacker"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">26</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Ben"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Bitdiddle"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">34</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Eva"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"Lu"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Ator"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">40</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Lem"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"E."</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Tweakit"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">45</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Louis"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Reasoner"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">21</span>}
+];
+</code></pre>
+<ol>
+<li>Add the object representing yourself to this array of people (if your
+<code>name</code> key does not have the same &quot;shape&quot; as the ones above, make sure you
+change it to look like these).</li>
+<li>Write a function that, when passed an array of <em>people</em> (person objects) as
+an argument, returns an array of their <strong>full names</strong>. Can you make use of
+your <code>fullName</code> function here?</li>
+<li>Write a function that finds the average age of the <code>people</code> array.</li>
+<li>Write a function that, when given <em>people</em> and an <em>age</em> as arguments,
+returns an array of just the people that are older than the specified age.</li>
+</ol>
+</li>
+</ol>
+<h4 id="iterating-over-keys-values">Iterating over Keys &amp; Values</h4>
+<ol>
+<li><p>The following object has a number of key/value pairs that need to be removed:</p>
+<pre><code class="lang-js"><span class="hljs-built_in">var</span> dirtyObject = {
+  <span class="hljs-attribute">_fht</span>: <span class="hljs-number">192492</span>,
+  <span class="hljs-attribute">name</span>: <span class="hljs-string">"Alyssa P. Hacker"</span>,
+  <span class="hljs-attribute">age</span>: <span class="hljs-number">26</span>,
+  <span class="hljs-attribute">_byz</span>: <span class="hljs-number">939205</span>,
+  <span class="hljs-attribute">_ttrs</span>: <span class="hljs-number">510852</span>
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">clean</span>(<span class="hljs-params">obj</span>) </span>{
+  <span class="hljs-comment">// ...</span>
+}
+clean(dirtyObject); <span class="hljs-comment">// =&gt; {name: "Alyssa P. Hacker", age: 26}</span>
+</code></pre>
+<p>The function <code>clean</code> should accept an object as an argument and return a new
+object that has all of the key/value pairs of its parameter except for those
+that begin with <code>_</code>.</p>
+</li>
+<li><p>Write a function <code>removeOddValues</code> that takes an object as an argument and
+returns an object with all key/value pairs removed for which the value holds
+an <em>odd number</em>. You&#39;ll need to use the `typeof` operator to first check that
+the values are numbers:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">typeof</span> <span class="hljs-string">"Hello"</span>
+<span class="hljs-keyword">typeof</span> <span class="hljs-number">3</span>
+</code></pre>
+</li>
+</ol>
+<h3 id="more-practice">More Practice</h3>
+<ol>
+<li><p>Look around at various physical objects in the room, or think about
+activities that you enjoy. How would you represent this <em>things</em> as objects?
+Practice creating objects to represent different things. Some ideas include:</p>
+<ul>
+<li>Your favorite drink</li>
+<li>A recipe</li>
+<li>Sports or hobbies</li>
+<li>Your car/bike/hoverboard/vehicle-like thing</li>
+<li>Literally anything</li>
+</ul>
+</li>
+<li><p>Write a function <code>countWords</code> that, when given a string as an argument,
+returns an <em>object</em> where <em>keys</em> are the words in the string, and <em>values</em>
+are the number of occurrences of that word within the string:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">function</span> countWords(s) {
+// ...
+}
+countWords(<span class="hljs-string">"hello hello"</span>); // =&gt; {<span class="hljs-string">"hello"</span>: <span class="hljs-number">2</span>}
+countWords(<span class="hljs-string">"Hello hello"</span>); // =&gt; {<span class="hljs-string">"Hello"</span>: <span class="hljs-number">1</span>, <span class="hljs-string">"hello"</span>: <span class="hljs-number">1</span>}
+countWords(<span class="hljs-string">"The quick brown"</span>); // =&gt; {<span class="hljs-string">"The"</span>: <span class="hljs-number">1</span>, <span class="hljs-string">"quick"</span>: <span class="hljs-number">1</span>, <span class="hljs-string">"brown"</span>: <span class="hljs-number">1</span>}
+</code></pre>
+<p><strong>HINT:</strong> You will want to make use of the string method <code>split</code>. Try
+<code>\&quot;Hello hello&quot;.split(&quot; &quot;)</code> at a console to see how it works.</p>
+<ul>
+<li>Modify <code>countWords</code> to be <em>case insensitive</em> by using the following string
+method (experiment at a console with it to learn its behavior):</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-string">"HElLo"</span>.toLowerCase<span class="hljs-comment">()</span>; <span class="hljs-comment">// =&gt; ???</span>
+</code></pre>
+</li>
+<li><p>Write a function <code>countCharacters</code> that, when given a string as an argument,
+returns an object containing counts of the ocurrences of each <em>character</em> in
+the string.</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">countCharacters</span><span class="hljs-params">(s)</span></span> {
+  // ...
+}
+countCharacters(<span class="hljs-string">"hello"</span>); // =&gt; {<span class="hljs-string">"h"</span>: <span class="hljs-number">1</span>, <span class="hljs-string">"e"</span>: <span class="hljs-number">1</span>, <span class="hljs-string">"l"</span>: <span class="hljs-number">2</span>, <span class="hljs-string">"o"</span>: <span class="hljs-number">1</span>}
+</code></pre>
+<p><strong>HINT:</strong> You will want to make use of the string method <code>split</code>. Try
+<code>\&quot;hello&quot;.split(&quot;&quot;)</code> at a console to see how it works.</p>
+</li>
+<li><p>Write a function <code>select</code> that accepts two arguments: an object and an
+array. The <strong>array</strong> should contain names of keys that will be <em>selected</em> from
+the object:</p>
+<pre><code class="lang-js"><span class="hljs-selector-tag">function</span> <span class="hljs-selector-tag">select</span>(obj, keys) {
+  <span class="hljs-comment">// ...</span>
+}
+<span class="hljs-selector-tag">select</span>({<span class="hljs-attribute">a</span>: <span class="hljs-number">1</span>, <span class="hljs-attribute">b</span>: <span class="hljs-number">2</span>, <span class="hljs-attribute">c</span>: <span class="hljs-number">3</span>}, [<span class="hljs-string">"a"</span>]); <span class="hljs-comment">// =&gt; {a: 1}</span>
+<span class="hljs-selector-tag">select</span>({<span class="hljs-attribute">a</span>: <span class="hljs-number">1</span>, <span class="hljs-attribute">b</span>: <span class="hljs-number">2</span>, <span class="hljs-attribute">c</span>: <span class="hljs-number">3</span>}, [<span class="hljs-string">"a"</span>, <span class="hljs-string">"c"</span>]); <span class="hljs-comment">// =&gt; {a: 1, c: 3}</span>
+<span class="hljs-selector-tag">select</span>({<span class="hljs-attribute">a</span>: <span class="hljs-number">1</span>, <span class="hljs-attribute">b</span>: <span class="hljs-number">2</span>, <span class="hljs-attribute">c</span>: <span class="hljs-number">3</span>}, [<span class="hljs-string">"a"</span>, <span class="hljs-string">"c"</span>, <span class="hljs-string">"d"</span>]); <span class="hljs-comment">// =&gt; {a: 1, c: 3}</span>
+</code></pre>
+</li>
+<li><p>Write a function <code>extends</code> that accepts two objects as arguments, and
+<em>extends</em> all of the key/value pairs of the second one to the first one.</p>
+<pre><code class="lang-js"><span class="hljs-selector-tag">function</span> <span class="hljs-selector-tag">extend</span>(obj1, obj2) {
+  <span class="hljs-comment">// ...</span>
+}
+<span class="hljs-selector-tag">extend</span>({<span class="hljs-selector-tag">a</span>: <span class="hljs-selector-tag">1</span>}, {<span class="hljs-attribute">b</span>: <span class="hljs-number">2</span>}); <span class="hljs-comment">// =&gt; {a: 1, b: 2}</span>
+<span class="hljs-selector-tag">extend</span>({<span class="hljs-selector-tag">a</span>: <span class="hljs-selector-tag">1</span>, <span class="hljs-selector-tag">c</span>: <span class="hljs-selector-tag">3</span>}, {<span class="hljs-attribute">b</span>: <span class="hljs-number">2</span>, <span class="hljs-attribute">c</span>: <span class="hljs-number">4</span>}); <span class="hljs-comment">// =&gt; {a: 1, b: 2, c: 4}</span>
+</code></pre>
+</li>
+</ol>
+<h3 id="advanced">Advanced</h3>
+<ol>
+<li><p>The function <code>Object.keys</code> returns an array of an object&#39;s <em>keys</em>. Experiment
+with it at the console like this:</p>
+<pre><code class="lang-js"><span class="hljs-selector-tag">Object</span><span class="hljs-selector-class">.keys</span>({<span class="hljs-attribute">a</span>: <span class="hljs-number">1</span>, b: <span class="hljs-number">2</span>});
+</code></pre>
+<p>Using this property, write versions of the above functions using repetition
+through function invocation (<em>i.e.</em> recursion)</p>
+</li>
+<li><p>The function <code>JSON.stringify</code> turns arbitrary JavaScript data structures
+(arrays and objects) into strings. Try it out in a console like this:</p>
+<pre><code class="lang-js"><span class="hljs-built_in">JSON</span>.stringify({<span class="hljs-attribute">a</span>: <span class="hljs-number">1</span>, <span class="hljs-attribute">b</span>: <span class="hljs-number">2</span>, <span class="hljs-attribute">c</span>: [<span class="hljs-string">"dog"</span>, <span class="hljs-string">"cat"</span>, <span class="hljs-string">"zebra"</span>], <span class="hljs-attribute">d</span>: <span class="hljs-literal">true</span>});
+<span class="hljs-built_in">JSON</span>.stringify([<span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">0</span>, <span class="hljs-number">20</span>]);
+<span class="hljs-built_in">var</span> people = [
+   {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Alyssa"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"P."</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Hacker"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">26</span>},
+   {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Ben"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Bitdiddle"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">34</span>},
+   {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Eva"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"Lu"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Ator"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">40</span>},
+   {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Lem"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"E."</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Tweakit"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">45</span>},
+   {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Louis"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Reasoner"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">21</span>}
+];
+<span class="hljs-built_in">JSON</span>.stringify(people);
+</code></pre>
+<p>Write a function <code>stringify</code> that works <em>exactly</em> like <code>JSON.stringify</code>.</p>
+<p><strong>HINT:</strong> This will be much easier to accomplish with repetition through
+function invocation than with iteration.</p>
+</li>
+</ol>

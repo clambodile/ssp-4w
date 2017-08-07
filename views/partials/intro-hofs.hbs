@@ -1,0 +1,235 @@
+<h1 id="introduction-to-higher-order-functions">Introduction to Higher-Order Functions</h1>
+<h2 id="lessons">Lessons</h2>
+<iframe src="https://docs.google.com/presentation/d/1Bdxmk5lkMncvNV6sxEGWaAJBq1SsjUmDhG28ll2j61M/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+<iframe src="https://docs.google.com/presentation/d/1SvocRkF39WNN860AtMt0sYyozsbu7BIGEA850V8OWTY/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+<h3 id="two-forms-of-functions">Two Forms of Functions</h3>
+<pre><code class="lang-js"><span class="hljs-comment">// function declaration</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">square</span><span class="hljs-params">(x)</span> </span>{
+  <span class="hljs-keyword">return</span> x * x;
+}
+
+<span class="hljs-comment">// function expression</span>
+<span class="hljs-keyword">var</span> square = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(x)</span> </span>{
+  <span class="hljs-keyword">return</span> x * x;
+};
+</code></pre>
+<h2 id="exercises">Exercises</h2>
+<h3 id="basic-requirements">Basic Requirements</h3>
+<h4 id="rewrite-functions">Rewrite Functions</h4>
+<ol>
+<li><p>We have two ways of writing a function. The <strong>function declaration</strong> is what we&#39;ve
+used so far, and the <strong>function expression</strong> is new to us. Rewrite the following
+<em>function declarations</em> using a <em>function expression</em>:</p>
+<pre><code class="lang-js"><span class="hljs-comment">// 1.</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">cube</span><span class="hljs-params">(x)</span> {</span>
+  <span class="hljs-keyword">return</span> x * x * x;
+}
+<span class="hljs-comment">// 2.</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fullname</span><span class="hljs-params">(first, last)</span> {</span>
+  <span class="hljs-keyword">return</span> first + <span class="hljs-string">" "</span> + last;
+}
+<span class="hljs-comment">// 3.</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">power</span><span class="hljs-params">(base, exp)</span> {</span>
+  <span class="hljs-keyword">if</span> (<span class="hljs-built_in">exp</span> === <span class="hljs-number">0</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+  }
+  <span class="hljs-keyword">return</span> base * power(base, <span class="hljs-built_in">exp</span> - <span class="hljs-number">1</span>);
+}
+<span class="hljs-comment">// 4.</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sumCubes</span><span class="hljs-params">(numbers)</span> {</span>
+  var total = <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">for</span> (var i = <span class="hljs-number">0</span>; i &lt; numbers.<span class="hljs-built_in">length</span>; i++) {
+    total = total + cube(numbers[i]);
+  }
+  <span class="hljs-keyword">return</span> total;
+}
+</code></pre>
+</li>
+</ol>
+<h4 id="iterating-over-arrays-using-each-">Iterating Over Arrays Using <code>each</code></h4>
+<ol>
+<li><p>Write <code>each</code> as seen below in your <code>main.js</code> file.</p>
+<pre><code class="lang-js">function each(array, <span class="hljs-function"><span class="hljs-keyword">func</span>) {</span>
+  <span class="hljs-keyword">for</span> (var i = <span class="hljs-number">0</span><span class="hljs-comment">; i &lt; array.length; i++) {</span>
+    <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">(array[i])</span>;</span>
+  }
+}
+</code></pre>
+</li>
+<li><p>Finish the implementation of <code>sumSquares</code> below (using <code>each</code>):</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sumSquares</span><span class="hljs-params">(numbers)</span> </span>{
+  <span class="hljs-keyword">var</span> total = <span class="hljs-number">0</span>;
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-keyword">return</span> total;
+}
+</code></pre>
+</li>
+<li><p>Rewrite <code>sumCubes</code> using <code>each</code>:</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sumCubes</span><span class="hljs-params">(numbers)</span> {</span>
+  var total = <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">for</span> (var <span class="hljs-built_in">i</span> = <span class="hljs-number">0</span>; <span class="hljs-built_in">i</span> &lt; numbers.<span class="hljs-built_in">length</span>; <span class="hljs-built_in">i</span>++) {
+    total = total + cube(numbers[i]);
+  }
+  <span class="hljs-keyword">return</span> total;
+}
+</code></pre>
+</li>
+<li><p>Write a function called <code>product</code> that calculates the product of an array of
+numbers using a <code>for</code> loop; then, refactor it to use <code>each</code>.</p>
+</li>
+<li><p>Write a function called <code>cubeAll</code> that cubes each number in an array, and
+returns an array of all the numbers <em>cubed</em> using a <code>for</code> loop; then,
+refactor it to use <code>each</code>.</p>
+</li>
+<li><p>Write a function called <code>odds</code> that accepts an array as a parameter and
+returns an array of just the odd numbers. If you wrote it using <code>each</code>,
+great! If you used anything else, refactor it to use a <code>for</code> loop.</p>
+</li>
+</ol>
+<h3 id="more-practice">More Practice</h3>
+<h4 id="summations">Summations</h4>
+<ol>
+<li><p>Write a function <code>sumByAllElementsMultipliedByFour</code> that takes an array as an
+argument and returns the sum of all elements multiplied by four.</p>
+</li>
+<li><p>Observe that <code>sumByAllElementsMultipliedByFour</code> is a terrible name for a
+function &#x2013; you should also notice that <code>sumByAllElementsMultipliedByFour</code>
+looks a lot like <code>sumCubes</code> and <code>sumSquares</code>.</p>
+<p>Write a function <code>sumBy</code> that accepts two arguments: an array of numbers and
+a <em>function</em>. The function will be invoked upon each element in the array,
+and its result will be used to compute the sum.</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sumBy</span><span class="hljs-params">(numbers, f)</span> </span>{
+  <span class="hljs-comment">// ...</span>
+}
+<span class="hljs-keyword">var</span> numbers = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>];
+sumBy(numbers, square); <span class="hljs-comment">// =&gt; 30</span>
+sumBy(numbers, cube); <span class="hljs-comment">// =&gt; 100</span>
+sumBy(numbers, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(number)</span> </span>{
+  <span class="hljs-keyword">return</span> number * <span class="hljs-number">4</span>;
+});
+<span class="hljs-comment">// =&gt; 40</span>
+</code></pre>
+</li>
+<li><p>How can you use <code>sumBy</code> to compute the sum of an array of
+numbers (just the plain sum)?</p>
+</li>
+<li><p>Write a function <code>productBy</code> that works like <code>sumBy</code>, but for <strong>products</strong>.</p>
+</li>
+</ol>
+<h4 id="refactoring">Refactoring</h4>
+<p>As an extended exercise, run back through your data modeling code from the past
+few days and look for opportunities to refactor your use of <code>for</code> loops using
+<code>each</code>, <code>map</code> and <code>filter</code>.</p>
+<h3 id="advanced">Advanced</h3>
+<h4 id="finding-patterns-mapping">Finding Patterns: Mapping</h4>
+<ol>
+<li><p>Write a function <code>doubleAll</code> that takes an array of numbers as a parameter
+and returns an array of all of those numbers <em>doubled</em>:</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doubleAll</span><span class="hljs-params">(numbers)</span> </span>{
+  <span class="hljs-comment">// ...</span>
+}
+doubleAll([<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">10</span>, <span class="hljs-number">4</span>, <span class="hljs-number">7</span>]); <span class="hljs-comment">// =&gt; [2, 6, 20, 8, 14]</span>
+</code></pre>
+</li>
+<li><p>Write a function <code>halveAll</code> that takes an array of numbers as a parameter and
+returns an array of all of those numbers <em>halved</em> (divided by two).</p>
+</li>
+<li><p>Write a function <code>uppercaseAll</code> that takes an array of <strong>strings</strong> as a
+parameter, and returns an array of all of those strings, but transformed to
+<em>upper case</em>. You can use <code>toUpperCase</code> to convert a string to upper case.</p>
+<pre><code class="lang-js"><span class="hljs-string">"hello, world"</span>.toUpperCase(); <span class="hljs-regexp">//</span> =&gt; <span class="hljs-string">"HELLO, WORLD"</span>
+</code></pre>
+</li>
+</ol>
+<ol>
+<li><p>You should at this point notice a similarity between all of the above
+functions, as well as the <code>cubeAll</code> function from the warmup. These functions
+all define what we call <strong>mappings</strong>; that is, they <em>map</em> from one value to
+another.</p>
+<pre><code class="lang-js">// doubleAll maps from an<span class="hljs-built_in"> array </span>of numbers to an<span class="hljs-built_in"> array </span>of doubled numbers
+// [1, 2, 3, 4] =&gt; [2, 4, 6, 8]
+
+// halveAll maps from an<span class="hljs-built_in"> array </span>of numbers to an<span class="hljs-built_in"> array </span>of halved numbers
+// [1, 2, 3, 4] =&gt; [0.5, 1, 1.5, 2]
+</code></pre>
+</li>
+<li><p>Write a function <code>map</code> that takes two parameters: an array and a <em>function</em>
+that, when applied to a single element, produces a new element. <code>map</code> should
+return an <em>array</em> of all elements in the input array transformed using the
+input function. Your function should work like this:</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">map</span><span class="hljs-params">(array, f)</span> </span>{
+  <span class="hljs-comment">// ...</span>
+}
+map([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(x)</span> </span>{
+  <span class="hljs-keyword">return</span> x * <span class="hljs-number">2</span>;
+});
+<span class="hljs-comment">// =&gt; [2, 4, 6, 8]</span>
+</code></pre>
+</li>
+<li><p>Complete the invocations of <code>map</code> below to produce the desired output (you&#39;ll
+need to replace <code>???</code> with a function):</p>
+<pre><code class="lang-js">map([<span class="hljs-string">"hello"</span>, <span class="hljs-string">"world"</span>], ???); // =&gt; [<span class="hljs-string">"HELLO"</span>, <span class="hljs-string">"WORLD"</span>]
+map([<span class="hljs-string">"HelLo"</span>, <span class="hljs-string">"WorLD"</span>], ???); // =&gt; [<span class="hljs-string">"hello"</span>, <span class="hljs-string">"world"</span>]
+map([<span class="hljs-string">"the"</span>, <span class="hljs-string">"quick"</span>, <span class="hljs-string">"brown"</span>, <span class="hljs-string">"fox"</span>, <span class="hljs-string">"jumped"</span>], ???); // =&gt; [<span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">5</span>, <span class="hljs-number">3</span>, <span class="hljs-number">6</span>]
+var people = [
+  {name: <span class="hljs-string">"Alyssa P. Hacker"</span>, age: <span class="hljs-number">26</span>},
+  {name: <span class="hljs-string">"Ben Bitdiddle"</span>, age: <span class="hljs-number">34</span>},
+  {name: <span class="hljs-string">"Eva Lu Ator"</span>, age: <span class="hljs-number">19</span>},
+  {name: <span class="hljs-string">"Lem E. Tweakit"</span>, age: <span class="hljs-number">40</span>}
+];
+map(people, ???); // =&gt; [<span class="hljs-string">"Alyssa P. Hacker"</span>, <span class="hljs-string">"Ben Bitdiddle"</span>, <span class="hljs-string">"Eva Lu Ator"</span>, <span class="hljs-string">"Lem E. Tweakit"</span>]
+map(people, ???);
+// =&gt; [<span class="hljs-string">"Alyssa P. Hacker is 26"</span>, <span class="hljs-string">"Ben Bitdiddle is 34"</span>, <span class="hljs-string">"Eva Lu Ator is 19"</span>, <span class="hljs-string">"Lem E. Tweakit is 40"</span>]
+</code></pre>
+</li>
+</ol>
+<h4 id="finding-patterns-filtering">Finding Patterns: Filtering</h4>
+<ol>
+<li><p>Write a function called <code>evens</code> that takes an array of <strong>numbers</strong> as a
+parameter, and returns <strong>an array of only the even numbers</strong> in the parameter.</p>
+</li>
+<li><p>Write a function called <code>multiplesOfThree</code> that takes an array of <strong>numbers</strong> as a
+parameter, and returns an array of only the numbers that are multiples of
+three.</p>
+</li>
+<li><p>Write a function called <code>positives</code> that takes an array of <strong>numbers</strong> as a parameter, and
+returns an array of only the numbers that are positive.</p>
+</li>
+<li><p>Write a function called <code>evenLength</code> that takes an array of <strong>strings</strong> and
+returns an array of only the strings with an even length.</p>
+</li>
+<li><p>At this point, you should notice a pattern; write a function called <code>filter</code>
+that takes two parameters: an array and a <strong>function</strong> that, when invoked with
+an argument, will return <code>true</code> or <code>false</code>. <code>filter</code> should return a <em>new
+array</em> of only the elements for which the function returns <code>true</code>:</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">filter</span><span class="hljs-params">(array, f)</span> </span>{
+  <span class="hljs-comment">// ...</span>
+}
+filter([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(x)</span> </span>{
+  <span class="hljs-keyword">return</span> x % <span class="hljs-number">2</span> === <span class="hljs-number">0</span>; <span class="hljs-comment">// x is even?</span>
+}); <span class="hljs-comment">// =&gt; [2, 4]</span>
+</code></pre>
+</li>
+<li><p>Use <code>filter</code> to write/rewrite:</p>
+<ul>
+<li><code>odds</code></li>
+<li><code>positives</code></li>
+<li><code>negatives</code></li>
+<li><code>evenLength</code></li>
+<li><code>largerThanSix</code> (given an array of numbers, returns those larger than 6)</li>
+</ul>
+</li>
+<li><p>Using <code>filter</code>, write a function <code>startsWithChar</code> that accepts two
+parameters: an array of strings, and a character (<em>e.g.</em> &quot;a&quot;), and returns an
+array of only the strings that start with that character:</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">startsWithChar</span><span class="hljs-params">(strings, character)</span> </span>{
+  <span class="hljs-comment">// ...</span>
+}
+<span class="hljs-keyword">var</span> words = <span class="hljs-string">"the quick brown fox jumps over the lazy dog"</span>.split(<span class="hljs-string">" "</span>);
+startsWithChar(words, <span class="hljs-string">"q"</span>); <span class="hljs-comment">// =&gt; ["quick"]</span>
+startsWithChar(words, <span class="hljs-string">"t"</span>); <span class="hljs-comment">// =&gt; ["the", "the"]</span>
+</code></pre>
+</li>
+</ol>

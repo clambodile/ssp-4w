@@ -1,0 +1,188 @@
+<h1 id="map">Map</h1>
+<h2 id="lesson">Lesson</h2>
+<iframe src="https://docs.google.com/presentation/d/19kN2z2amdb8vPU31qd7_YU9Kz0OdG-YvdKpEhCmmj5Q/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+<h2 id="exercises">Exercises</h2>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">each</span>(<span class="hljs-params">coll, f</span>) </span>{
+  <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Array</span>.isArray(coll)) {
+    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">var</span> i = <span class="hljs-number">0</span>; i &lt; coll.length; i++) {
+      f(coll[i], i);
+    }
+  } <span class="hljs-decorator"><span class="hljs-keyword">else</span></span> {
+    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">var</span> key <span class="hljs-keyword">in</span> coll) {
+      f(coll[key], key);
+    }
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">map</span>(<span class="hljs-params">array, f</span>) </span>{
+  <span class="hljs-built_in">var</span> acc = [];
+  each(array, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">element, i</span>) </span>{
+    acc.push(f(element, i));
+  });
+  <span class="hljs-keyword">return</span> acc;
+}
+</code></pre>
+<h3 id="basic-requirements">Basic Requirements</h3>
+<ol>
+<li><p>We can rewrite the <code>ages</code> function from the warmup using <code>map</code> like this:</p>
+<pre><code class="lang-js"><span class="hljs-built_in">var</span> people = [
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Alyssa"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"P."</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Hacker"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">26</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Ben"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Bitdiddle"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">34</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Eva"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"Lu"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Ator"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">40</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Lem"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"E."</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Tweakit"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">45</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Louis"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Reasoner"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">21</span>}
+];
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ages</span>(<span class="hljs-params">people</span>) </span>{
+  <span class="hljs-keyword">return</span> map(people, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">person</span>) </span>{
+    <span class="hljs-keyword">return</span> person.age;
+  });
+}
+</code></pre>
+<p>Rewrite the functions <code>firstNames</code>, <code>lastNames</code> and <code>fullNames</code> using <code>map</code>
+as shown above.</p>
+</li>
+<li><p>Given the function <code>abs</code> that computes the absolute value, finish the
+invocation of <code>map</code> that should compute the absolute value of each number in
+its array argument.</p>
+<pre><code class="lang-js">function abs(<span class="hljs-keyword">x</span>) {
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">x</span> &gt;= <span class="hljs-number">0</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">x</span><span class="hljs-comment">;</span>
+  }
+  <span class="hljs-keyword">return</span> -<span class="hljs-keyword">x</span><span class="hljs-comment">;</span>
+}
+
+map([<span class="hljs-number">1</span>, -<span class="hljs-number">2</span>, <span class="hljs-number">37</span>, -<span class="hljs-number">100</span>, -<span class="hljs-number">8</span>, <span class="hljs-number">5</span>], ???)<span class="hljs-comment">;</span>
+<span class="hljs-comment">// =&gt; [1, 2, 37, 100, 8, 5]</span>
+</code></pre>
+<p><strong>HINT:</strong> To test this, it may be easiest to paste all of the above into a
+console.</p>
+</li>
+<li><p>We&#39;re going to write a function <code>maximums</code> that, given an <em>array of arrays of numbers</em>
+as an argument, returns a new array containing the maximum number of each
+inner array. That&#39;s a bit of a mouthful, so let&#39;s break it down:</p>
+<pre><code class="lang-js">// our argument would look like this:
+var sampleInput = [ // it's an<span class="hljs-built_in"> array
+</span>  [1, 3, 2], // of arrays of numbers
+  [4, 23, 100],
+  [7, 6, 3, -2]
+];
+
+//<span class="hljs-built_in"> and </span>we want to be able to use maximums to do this:
+maximums(sampleInput); // =&gt; [3, 100, 7]
+</code></pre>
+<p><strong>Part One:</strong> Let&#39;s start by writing a function <code>max</code> that, when given an
+<em>array of numbers</em> computes the maximum number in that array. You will want
+to use <code>each</code> for this.</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">max</span><span class="hljs-params">(numbers)</span> {</span>
+  <span class="hljs-comment">// YOUR CODE HERE</span>
+}
+<span class="hljs-built_in">max</span>([<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>]); <span class="hljs-comment">// =&gt; 3</span>
+<span class="hljs-built_in">max</span>([<span class="hljs-number">4</span>, <span class="hljs-number">23</span>, <span class="hljs-number">100</span>]); <span class="hljs-comment">// =&gt; 100</span>
+</code></pre>
+<p><strong>Part Two:</strong> Now that you have a function that computes the the maximum
+number in an array of numbers, use <code>map</code> to transform each array in
+the <code>sampleInput</code> into its maximum by completing the <code>maximums</code> function:</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">maximums</span><span class="hljs-params">(arrays)</span> </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-comment">// YOUR CODE HERE</span>
+}
+</code></pre>
+</li>
+</ol>
+<h3 id="more-practice">More Practice</h3>
+<ol>
+<li><p>Complete the function <code>exponentials</code> that accepts an array of numbers as a
+parameter, and raises each number <code>n</code> to the <code>n</code>th power, <em>e.g</em>:</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">exponentials</span><span class="hljs-params">(numbers)</span> </span>{
+  <span class="hljs-comment">// YOUR CODE HERE</span>
+}
+exponentials([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>]); <span class="hljs-comment">// =&gt; [1, 2*2, 3*3*3, 4*4*4*4] =&gt; [1, 4, 27, 256]</span>
+exponentials([<span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">5</span>]); <span class="hljs-comment">// =&gt; [27, 4, 3125]</span>
+</code></pre>
+</li>
+<li><p>First, write a function <code>reverse</code> that accepts a string as a parameter and
+returns a reversed version of that string (you&#39;ll want to use a <code>for</code> loop
+for this). Then, use <code>reverse</code> to write a function called <code>reverseWords</code> that
+accepts a string as an argument, and returns a string with all of its words
+reversed. You&#39;ll want to use <code>split</code> and <code>join</code> in both of these functions.</p>
+<pre><code class="lang-js"><span class="hljs-string">"hello"</span>.split(<span class="hljs-string">""</span>); <span class="hljs-regexp">//</span> =&gt; [<span class="hljs-string">"h"</span>, <span class="hljs-string">"e"</span>, <span class="hljs-string">"l"</span>, <span class="hljs-string">"l"</span>, <span class="hljs-string">"o"</span>]
+[<span class="hljs-string">"h"</span>, <span class="hljs-string">"e"</span>, <span class="hljs-string">"l"</span>, <span class="hljs-string">"l"</span>, <span class="hljs-string">"o"</span>].join(<span class="hljs-string">""</span>); <span class="hljs-regexp">//</span> =&gt; <span class="hljs-string">"hello"</span>
+
+<span class="hljs-string">"hello world"</span>.split(<span class="hljs-string">" "</span>); <span class="hljs-regexp">//</span> =&gt; [<span class="hljs-string">"hello"</span>, <span class="hljs-string">"world"</span>]
+[<span class="hljs-string">"hello"</span>, <span class="hljs-string">"world"</span>].join(<span class="hljs-string">" "</span>); <span class="hljs-regexp">//</span> =&gt; <span class="hljs-string">"hello world"</span>
+
+reverseWords(<span class="hljs-string">"hello world"</span>); <span class="hljs-regexp">//</span> =&gt; <span class="hljs-string">"olleh dlrow"</span>
+</code></pre>
+<p>Note that <code>reverseWords</code> should reverse <strong>each word individually</strong>, not the
+entire string.</p>
+</li>
+<li><p>We often want to transform an array of objects by looking up the value found
+under a specific key in each object; for instance, consider the problem of
+finding the ages of all the people in the <code>people</code> array like we did in the
+first exercise:</p>
+<pre><code class="lang-js"><span class="hljs-built_in">var</span> people = [
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Alyssa"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"P."</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Hacker"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">26</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Ben"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Bitdiddle"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">34</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Eva"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"Lu"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Ator"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">40</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Lem"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"E."</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Tweakit"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">45</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Louis"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Reasoner"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">21</span>}
+];
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ages</span>(<span class="hljs-params">people</span>) </span>{
+  <span class="hljs-keyword">return</span> map(people, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">person</span>) </span>{
+    <span class="hljs-keyword">return</span> person.age;
+  });
+}
+</code></pre>
+<p>Write a function called <code>pluck</code> that takes an array of objects and a string
+representing a key as parameters, and returns an array of all the values
+found under each object using the key, <em>e.g.</em>:</p>
+<pre><code class="lang-js">pluck(<span class="hljs-name">people</span>, <span class="hljs-string">"age"</span>)<span class="hljs-comment">; // =&gt; [26, 34, 40, 45, 21]</span>
+</code></pre>
+<p>Your implementation should use <code>map</code>.</p>
+</li>
+<li><p>Let&#39;s say that we have a string representing a CSV (comma-separated values) file
+that looks like this:</p>
+<pre><code class="lang-js">"Alyssa,P.,Hacker,26<span class="hljs-tag">\<span class="hljs-name">nBen</span></span>,,Bitdiddle,34<span class="hljs-tag">\<span class="hljs-name">nEva</span></span>,Lu,Ator,40<span class="hljs-tag">\<span class="hljs-name">nLem</span></span>,E.,Tweakit,45<span class="hljs-tag">\<span class="hljs-name">nLouis</span></span>,,Reasoner,21"
+</code></pre>
+<p>And we want to parse it into an array <strong>people</strong> objects like we showed in
+the warmup, <em>e.g.</em>:</p>
+<pre><code class="lang-js"><span class="hljs-built_in">var</span> people = [
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Alyssa"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"P."</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Hacker"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">26</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Ben"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Bitdiddle"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">34</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Eva"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"Lu"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Ator"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">40</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Lem"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"E."</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Tweakit"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">45</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Louis"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Reasoner"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">21</span>}
+];
+</code></pre>
+<p>Using <code>map</code> and <code>split</code>, write a function <code>parseCSV</code> that accepts a CSV
+string as a parameter and outputs an array of people objects with the <em>exact</em>
+format as shown above.</p>
+</li>
+</ol>
+<h3 id="advanced">Advanced</h3>
+<ol>
+<li><p><strong>Disclaimer: This problem is very difficult!</strong> Write a function called
+<code>map2</code> that accepts <strong>two</strong> arrays and a function as arguments, and
+constructs a new array by invoking its function argument on the elements of
+both arrays, <em>e.g.</em>:</p>
+<pre><code class="lang-js">map2([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>], <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(a, b)</span> </span>{
+  <span class="hljs-keyword">return</span> a * b;
+});
+<span class="hljs-comment">// =&gt; [4, 10, 18]</span>
+</code></pre>
+<p>Now, write a function called <code>mapN</code> that accepts an <em>arbitrary number of
+arrays</em> and a <code>n</code>-ary function as arguments, and constructs a new array by
+combining the elements of all the arrays, <em>e.g.</em>:</p>
+<pre><code class="lang-js">mapN([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>], [<span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>], <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(a, b, c)</span> </span>{
+  <span class="hljs-keyword">return</span> (a * b) + c;
+});
+<span class="hljs-comment">// =&gt; [6, 12, 20]</span>
+
+mapN([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(x)</span> </span>{ <span class="hljs-keyword">return</span> x * x; }) <span class="hljs-comment">// =&gt; [1, 4, 9]</span>
+</code></pre>
+<p>You&#39;ll need to read about the <code>arguments</code> keyword and <code>apply</code> to complete
+this function.</p>
+</li>
+</ol>

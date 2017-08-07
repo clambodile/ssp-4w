@@ -1,0 +1,17 @@
+{
+  "name": "Structured Study Program",
+  "description": "Learn to Code",
+  "author": "Fred, Tim, Muhammad <muhammad.meigooni@hackreactor.com>",
+  "syllabus": [
+    "reading/index.md"
+  ],
+
+  "phases": {
+    "Getting Started": [
+      "lessons/pre-requisites.md"
+    ],
+    "More content": [
+      "lessons/content2.md"
+    ]
+  }
+}

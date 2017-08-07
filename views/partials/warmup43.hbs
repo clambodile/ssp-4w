@@ -1,0 +1,59 @@
+<h1 id="warmup">Warmup</h1>
+<h2 id="instructions">Instructions</h2>
+<ol>
+<li>Start a new project for today by right-clicking
+<a href="https://github.com/jalehman/rp-starter/archive/master.zip">this link</a> and
+&quot;Save Link As...&quot; to your Desktop (or somewhere else). Don&#39;t forget to rename
+the folder to something meaningful!</li>
+<li>Find a partner (preferably one that you have not yet worked with), and work
+through the following exercises as a pair.</li>
+</ol>
+<h2 id="exercises">Exercises</h2>
+<p>In this exercise, you are going to create a simple stopwatch using closures.
+Before we can start however, we need to become familiar with a couple of
+built-in functions.</p>
+<p>The first of this is <code>setInterval</code> -- this is a function that takes two
+arguments: a <em>function</em> as its first argument, and a <em>number</em> representing
+<em>milliseconds</em> (let&#39;s call it <code>ms</code>). <code>setInterval</code> will continue to invoke its
+function argument after <code>ms</code> have passed. Let&#39;s examine this a bit more closely:</p>
+<pre><code class="lang-js">setInterval(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Hello!"</span>);
+}, <span class="hljs-number">1000</span>);
+</code></pre>
+<p>Enter the above into your console. You should notice that &quot;Hello!&quot; is printed to
+your console after every <code>1000</code> milliseconds (which is 1 second).</p>
+<p>If you typed the above into the console, the only way to stop it will be by
+refreshing the entire page. Yikes! Luckily, there&#39;s a better way.</p>
+<p><code>setInterval</code> <em>returns</em> a number that can be used to stop it with <code>clearInterval</code>:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> stop = setInterval(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Hello!"</span>);
+}, <span class="hljs-number">1000</span>);
+</code></pre>
+<p>Enter the above into a console, wait for a few &quot;Hello!&quot;s, and then enter
+<code>clearInterval(stop)</code> -- then it should cease printing.</p>
+<hr>
+<p>Given the above, implement a <code>makeStopwatch</code> function that returns an <strong>object</strong>
+with the following functionality:</p>
+<ul>
+<li><code>start</code>: starts the stopwatch</li>
+<li><code>stop</code>: stops the stopwatch</li>
+<li><code>reset</code>: resets the stopwatch to zero</li>
+</ul>
+<p>A stopwatch should exhibit the following behavior:</p>
+<pre><code class="lang-js">var stopwatch = makeStopwatch()<span class="hljs-comment">;</span>
+stopwatch.start()<span class="hljs-comment">;</span>
+<span class="hljs-comment">// =&gt; "Elapsed time: 1s"</span>
+<span class="hljs-comment">// =&gt; "Elapsed time: 2s"</span>
+<span class="hljs-comment">// =&gt; "Elapsed time: 3s"</span>
+<span class="hljs-comment">// =&gt; "Elapsed time: 4s"</span>
+<span class="hljs-comment">// =&gt; "Elapsed time: 5s"</span>
+stopwatch.<span class="hljs-keyword">stop</span>()<span class="hljs-comment">;</span>
+stopwatch.start()<span class="hljs-comment">;</span>
+<span class="hljs-comment">// =&gt; "Elapsed time: 6s"</span>
+<span class="hljs-comment">// =&gt; "Elapsed time: 7s"</span>
+stopwatch.reset()<span class="hljs-comment">;</span>
+stopwatch.start()<span class="hljs-comment">;</span>
+<span class="hljs-comment">// =&gt; "Elapsed time: 1s"</span>
+<span class="hljs-comment">// =&gt; "Elapsed time: 2s"</span>
+<span class="hljs-comment">// etc.</span>
+</code></pre>

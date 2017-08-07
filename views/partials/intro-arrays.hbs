@@ -1,0 +1,158 @@
+<h1 id="introduction-to-arrays">Introduction to Arrays</h1>
+<h2 id="lesson">Lesson</h2>
+<iframe src="https://docs.google.com/presentation/d/1Tu5_fBxINJC8bnJ25lXkkCIC-2qp64Tqk87pPnRIHpE/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+<h2 id="exercises">Exercises</h2>
+<h3 id="basic-requirements">Basic Requirements</h3>
+<h4 id="creating-arrays">Creating Arrays</h4>
+<ol>
+<li><p>Using the array: <code>[&quot;cat&quot;, &quot;fox&quot;, &quot;dog&quot;, &quot;monkey&quot;]</code>, what is the index of:</p>
+<ul>
+<li>&quot;dog&quot;?</li>
+<li>&quot;monkey&quot;?</li>
+<li>&quot;cat&quot;?</li>
+</ul>
+</li>
+<li><p>Fix the syntax/style in the following arrays:</p>
+<pre><code class="lang-js">[ <span class="hljs-number">1</span>, <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">7</span>,<span class="hljs-number">9</span>, ]
+<span class="hljs-string">"the"</span><span class="hljs-string">"quick"</span><span class="hljs-string">"brown"</span>,<span class="hljs-string">"fox"</span> <span class="hljs-string">"jumped"</span>,<span class="hljs-string">"over"</span> the <span class="hljs-keyword">lazy</span>, <span class="hljs-string">"dog"</span>,  ]
+[<span class="hljs-literal">true</span> <span class="hljs-literal">false</span>,<span class="hljs-literal">true</span>
+</code></pre>
+</li>
+<li><p>Create arrays in the <em>global scope</em> of your <code>main.js</code> file consisting of strings that represent:</p>
+<ul>
+<li>Your favorite TV shows/movies</li>
+<li>Names of people you know/care about</li>
+<li>Favorite sports/activities</li>
+</ul>
+</li>
+</ol>
+<h4 id="accessing-array-elements">Accessing Array Elements</h4>
+<ol>
+<li><p>Using the arrays that you created in the last exercise, use the console to access:</p>
+<ul>
+<li>First elements,</li>
+<li>Last elements,</li>
+<li>Other elements!</li>
+</ul>
+</li>
+<li><p>Write a function <code>first</code> that takes an array as an argument and returns the
+first element in that array.</p>
+</li>
+<li><p>Write a function <code>last</code> that takes an array as an argument and returns the
+<em>last</em> element in the array. <strong>Hint:</strong> What is the relationship between the
+<em>index</em> of the last element in the array and the <em>length</em> of the array?</p>
+</li>
+</ol>
+<h4 id="modifying-arrays">Modifying Arrays</h4>
+<ol>
+<li><p>Using the <strong>console</strong>, <code>push</code> and <code>unshift</code>, make this array contain the
+numbers from zero through seven:</p>
+<pre><code class="lang-js"><span class="hljs-variable"><span class="hljs-keyword">var</span> arr</span> = [<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>];
+<span class="hljs-comment">// your code here</span>
+arr; <span class="hljs-comment">// =&gt; [0, 1, 2, 3, 4, 5, 6, 7]</span>
+</code></pre>
+</li>
+<li><p>What is <em>returned</em> by <code>push</code>? Before throwing this into the console, form a
+hypothesis about what you think the return value will be:</p>
+<pre><code class="lang-js"><span class="hljs-variable"><span class="hljs-keyword">var</span> arr</span> = [<span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">9</span>];
+arr.push(<span class="hljs-number">6</span>); <span class="hljs-comment">// =&gt; ???</span>
+</code></pre>
+<p>Were you correct? What is the returned by <code>push</code>? Does <code>unshift</code> work in the
+same way?</p>
+</li>
+<li><p>We can use the <em>assignment operator</em> (<code>=</code>) to replace elements in arrays with
+other ones like so:</p>
+<pre><code class="lang-js">var animals = [<span class="hljs-symbol">'dog</span>', <span class="hljs-symbol">'elephant</span>', <span class="hljs-symbol">'zebra</span>']
+// let<span class="hljs-symbol">'s</span> replace <span class="hljs-symbol">'dog</span>' <span class="hljs-keyword">with</span> <span class="hljs-symbol">'hippo</span>'
+animals[<span class="hljs-number">0</span>] = <span class="hljs-symbol">'hippo</span>';
+animals; // =&gt; [<span class="hljs-symbol">'hippo</span>', <span class="hljs-symbol">'elephant</span>', <span class="hljs-symbol">'zebra</span>']
+</code></pre>
+<p>Using the same principle, perform the following:</p>
+<pre><code class="lang-js"><span class="hljs-comment">// 1. Change all odd numbers to be those numbers multiplied by two:</span>
+<span class="hljs-keyword">var</span> numbers = [<span class="hljs-number">4</span>, <span class="hljs-number">9</span>, <span class="hljs-number">7</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">8</span>];
+<span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> your code here</span>
+numbers; <span class="hljs-comment">// =&gt; [4, 18, 14, 2, 2, 8]</span>
+
+<span class="hljs-comment">// 2. Fix the typos by replacing each element with a correctly spelled version</span>
+<span class="hljs-keyword">var</span> places = [<span class="hljs-string">'snfranisco'</span>, <span class="hljs-string">'oacklannd'</span>, <span class="hljs-string">'santacrus'</span>]
+<span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> your code here</span>
+places; <span class="hljs-comment">// =&gt; ['san francisco', 'oakland', 'santa cruz']</span>
+</code></pre>
+</li>
+</ol>
+<h3 id="more-practice">More Practice</h3>
+<ol>
+<li><p>Write a function called <code>nth</code> that accepts an array and an index as
+parameters, and returns the element at that index.</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">nth</span><span class="hljs-params">(array, index)</span> </span>{
+  <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> your code here</span>
+}
+<span class="hljs-keyword">var</span> animals = [<span class="hljs-string">'dog'</span>, <span class="hljs-string">'cat'</span>, <span class="hljs-string">'gerbil'</span>];
+nth(animals, <span class="hljs-number">2</span>); <span class="hljs-comment">// =&gt; 'gerbil'</span>
+nth(animals, <span class="hljs-number">1</span>) === animals[<span class="hljs-number">1</span>]; <span class="hljs-comment">// =&gt; true</span>
+</code></pre>
+</li>
+<li><p>Write a function <code>rest</code> that returns all the elements in the array <em>except</em>
+for the first one. <strong>HINT:</strong> Read about the <code>slice</code> method on
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice">MDN</a>
+and/or experiment with <code>slice</code> at the console like so:</p>
+<pre><code class="lang-js">var numbers = [<span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">7</span>, <span class="hljs-number">5</span>]<span class="hljs-comment">;</span>
+numbers.slice(<span class="hljs-number">0</span>)<span class="hljs-comment">;</span>
+numbers.slice(<span class="hljs-number">1</span>)<span class="hljs-comment">;</span>
+numbers.slice(<span class="hljs-number">2</span>)<span class="hljs-comment">;</span>
+numbers.slice(<span class="hljs-number">0</span>, <span class="hljs-number">2</span>)<span class="hljs-comment">;</span>
+</code></pre>
+</li>
+<li><p>Write a function <code>butlast</code> that returns all of the elements in the array
+<em>except</em> for the last one (you may want to use <code>slice</code> for this one as well).</p>
+</li>
+<li><p>Complete the function <code>cons</code> that accepts an element and an array, and
+returns an array with the element added to the <em>front</em> of the array:</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">cons</span><span class="hljs-params">(x, array)</span> </span>{
+  <span class="hljs-comment">// your code here</span>
+}
+</code></pre>
+</li>
+<li><p>Complete the function <code>conj</code> that accepts an array and an element, and
+returns an array with the element added to the <em>end</em> of the array:</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">conj</span><span class="hljs-params">(array, x)</span> </span>{
+  <span class="hljs-comment">// your code here</span>
+}
+</code></pre>
+</li>
+<li><p>What benefit(s) might there be to using functions like <code>cons</code> or <code>conj</code> over
+<code>unshift</code> or <code>push</code>?</p>
+</li>
+<li><p>Try the following in a console:</p>
+<pre><code class="lang-js"><span class="hljs-variable"><span class="hljs-keyword">var</span> arr</span> = [];
+arr[<span class="hljs-number">7</span>] = <span class="hljs-string">"Hello."</span>
+arr; <span class="hljs-comment">// =&gt; ???</span>
+</code></pre>
+<p>What is the value of <code>arr</code> after assigning an element to its seventh index?
+Explain the result in plain English.</p>
+</li>
+</ol>
+<h3 id="advanced">Advanced</h3>
+<ol>
+<li><p>Without running the below function, use a whiteboard to figure out what it
+should return by repeatedly expanding function invocations:</p>
+<pre><code class="lang-js">function mystery(<span class="hljs-built_in">array</span>) {
+  <span class="hljs-keyword">if</span> (<span class="hljs-built_in">array</span>.<span class="hljs-built_in">length</span> === <span class="hljs-number">0</span>) {
+    <span class="hljs-built_in">return</span> [];
+  }
+  <span class="hljs-built_in">return</span> conj(mystery(<span class="hljs-built_in">rest</span>(<span class="hljs-built_in">array</span>)), <span class="hljs-built_in">first</span>(<span class="hljs-built_in">array</span>));
+}
+</code></pre>
+</li>
+<li><p>Using <code>first</code>, <code>rest</code>, <code>conj</code> and/or <code>cons</code>, write functions that accomplish
+the following:</p>
+<ul>
+<li><code>sum</code> all the elements of an array</li>
+<li>Given an array, returns a new array with each element <em>squared</em></li>
+<li>Given an array of numbers, returns a new array of just the <em>even</em> numbers</li>
+</ul>
+<p><strong>HINT:</strong> After figuring out how the <code>mystery</code> function works above, use it
+as a reference for how to write this type of function.</p>
+</li>
+</ol>

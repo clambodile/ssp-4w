@@ -1,0 +1,355 @@
+<h1 id="introduction-to-the-dom">Introduction to the DOM</h1>
+<h3 id="extended-warmup">Extended Warmup</h3>
+<p><strong>First, start a new project for today by right-clicking
+<a href="https://github.com/jalehman/rp-starter/archive/master.zip">this link</a> and &quot;Save
+Link As...&quot; to your Desktop (or somewhere else). Don&#39;t forget to rename the
+folder to something meaningful!</strong></p>
+<h4 id="tips-notes">Tips &amp; Notes</h4>
+<p>This problem is meant to stretch your ability to decompose more difficult
+problems into sequences of steps. The following may help:</p>
+<ul>
+<li>Work with a partner!</li>
+<li>Before writing code, write out a &quot;plan&quot; for the steps that you&#39;ll need to
+take in plain English (or whichever language you&#39;re more comfortable
+writing/thinking in); that is, something like a numbered list of the steps
+that you would go through to figure out the solution.</li>
+<li>The <strong>Helper Functions</strong> section below contains some functions that may be
+useful here -- particularly <code>find</code> and <code>some</code>.</li>
+<li>Generally, the harder the problem, the more ways there are to solve it
+(this is part of what makes difficult problems difficult) -- be creative!</li>
+</ul>
+<h4 id="exercise">Exercise</h4>
+<p>Let&#39;s say that we have an array of <em>names</em> represented as strings that look like
+this:</p>
+<pre><code class="lang-js"><span class="hljs-variable"><span class="hljs-keyword">var</span> names</span> = [
+  <span class="hljs-string">"John Q Public"</span>,
+  <span class="hljs-string">"Admiral General Grace Murray Hopper"</span>,
+  <span class="hljs-string">"Spot"</span>,
+  <span class="hljs-string">"Aristotle"</span>,
+  <span class="hljs-string">"Lord Bertrand Russell"</span>,
+  <span class="hljs-string">"Sir Laurence Olivier"</span>,
+  <span class="hljs-string">"Annyeong"</span>,
+  <span class="hljs-string">"Miss Scarlet"</span>
+];
+</code></pre>
+<p>Your goal is to produce an array of <strong>just the first names</strong> of each of the
+above entities; however, there&#39;s a catch: <strong>titles</strong> should not be included. A
+<strong>title</strong> is some prefix that comes before a person&#39;s name, <em>e.g.</em> Admiral,
+General, Lord, etc. For now, it is safe to assume that the titles in the above
+names are the only titles that we&#39;ll have to deal with.</p>
+<p>You may want to first consider the problem of getting the first name of <strong>one</strong>
+name at a time, <em>e.g.</em> a function called <code>firstName</code> that works like this:</p>
+<pre><code class="lang-js">firstName(<span class="hljs-string">"John Q Public"</span>); <span class="hljs-regexp">//</span> =&gt; <span class="hljs-string">"John"</span>
+firstName(<span class="hljs-string">"Admiral General Grace Murray Hopper"</span>); <span class="hljs-regexp">//</span> =&gt; <span class="hljs-string">"Grace"</span>
+firstName(<span class="hljs-string">"Spot"</span>); <span class="hljs-regexp">//</span> =&gt; <span class="hljs-string">"Spot"</span>
+</code></pre>
+<p>Then, tackle transforming the array <code>names</code> into an array of just <em>first names</em>.
+Your output should be:</p>
+<pre><code class="lang-js">[ <span class="hljs-symbol">'John</span>',
+  <span class="hljs-symbol">'Grace</span>',
+  <span class="hljs-symbol">'Spot</span>',
+  <span class="hljs-symbol">'Aristotle</span>',
+  <span class="hljs-symbol">'Bertrand</span>',
+  <span class="hljs-symbol">'Laurence</span>',
+  <span class="hljs-symbol">'Annyeong</span>',
+  <span class="hljs-symbol">'Scarlet</span>' ]
+</code></pre>
+<h4 id="helper-functions">Helper Functions</h4>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">find</span><span class="hljs-params">(array, pred)</span> </span>{
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-keyword">array</span>.length; i++) {
+    <span class="hljs-keyword">if</span> (pred(<span class="hljs-keyword">array</span>[i])) {
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">array</span>[i];
+    }
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">some</span><span class="hljs-params">(array, pred)</span> </span>{
+  <span class="hljs-keyword">return</span> reduce(<span class="hljs-keyword">array</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(acc, element)</span> </span>{
+    <span class="hljs-keyword">return</span> acc || pred(element);
+  }, <span class="hljs-keyword">false</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">each</span><span class="hljs-params">(coll, f)</span> </span>{
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">Array</span>.isArray(coll)) {
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; coll.length; i++) {
+      f(coll[i], i);
+    }
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> key in coll) {
+      f(coll[key], key);
+    }
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">map</span><span class="hljs-params">(coll, f)</span> </span>{
+  <span class="hljs-keyword">var</span> acc = [];
+  <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">Array</span>.isArray(coll)) {
+    acc = {};
+  }
+  each(coll, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(value, key)</span> </span>{
+    acc[key] = f(value, key);
+  });
+  <span class="hljs-keyword">return</span> acc;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">reduce</span><span class="hljs-params">(coll, f, acc)</span></span>{
+  <span class="hljs-keyword">if</span> (acc === undefined){
+    acc = coll[<span class="hljs-number">0</span>];
+    coll = coll.slice(<span class="hljs-number">1</span>);
+  }
+  each(coll, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(val)</span></span>{
+    acc = f(acc, val);
+  });
+  <span class="hljs-keyword">return</span> acc;
+}
+</code></pre>
+<h2 id="exercises">Exercises</h2>
+<h3 id="creating-a-project-utility-library">Creating a Project &amp; Utility Library</h3>
+<p>At this point you have written many useful functions, and it is annoying to have
+to constantly enter them into the JS file that you&#39;re working with. Instead,
+let&#39;s make a little <em>library</em> of helpful functions that will exist independently
+from the application code that you work.</p>
+<ol>
+<li><p>Create a new JavaScript file called <code>helpers.js</code> in your project -- to create
+a new project, just create a new folder!</p>
+</li>
+<li><p>Create an empty object at the top of that file and assign it to a variable
+called <code>RP</code> (for &quot;Reactor Prep&quot;).</p>
+<pre><code class="lang-js">var <span class="hljs-keyword">RP</span> = {}<span class="hljs-comment">;</span>
+</code></pre>
+</li>
+<li><p>Now, we&#39;ll assign utility functions to be key/value pairs of that object,
+<em>e.g.</em></p>
+<pre><code class="lang-js">RP.each = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">coll, f</span>) </span>{
+  <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Array</span>.isArray(coll)) {
+    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">var</span> i = <span class="hljs-number">0</span>; i &lt; coll.length; i++) {
+      f(coll[i], i);
+    }
+  } <span class="hljs-decorator"><span class="hljs-keyword">else</span></span> {
+   <span class="hljs-keyword">for</span> (<span class="hljs-built_in">var</span> key <span class="hljs-keyword">in</span> coll) {
+      f(coll[key], key);
+    }
+  }
+};
+</code></pre>
+</li>
+<li><p>Repeat the process with the rest of your utility functions. Examples of these
+should at least include:</p>
+<ul>
+<li><code>each</code></li>
+<li><code>map</code></li>
+<li><code>filter</code></li>
+<li><code>reduce</code></li>
+</ul>
+<p>And can optionally also include:</p>
+<ul>
+<li><code>some</code></li>
+<li><code>every</code></li>
+<li><code>reject</code></li>
+<li><code>pluck</code></li>
+<li><code>max</code></li>
+<li><code>min</code></li>
+</ul>
+</li>
+<li><p>Now, create a new HTML file in your project -- a good name for it would be
+<code>index.html</code>, and it should have at minimum the following content:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>My Project<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<p>Feel free to change the title to whatever you&#39;d prefer.</p>
+</li>
+<li><p>Now, add a <code>script</code> tag inside the <code>body</code> tag of the HTML file that
+references your <code>helpers.js</code> file. It should look like this:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"helpers.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<p><code>script</code> tags should always be at the <em>bottom</em> of the <code>body</code>.</p>
+</li>
+<li><p>Now, let&#39;s create a <strong>separate</strong> JavaScript file for our application&#39;s logic.
+You can call it <code>app.js</code> or <code>main.js</code>, or anything that you&#39;d like -- just
+make sure it ends in <code>.js</code>.</p>
+</li>
+<li><p>Now, create <em>another</em> script tag that references the file that you just
+created above. <strong>Make sure to add this script tag below the <code>helpers.js</code>
+script tag</strong> -- this will ensure that, because <code>helpers.js</code> is encountered
+<em>before</em> the <code>app.js</code> file, the <code>RP</code> object will be accessible.</p>
+<p>Test that everything is working by entering the following into your <code>app.js</code>
+file:</p>
+<pre><code class="lang-js">RP.each([<span class="hljs-string">"Hello"</span>, <span class="hljs-string">"World!"</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">word</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(word);
+});
+</code></pre>
+<p>Now, open your <code>index.html</code> page in a browser and ensure that you see &quot;Hello&quot;
+and &quot;World!&quot; logged to the console.</p>
+</li>
+</ol>
+<h3 id="building-a-todo-list">Building a Todo List</h3>
+<p>We are not going to go into too many specifics surrounding the DOM and HTML --
+instead, we&#39;re going to focus on the ways in which we can use JavaScript to
+manipulate the DOM.</p>
+<ol>
+<li><p>Let&#39;s add a title to your page. Go to <code>index.html</code>, and enter the following
+inside of the <code>body</code> tag (at the top):</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Todo List<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+</code></pre>
+<p>Refresh your page -- do you see a title?</p>
+</li>
+<li><p>Next, let&#39;s create a basic list of todos in HTML using an <a
+href="http://www.w3schools.com/tags/tag_ul.asp" target="_blank">unordered
+list</a> element.Beneath your <code>h1</code> tag, enter the following</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Buy Groceries<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+</code></pre>
+<p>Now, add add least three more <em>list items</em> (<code>li</code>) that represent some sample
+todos.</p>
+</li>
+<li><p>Now, let&#39;s visit your <code>app.js</code> file and create an array of strings containing
+our todos. You should create something like this:</p>
+<pre><code class="lang-js"><span class="hljs-variable"><span class="hljs-keyword">var</span> todos</span> = [
+  <span class="hljs-string">"Buy Groceries"</span>
+];
+</code></pre>
+<p>Make sure to add the other todos that you created in the HTML file to the
+list also.</p>
+</li>
+</ol>
+<p>Wouldn&#39;t it be nice if we could enter our todos in a JavaScript array and have
+the page reflect the contents of that array, rather than duplicating them in
+both places ourselves? Let&#39;s figure out how we might accomplish that.</p>
+<h4 id="accessing-html-elements-from-js">Accessing HTML Elements from JS</h4>
+<p>Let&#39;s explore two different ways to access HTML elements on the page.</p>
+<ol>
+<li><p><strong>From a console on your <code>index.html</code> page</strong>, enter the following:</p>
+<pre><code class="lang-js"><span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">"h1"</span>);
+</code></pre>
+<p>What is returned? Let&#39;s break that expression down:</p>
+<ul>
+<li><code>document</code>: This is a global reference to the HTML page that is currently
+visible.</li>
+<li><code>getElementsByTagName</code>: This is a function that fetches <em>elements</em> from
+within the <code>document</code> based on the name of their HTML tag.</li>
+<li><code>&quot;h1&quot;</code>: This is the HTML tag that we are trying to access.</li>
+</ul>
+<p><code>getElementsByTagName</code> returns an array (it&#39;s actually not an array, but we
+can treat it like one in many respects) of all the elements in the page with
+that tag name.</p>
+<p>Now, write a function <code>getFirstElementByTagName</code> (within your <code>app.js</code> file)
+that, given a tag&#39;s name as a parameter, returns the <em>first</em> element with
+that tag name.</p>
+</li>
+<li><p>Often, we want to be able to retrieve a <em>specific</em> element from within the
+page. <code>getElementsByTagName</code> doesn&#39;t work real well for this because it
+fetches <em>all</em> of the matching elements, and there may be multiple; for the
+same reasons, <code>getFirstElementByTagName</code> is not going to work well in many
+cases either, because we may not be looking for the first one.</p>
+<p>What we need is a way to specify <em>exactly</em> which element we&#39;re looking for;
+and luckily for us, there is a way to do just that.</p>
+<p>First, edit your <code>index.html</code> by giving the title and <code>id</code> attribute:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"my-title"</span>&gt;</span>Todo List<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+</code></pre>
+<p>Now, after refreshing the page, enter the following in the console:</p>
+<pre><code class="lang-js"><span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"my-title"</span>);
+</code></pre>
+<p>By providing <code>id</code> attributes, we can give ourselves a way to refer to
+specific elements in the page.</p>
+<p>Finally, give the <code>ul</code> tag an <code>id</code> attribute as well, and then verify that
+you can access it using <code>getElementById</code>.</p>
+</li>
+</ol>
+<h4 id="creating-html-elements-in-javascript">Creating HTML Elements in JavaScript</h4>
+<ol>
+<li><p>It is possible to create new HTML elements using JavaScript. Try the
+following in the console:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> paragraph = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"p"</span>);
+paragraph; <span class="hljs-comment">// =&gt; ?</span>
+</code></pre>
+<p>This <em>creates</em> a new element, but it does not actually <em>add</em> it to the
+document. To add an element to the page, we need to know where we want to add
+it. To add your <code>paragraph</code> (the <code>p</code> tag stands for &quot;paragraph&quot;) element to
+the page, do the following:</p>
+<pre><code class="lang-js"><span class="hljs-selector-tag">document</span><span class="hljs-selector-class">.body</span><span class="hljs-selector-class">.appendChild</span>(<span class="hljs-selector-tag">paragraph</span>);
+</code></pre>
+<p>You still won&#39;t see any update on the page, but the element is in fact there.
+Click on the <strong>Elements</strong> tab in your console (to the left of <strong>Console</strong>)
+and look at the HTML of the page. You should see <code>&lt;p&gt;&lt;/p&gt;</code> after your <code>ul</code>
+tag. Let&#39;s break down what happened there:</p>
+<ul>
+<li><code>document.body</code>: Because an HTML page can only have one <code>body</code> tag, this is
+just a convenient way to refer to the <code>body</code> tag.</li>
+<li><code>appendChild(paragraph)</code>: This <em>appends</em> -- that is, &quot;adds to the end of&quot;
+-- its argument to the element preceding the dot. Not that <code>appendChild</code>
+puts the element at the <strong>end</strong> of the <code>body</code> tag, but inside of it.</li>
+</ul>
+<p>Now, let&#39;s make our <code>p</code> element a bit more interesting. Since we still have a
+reference to it with the variable <code>paragraph</code>, let&#39;s give it some text:</p>
+<pre><code class="lang-js"><span class="hljs-built_in">paragraph</span>.textContent = <span class="hljs-string">"The quick brown fox jumps over the lazy dog."</span>;
+</code></pre>
+<p>Now, repeat the above process, but add a new <code>li</code> element containing a new
+&quot;todo&quot; to the end of the <code>ul</code> element (from within the console).</p>
+</li>
+<li><p>Back in your <code>app.js</code> file, let&#39;s create a helper function to create new HTML
+elements. The function <code>makeElement</code> below should accept two parameters: a
+tag name (a string), and the text content that should be in the created
+element (also a string). It should return an HTML element.</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makeElement</span><span class="hljs-params">(tag, text)</span> </span>{
+  <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> Your code here</span>
+}
+</code></pre>
+<p>Once your function is working, use it from the console to create a new todo
+and append it to the <code>ul</code> tag using <code>appendChild</code>.</p>
+</li>
+<li><p>Write a function called <code>makeTodo</code> that accepts a string as a parameter
+representing the todo&#39;s text, and outputs an HTML element representing a todo
+item (you will want to make use of <code>makeElement</code> here).</p>
+</li>
+<li><p>We now have the tools that we need to turn our array of todos in <code>app.js</code>
+into todos on the page! First, remove an <code>li</code> elements from within the <code>ul</code>
+element in your <code>index.html</code> file.</p>
+<p>Next, using <code>each</code>, <code>makeTodo</code> and <code>appendChild</code>, write a function called
+<code>renderTodos</code> that, when given an array of todos as a paramter, adds each
+todo into your <code>ul</code> element.</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">renderTodos</span><span class="hljs-params">(todos)</span> </span>{
+  <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> your code here</span>
+}
+</code></pre>
+<p>Then, try invoking <code>renderTodos</code> from the console to add all of your todos
+into the page.</p>
+</li>
+</ol>
+<h4 id="going-further">Going Further</h4>
+<ol>
+<li><p>Write a function <code>appendChildren</code> that accepts two parameters: an <em>HTML
+element</em> that will have children appended to it, and an <em>array</em> of HTML
+elements.</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">appendChildren</span><span class="hljs-params">(el, elements)</span> </span>{
+  <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> your code here</span>
+}
+</code></pre>
+<p>Test your function by using <code>map</code> to transform the todos array into an array
+of HTML elements (<code>makeTodo</code>) and refactoring <code>renderTodos</code> to use
+<code>appendChildren</code>.</p>
+</li>
+<li><p>What happens if you invoke <code>renderTodos</code> twice with the same argument? Try it
+from the console to find out.</p>
+<p>You should observe that it just duplicates all of the todos on each
+invocation. This should make sense, but isn&#39;t ideal.</p>
+<p>The following function can be used to <em>remove</em> the children of a specific
+element:</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">removeChildren</span><span class="hljs-params">(el)</span> </span>{
+  <span class="hljs-keyword">while</span> (el.firstChild) {
+    el.removeChild(el.firstChild);
+  }
+}
+</code></pre>
+<p>Try using <code>removeChildren</code> in the console to remove the currently visible
+todos (from the <code>ul</code> element). Once you have verified that it works as
+expected, update <code>renderTodos</code> to first remove existing todos from the the
+list <em>before</em> adding the new ones.</p>
+</li>
+</ol>

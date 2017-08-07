@@ -1,0 +1,206 @@
+<h1 id="data-modeling">Data Modeling</h1>
+<h2 id="lessons">Lessons</h2>
+<iframe src="https://docs.google.com/presentation/d/1inxNZepJVO_u5jqOQ9ttjzfRUnKwtDmIDtp6UHo--kg/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+<iframe src="https://docs.google.com/presentation/d/1JeDZC_6ODGvu7HqEjmCwq7bYrO4_8R3Pro3OMo_fyCU/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+<h2 id="terms">Terms</h2>
+<ul>
+<li><strong>Data:</strong> Strings, booleans, numbers, arrays and objects.</li>
+<li><strong>Model:</strong> A way of representing something as <em>data</em>.</li>
+<li><strong>Instance:</strong> A single representation of something as using a <em>model</em>. For our
+purposes, this will be an <em>object</em>.</li>
+<li><strong>Factory function:</strong> A function that outputs <em>instances</em> of a <em>model</em>.</li>
+</ul>
+<h2 id="exercises">Exercises</h2>
+<h3 id="basic-requirements">Basic Requirements</h3>
+<h4 id="representing-books">Representing Books</h4>
+<ol>
+<li><p>Think about some different attributes of books &#x2013; what do all books have?
+Ideas include:</p>
+<ul>
+<li>Title</li>
+<li>Author</li>
+<li>MSRP</li>
+<li>Genre</li>
+<li>Number of Pages</li>
+<li>Description</li>
+</ul>
+</li>
+<li><p>In terms of the properties of books that you thought of, represent the
+following books as data:</p>
+<ul>
+<li>Harry Potter and the Sorcerer&#39;s Stone (J.K. Rowling)</li>
+<li>Snow Crash (Neal Stephenson)</li>
+<li>Structure and Interpretation of Computer Programs (Gerald Jay Sussman, Hal
+Abelson)<ul>
+<li><strong>NOTE:</strong> Did you account for the possibility of two authors? If not,
+  update your model to handle multiple authors.</li>
+</ul>
+</li>
+<li>Three other books (see <a href="https://www.goodreads.com/list/show/1.Best_Books_Ever">this list</a> for ideas)</li>
+</ul>
+</li>
+<li><p>You have probably had to rewrite the same kind of object multiple times at
+this point; write a function <code>makeBook</code> that takes as arguments different
+aspects of a book and returns an <strong>object</strong> representing that book that has the
+proper structure (we call this a <em>factory function</em>).</p>
+</li>
+</ol>
+<h4 id="formatting">Formatting</h4>
+<p>Look at one of your book objects in the console. The object inspector is
+nice, but it would be nice if we could easily view important attributes of a
+book without having to click on all of its properties with the inspector.
+Write a function called <code>displayBook</code> that takes a book as an argument, and
+&quot;pretty prints&quot; the important parts, for example:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> sorcerersStone = { <span class="hljs-comment">/* ... */</span> }
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">displayBook</span><span class="hljs-params">(book)</span> </span>{
+<span class="hljs-comment">// ...</span>
+}
+displayBook(sorcerersStone);
+<span class="hljs-comment">// =&gt; "Harry Potter and the Sorcerer's Stone, by J.K. Rowling -- fantasy, $24.99"</span>
+</code></pre>
+<p>The output string above is only an example &#x2013; the idea is that, given
+a book object, <code>displayBook</code> returns some string that shows <em>some</em> subset of
+the information about the book that is deemed important &#x2013; what is
+shown is up to you.</p>
+<h4 id="handling-multiple-books">Handling Multiple Books</h4>
+<ol>
+<li><p>If you haven&#39;t already, create an array to hold all of the books that you
+created above called <code>books</code>.</p>
+</li>
+<li><p>You have written the function <code>displayBook</code> that can be used to display a
+single book as a string &#x2013; write a function <code>displayBooks</code> that, given an
+array of books, returns a single string consisting of <strong>all</strong> of the books
+formatted using the <code>displayBook</code> function you defined before.</p>
+<p>Each book should be <em>numbered</em>, and separated with a <em>newline</em> character so
+that each book is shown on a separate line in the console. The <em>newline</em>
+character is specified with a special <strong>escaped</strong> character in a string:</p>
+<pre><code class="lang-js"><span class="hljs-comment">// Enter the below line into a console</span>
+<span class="hljs-string">"Hello\nWorld!"</span>; <span class="hljs-comment">// the \n character is a newline</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">displayBooks</span><span class="hljs-params">(books)</span> </span>{
+  <span class="hljs-comment">// ...</span>
+}
+displayBooks(books);
+<span class="hljs-comment">// =&gt; "1. Harry Potter and the Sorcerer's Stone...\n2. Snow Crash, ..."</span>
+</code></pre>
+</li>
+<li><p>Write a function <code>searchBooks</code> that, given a query and an array of books,
+searches the array of books for &quot;matching&quot; books. You&#39;ll need to make a few
+decisions when implementing a search algorithm, like:</p>
+<ul>
+<li><p>What fields will be searched? Will you search multiple fields
+simultaneously (it might be best to start with <em>one</em> field, <em>e.g.</em>
+<code>title</code>)? Should the search be case-sensitive?</p>
+</li>
+<li><p>How will the search work? Will it only work from the <em>beginning</em> of a
+field, or from anywhere within?</p>
+<p>A good starting point would be to write a function <code>isMatch</code> that
+accepts two arguments &#x2013; the query and <strong>a single book</strong> &#x2013;
+and returns <code>true</code> if the book is a match, and <code>false</code> otherwise. <strong>Some
+Hints:</strong></p>
+<pre><code class="lang-js"><span class="hljs-string">"Harry Potter"</span>.toLowerCase(); <span class="hljs-comment">// =&gt; "harry potter"</span>
+<span class="hljs-string">"Harry Potter"</span>.<span class="hljs-built_in">substr</span>(0, 5); <span class="hljs-comment">// =&gt; "Harry"</span>
+<span class="hljs-keyword">var</span> <span class="hljs-keyword">query</span> = <span class="hljs-string">"Harry"</span>;
+<span class="hljs-string">"Harry Potter"</span>.<span class="hljs-built_in">substr</span>(0, <span class="hljs-keyword">query</span>.length); <span class="hljs-comment">// =&gt; "Harry"</span>
+<span class="hljs-string">"Harry Potter"</span>.indexOf(<span class="hljs-string">"Pot"</span>); <span class="hljs-comment">// =&gt; 6</span>
+<span class="hljs-string">"Harry Potter"</span>.indexOf(<span class="hljs-string">"dog"</span>); <span class="hljs-comment">// =&gt; -1</span>
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>Write a function <code>removeBook</code> that, given a book&#39;s title and an array of
+books, returns a new array of books that does not contain the book with the
+provided title.</p>
+</li>
+</ol>
+<h3 id="more-practice-representing-movies">More Practice: Representing Movies</h3>
+<ol>
+<li><p>As we did before, think about what kinds of aspects of movies you would like
+to represent. A few ideas are:</p>
+<ul>
+<li>Title</li>
+<li>Director</li>
+<li>Duration</li>
+<li>Release Date</li>
+<li>Actors/Actresses</li>
+<li>Studio(s)</li>
+<li>Synopsis</li>
+<li>Rating</li>
+</ul>
+<p>The level of granularity with some of these values is up for you to decide;
+for instance, the actors/actresses could be represented with an array of
+names, but what if you wanted to include the role that the actor/actress
+played? Did he/she win any awards? Even the <code>rating</code> of a movie is open to
+interpretation &#x2013; is the rating from critics? Users of IMDB? Rotten
+Tomatoes? Some combination?</p>
+</li>
+<li><p>Using the format that you decide upon, construct five movie objects.</p>
+</li>
+<li><p>Write a <em>factory function</em> for movies.</p>
+</li>
+<li><p>Write a function <code>displayMovie</code> that works like <code>displayBook</code>, but for
+movies.</p>
+</li>
+<li><p>Write a function <code>displayCast</code> that displays the cast of a movie, including:</p>
+<ul>
+<li>Role</li>
+<li>Actor/Actress name</li>
+</ul>
+</li>
+<li><p>Create an array to hold the movies that you created called <code>movies</code>, and add
+your movies to it.</p>
+</li>
+<li><p>As before, write a <code>displayMovies</code> function that works just like
+<code>displayBooks</code>.</p>
+</li>
+<li><p>Calculate the average duration of your movies by writing a function called
+<code>averageDuration</code> that will accept an array of movies as a parameter and
+ouput the average duration. The difficulty of this problem is dependent on
+how you have chosen to store the duration.</p>
+<ul>
+<li>How about <code>averageRating</code>?</li>
+</ul>
+</li>
+<li><p>How about searching your <code>movies</code> array? Write a function that works like
+<code>searchBooks</code>, but for movies.</p>
+</li>
+</ol>
+<h3 id="advanced">Advanced</h3>
+<ol>
+<li><p><strong>Tagging System:</strong> Some books have multiple genres, have won awards, are on
+a best-seller list, or have other unique identifying characteristics. Let&#39;s
+incorporate a <em>tagging system</em> that will allow us to represent all of these.
+Write functions <code>addTag</code> and <code>removeTag</code> that each accept a book and a <em>tag</em>
+as parameters, and either add tags or remove tags respectively.
+Considerations:</p>
+<ul>
+<li>If you included a <code>genre</code> key, replace it with a tag.</li>
+<li>What if you use <code>addTag</code> on a book that has no tags yet?</li>
+<li>What if you attempt to use <code>addTag</code> with the same tag (on the same book)
+multiple times? Should it be possible to have the same tag twice?</li>
+<li>Add some tags to multiple books, like &quot;bestseller&quot; or &quot;pulitzer&quot;.</li>
+<li>Extend</li>
+<li>Extend <code>searchBooks</code> to work with <code>tags</code>.</li>
+</ul>
+</li>
+<li><p>Let&#39;s revisit your <code>removeBooks</code> function: what would happen if you had two
+books with the same title, but different authors? Would your algorithm
+remove both books? This is a common problem that we usually solve by
+providing a <strong>unique identifier</strong> for each item.</p>
+<ul>
+<li>Modify all of your books to contain an <strong>id</strong> key with a unique value. This
+can be an integer or a unique string (like an ISBN).</li>
+<li>Change <code>removeBook</code> to use the book&#39;s <code>id</code> for lookups instead of its
+<code>title</code>.</li>
+</ul>
+</li>
+<li><p>Can you think of a way to write a more abstract <code>displayItem</code> function that
+works for books <strong>and</strong> movies (depending on how you have structured your
+objects, this may or may not work well)?</p>
+</li>
+<li><p>Write a more general <code>searchItems</code> function that accepts as parameters the
+query, items to search, <em>and an array of keys that should be searched</em>.
+Refactor <code>searchMovies</code> and <code>searchBooks</code> to use this function.</p>
+</li>
+</ol>

@@ -1,0 +1,58 @@
+<h1 id="warmup">Warmup</h1>
+<h2 id="instructions">Instructions</h2>
+<ol>
+<li>Start a new project for today by right-clicking
+<a href="https://github.com/jalehman/rp-starter/archive/master.zip">this link</a> and
+&quot;Save Link As...&quot; to your Desktop (or somewhere else). Don&#39;t forget to rename
+the folder to something meaningful!</li>
+<li>Find a partner (preferably one that you have not yet worked with), and work
+through the following exercises as a pair.</li>
+</ol>
+<h2 id="exercises">Exercises</h2>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">each</span>(<span class="hljs-params">coll, f</span>) </span>{
+  <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Array</span>.isArray(coll)) {
+    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">var</span> i = <span class="hljs-number">0</span>; i &lt; coll.length; i++) {
+      f(coll[i], i);
+    }
+  } <span class="hljs-decorator"><span class="hljs-keyword">else</span></span> {
+    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">var</span> key <span class="hljs-keyword">in</span> coll) {
+      f(coll[key], key);
+    }
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">map</span>(<span class="hljs-params">coll, f</span>) </span>{
+  <span class="hljs-built_in">var</span> acc = [];
+  <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">Array</span>.isArray(coll)) {
+    acc = {};
+  }
+  each(coll, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">element, key</span>) </span>{
+    acc[key] = f(element, key);
+  });
+  <span class="hljs-keyword">return</span> acc;
+}
+</code></pre>
+<ol>
+<li><p>Using the above version of <code>map</code>, write a function (you can call it anything,
+<em>e.g.</em> <code>g</code>) that takes an array as a parameter and <em>squares</em> all the numbers
+with <strong>even indices</strong> and <em>cubes</em> all of the numbers with <strong>odd indices</strong>.</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">g</span><span class="hljs-params">(<span class="hljs-keyword">array</span>)</span> <span class="hljs-comment">{
+ // your code here
+}</span>
+<span class="hljs-title">g</span><span class="hljs-params">([2, 7, 10, 5, 3, 22])</span>;</span> <span class="hljs-comment">// =&gt; [4, 343, 100, 125, 9, 10648]</span>
+</code></pre>
+</li>
+<li><p>Using the version of <code>each</code> shown above, write a function called <code>tupleize</code>
+that accepts an object as a parameter and converts it to an array of arrays,
+where each array element is a <em>tuple</em> of key/value pairs, <em>e.g.</em></p>
+<pre><code class="lang-js"><span class="hljs-selector-tag">function</span> <span class="hljs-selector-tag">tupleize</span>(object) {
+  <span class="hljs-comment">// your code here</span>
+}
+<span class="hljs-selector-tag">tupleize</span>({<span class="hljs-attribute">a</span>: <span class="hljs-number">1</span>, <span class="hljs-attribute">b</span>: <span class="hljs-string">"hello"</span>, <span class="hljs-attribute">c</span>: true, <span class="hljs-attribute">d</span>: <span class="hljs-number">34</span>});
+<span class="hljs-comment">// =&gt; [["a", 1], ["b", "hello"], ["c", true], ["d", 34]]</span>
+</code></pre>
+</li>
+<li><p>Write a function called <code>detupleize</code> that converts the output of the
+<code>tupleize</code> function back into an object.</p>
+</li>
+</ol>

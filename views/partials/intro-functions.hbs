@@ -1,0 +1,151 @@
+<h1 id="introduction-to-functions">Introduction to Functions</h1>
+<p><strong>Before getting started, make sure that you&#39;re familiar with
+<a href="/editor">Sublime Text</a>. Make sure you download a new project for today&#39;s
+lesson (explained in the previous link).</strong></p>
+<h2 id="lesson">Lesson</h2>
+<iframe src="https://docs.google.com/presentation/d/1u0T12ffroqJJ58ELC4pzUdd0Nf4ulq9_3fxsCiqw8bg/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+<h2 id="exercises">Exercises</h2>
+<h3 id="basic-requirements">Basic Requirements</h3>
+<ol>
+<li><p>In the console on the blank <code>index.html</code> page, try the following and verify
+that the results match your expectations:</p>
+<pre><code class="lang-js">square(<span class="hljs-number">10</span>) + <span class="hljs-number">2</span><span class="hljs-comment">;</span>
+square(<span class="hljs-number">100</span>) + square(<span class="hljs-number">77</span>)<span class="hljs-comment">;</span>
+square(<span class="hljs-number">8</span> / <span class="hljs-number">2</span>)
+square(<span class="hljs-number">2</span> + <span class="hljs-number">17</span>)<span class="hljs-comment">;</span>
+square(<span class="hljs-name">square</span>(<span class="hljs-number">15</span>))<span class="hljs-comment">;</span>
+</code></pre>
+</li>
+<li><p>Write a sentence in plain English describing how <code>square(square(15))</code> is
+evaluated.</p>
+</li>
+<li><p>Rename the parameter to <code>square</code> in your <code>main.js</code> file to <code>monkey</code>, and
+rename the uses of that parameter in the body to <code>monkey</code> as well. Will the
+function <code>square</code> still work? Why or why not?</p>
+</li>
+<li><p>What is wrong with the following definitions of <code>square</code>? Write a sentence or
+two describing the issue(s); then, try copying the erroneous examples into a
+console one-at-a-time and observing the error(s) generated (you may have to
+attempt to invoke the functions to see the error). What errors are produced
+(if any) for each erroneous version? Do the errors make sense?</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">square</span><span class="hljs-params">(monkey)</span> </span>{
+  <span class="hljs-keyword">return</span> x * x;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">square</span><span class="hljs-params">(5)</span> </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-number">5</span> * <span class="hljs-number">5</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">square</span><span class="hljs-params">(<span class="hljs-string">"x"</span>)</span> </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-string">"x"</span> * <span class="hljs-string">"x"</span>;
+}
+</code></pre>
+</li>
+<li><p>Fix the invalid syntax in the following functions (you can copy and paste these
+invalid definitions into <code>main.js</code> and then edit them there):</p>
+<pre><code class="lang-js">func square1(<span class="hljs-keyword">x</span> {
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">x</span> * <span class="hljs-keyword">x</span><span class="hljs-comment">;</span>
+}
+
+functionsquare2 <span class="hljs-keyword">x</span>)
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">x</span> * <span class="hljs-keyword">x</span><span class="hljs-comment">;</span>
+}
+
+function (<span class="hljs-keyword">x</span>) square3 {
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">x</span> * <span class="hljs-keyword">x</span><span class="hljs-comment">;</span>
+</code></pre>
+</li>
+<li><p>The following functions exhibit poor style -- fix these issues using the
+original version of <code>square</code> as a reference.</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">square</span><span class="hljs-params">(x)</span></span>{<span class="hljs-keyword">return</span> x*x;}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">square</span> <span class="hljs-params">(x)</span> </span>{ <span class="hljs-keyword">return</span> x *x;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">square</span><span class="hljs-params">(x)</span>
+</span>{
+<span class="hljs-keyword">return</span> x * x;
+}
+</code></pre>
+</li>
+<li><p>Complete the function <code>cube</code> that returns the cube of x:</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">cube</span><span class="hljs-params">(x)</span> </span>{
+ <span class="hljs-comment">// your code here</span>
+}
+</code></pre>
+</li>
+<li><p>Complete the function <code>fullName</code> that should take two parameters, <code>firstName</code>
+and <code>lastName</code>, and returns the <code>firstName</code> and <code>lastName</code> concatenated
+together with a space in between.</p>
+<pre><code class="lang-js"><span class="hljs-comment">// don't forget the parameters!</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fullName</span><span class="hljs-params">()</span> </span>{
+ <span class="hljs-comment">// your code here</span>
+}
+fullName(<span class="hljs-string">"John"</span>, <span class="hljs-string">"Doe"</span>) <span class="hljs-comment">// =&gt; "John Doe"</span>
+</code></pre>
+</li>
+<li><p>Write a function <code>average</code> that takes two numbers as input (parameters), and
+returns the average of those numbers.</p>
+</li>
+<li><p>Write a function <code>greeter</code> that takes a name as an argument and <em>greets</em>
+that name by returning something along the lines of <code>&quot;Hello, &lt;name&gt;!&quot;</code></p>
+</li>
+<li><p>Using the document found at <a href="http://www.gbcnv.edu/documents/ASC/docs/00000005.pdf" target="_blank">this link</a>, translate the first page of geometric
+formulas into JavaScript functions.</p>
+<p>As an example, a function to compute the perimeter of a rectangle might look
+like this:</p>
+<pre><code class="lang-js">function perimeterRect(<span class="hljs-keyword">l</span>, <span class="hljs-keyword">w</span>) {
+  <span class="hljs-keyword">return</span> <span class="hljs-number">2</span> * (<span class="hljs-keyword">l</span> + <span class="hljs-keyword">w</span>)<span class="hljs-comment">;</span>
+}
+</code></pre>
+<p><strong>NOTE:</strong> JavaScript provides some nifty mathematical functions and
+constants built into the language that you&#39;ll need for this exercise. The
+two that we&#39;ll be making use of are:</p>
+<pre><code class="lang-js">Math.<span class="hljs-built_in">PI</span>; <span class="hljs-comment">// =&gt; 3.141592653589793</span>
+Math.<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">256</span>); <span class="hljs-comment">// =&gt; 16</span>
+</code></pre>
+<p>To test your answers, you&#39;ll need to:</p>
+<ol>
+<li>Save the JavaScript file that you enter your code into,</li>
+<li>Reload the corresponding <code>index.html</code> file (the one in the same directory as
+the <code>main.js</code> file that your code is in),</li>
+<li>Call the function with arguments in the console to see the result, e.g.
+<code>perimeterRect(2, 6)</code>.</li>
+<li>Eventually, you may want to verify that the output is correct. Google is a
+great tool for this:</li>
+</ol>
+<p><img src="img/google-geometry-answer.gif" alt="google geometry answer"></p>
+</li>
+</ol>
+<h3 id="more-practice">More Practice</h3>
+<p>Translate the rest of the geometric formulas found <a href="http://www.gbcnv.edu/documents/ASC/docs/00000005.pdf" target="_blank">here</a> into JavaScript functions.</p>
+<h3 id="advanced">Advanced</h3>
+<ol>
+<li><p>Compound interest can be calculated with the formula:</p>
+<p> <img src="img/future-value.png" alt="future value"></p>
+<ul>
+<li><em>F</em>: future value</li>
+<li><em>P</em>: present value</li>
+<li><em>i</em>: nominal interest rate</li>
+<li><em>n</em>: compounding frequency</li>
+<li><em>t</em>: time</li>
+</ul>
+<p>Write a function <code>futureValue</code> that can be used to calculate the <em>future value</em>
+of a quantity of money using compound interest.</p>
+<p>Use the function to calculate what the future value of $1700 (<em>P</em> = 1700)
+deposited in a bank that pays an annual interest rate of 4.7% (<em>i</em> = 0.047),
+compounded quarterly (<em>n</em> = 4) after 6 years (<em>t</em> = 6) (you can use <code>Math.pow</code>
+to do exponentiation).</p>
+</li>
+<li><p>Write a <code>power</code> function that accepts the parameters <code>base</code> and <code>exponent</code>
+and returns the result. Replace <code>square</code> and <code>cube</code> with the <code>power</code> function
+you just wrote. Do not use <code>Math.pow</code>.</p>
+</li>
+<li><p>Write your own square-root function called <code>sqrt</code> that accepts a <code>number</code>
+parameter and returns an approximate square root. Square-root approximations
+make use of averages. Be sure to use the <code>average</code> function you previously
+wrote. The first version of your square root function should perform no more
+than 3 successive averages.</p>
+</li>
+</ol>

@@ -1,0 +1,57 @@
+<h1 id="warmup">Warmup</h1>
+<h2 id="instructions">Instructions</h2>
+<ol>
+<li>Start a new project for today by right-clicking
+<a href="https://github.com/jalehman/rp-starter/archive/master.zip">this link</a> and
+&quot;Save Link As...&quot; to your Desktop (or somewhere else). Don&#39;t forget to rename
+the folder to something meaningful!</li>
+<li>Find a partner (preferably one that you have not yet worked with), and work
+through the following exercises as a pair.</li>
+</ol>
+<h2 id="exercises">Exercises</h2>
+<ol>
+<li><p>What does <code>map</code> do? Discuss with your partner until you are confident that
+you understand the purpose of the <code>map</code> abstraction. Try to describe <em>what</em>
+map does, not <em>how</em> it does what it does.</p>
+</li>
+<li><p>Read and experiment with the code below to figure out what it does and how it
+works.</p>
+<pre><code class="lang-js"><span class="hljs-built_in">var</span> coordinates = [
+  [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>],
+  [<span class="hljs-number">4</span>, <span class="hljs-number">-2</span>],
+  [<span class="hljs-number">5</span>, <span class="hljs-number">4</span>],
+  [<span class="hljs-number">0</span>, <span class="hljs-number">7</span>],
+  [<span class="hljs-number">-1</span>, <span class="hljs-number">1</span>]
+];
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">coordinatesToObjects</span>(<span class="hljs-params">coordinates</span>) </span>{
+  <span class="hljs-built_in">var</span> objects = [];
+  each(coordinates, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">coord</span>) </span>{
+    objects.push({
+      <span class="hljs-attribute">x</span>: coord[<span class="hljs-number">0</span>],
+      <span class="hljs-attribute">y</span>: coord[<span class="hljs-number">1</span>]
+    });
+  });
+  <span class="hljs-keyword">return</span> objects;
+}
+
+coordinatesToObjects(coordinates); <span class="hljs-comment">// =&gt; ?</span>
+</code></pre>
+<p>Would it make sense to use <code>map</code> instead of <code>each</code> in <code>coordinatesToObjects</code>?
+Why or why not? If so, refactor <code>coordinatesToObjects</code> to use <code>map</code> instead
+of <code>each</code>.</p>
+</li>
+<li><p>This is the <code>factorial</code> function from the first week, that computes the
+factorial of its parameter <code>n</code>:</p>
+<pre><code class="lang-js">function factorial(<span class="hljs-keyword">n</span>) {
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">n</span> &lt; 2) {
+    <span class="hljs-keyword">return</span> 1;
+  }
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">n</span> * factorial(<span class="hljs-keyword">n</span> - 1);
+}
+</code></pre>
+<p>Using <code>map</code> and the <code>factorial</code> function, write a function <code>factorials</code> that
+accepts an array of numbers as a parameter and outputs an array of the
+<em>factorial</em> of each of those numbers.</p>
+</li>
+</ol>

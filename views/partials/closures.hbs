@@ -1,0 +1,196 @@
+<h1 id="closures">Closures</h1>
+<h2 id="lesson">Lesson</h2>
+<iframe src="https://docs.google.com/presentation/d/16u1XAV0c2QyOT2GEF7LgUE8jfSXqHdRhx9er0NK2Yxg/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+<h2 id="exercises">Exercises</h2>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makeAccount</span>(<span class="hljs-params">initial</span>) </span>{
+  <span class="hljs-built_in">var</span> balance = initial;
+
+  <span class="hljs-keyword">return</span> {
+    <span class="hljs-attribute">withdraw</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">amount</span>) </span>{
+      <span class="hljs-keyword">if</span> (balance - amount &gt;= <span class="hljs-number">0</span>) {
+        balance = balance - amount;
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"Here’s your money: $"</span> + amount;
+      }
+      <span class="hljs-keyword">return</span> <span class="hljs-string">"Insufficient funds."</span>;
+    },
+    <span class="hljs-attribute">deposit</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">amount</span>) </span>{
+      balance = balance + amount;
+      <span class="hljs-keyword">return</span> <span class="hljs-string">"Your balance is: $"</span> + balance;
+    }
+  };
+}
+</code></pre>
+<h3 id="basic-requirements">Basic Requirements</h3>
+<ol>
+<li><p>Let&#39;s make a counter using closures. For our purposes, a <em>counter</em> is simply
+a function that, when invoked, returns a number that is one higher than it
+used to be. For example, this is the behavior that we want:</p>
+<pre><code class="lang-js">counter(); <span class="hljs-comment">// =&gt; 1</span>
+counter(); <span class="hljs-comment">// =&gt; 2</span>
+counter(); <span class="hljs-comment">// =&gt; 3</span>
+</code></pre>
+<p>We could implement this using the global scope like this:</p>
+<pre><code class="lang-js">var <span class="hljs-built_in">count</span> = <span class="hljs-number">0</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span></span> counter() {
+  <span class="hljs-built_in">count</span> = <span class="hljs-built_in">count</span> + <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">count</span>;
+}
+</code></pre>
+<p>But now that we know about closures, we can do something way cooler. Finish
+the implementation of <code>makeCounter</code> below so that we can make <em>multiple</em>
+counters, each with their own internal <code>count</code> using <strong>closures</strong>.</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makeCounter</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-comment">// YOUR CODE HERE</span>
+}
+
+<span class="hljs-keyword">var</span> counter1 = makeCounter();
+<span class="hljs-keyword">var</span> counter2 = makeCounter();
+counter1(); <span class="hljs-comment">// =&gt; 1</span>
+counter1(); <span class="hljs-comment">// =&gt; 2</span>
+counter2(); <span class="hljs-comment">// =&gt; 1</span>
+counter1(); <span class="hljs-comment">// =&gt; 3</span>
+counter2(); <span class="hljs-comment">// =&gt; 2</span>
+</code></pre>
+</li>
+<li><p>Update <code>makeCounter</code> so that, instead of always starting from zero, you can
+start from <em>any number, e.g.:</em></p>
+<pre><code class="lang-js"><span class="hljs-variable"><span class="hljs-keyword">var</span> counter</span> = makeCounter(<span class="hljs-number">100</span>);
+counter(); <span class="hljs-comment">// =&gt; 101;</span>
+</code></pre>
+</li>
+<li><p>One way we can use closures is as functions that construct other functions.
+Consider the numerous examples of exponentiation functions that we&#39;ve
+created, <em>e.g.</em> <code>square</code> and <code>cube</code>. The following function <code>pow</code> is
+incomplete:</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">pow</span><span class="hljs-params">(exponent)</span> </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(???)</span> </span>{
+    <span class="hljs-keyword">return</span> ???
+  }
+}
+</code></pre>
+<p>Fill in the <code>???</code> so that it works like this:</p>
+<pre><code class="lang-js">var <span class="hljs-built_in">square</span> = <span class="hljs-built_in">pow</span>(<span class="hljs-number">2</span>);
+var <span class="hljs-built_in">cube</span> = <span class="hljs-built_in">pow</span>(<span class="hljs-number">3</span>);
+var power4 = <span class="hljs-built_in">pow</span>(<span class="hljs-number">4</span>);
+
+<span class="hljs-built_in">square</span>(<span class="hljs-number">5</span>); <span class="hljs-comment">// =&gt; 25</span>
+<span class="hljs-built_in">cube</span>(<span class="hljs-number">3</span>); <span class="hljs-comment">// =&gt; 27</span>
+power4(<span class="hljs-number">4</span>); <span class="hljs-comment">// =&gt; 256</span>
+</code></pre>
+</li>
+<li><p>Modify the <code>makeAccount</code> function from the lecture so that the returned
+object contains an additional key called <code>checkBalance</code>, the value of which
+is a <em>function</em> that takes <em>no arguments</em> and returns a string representing
+the current balance. You should be able to use it like this:</p>
+<pre><code class="lang-js">var account = makeAccount(<span class="hljs-number">100</span>)<span class="hljs-comment">;</span>
+account.checkBalance()<span class="hljs-comment">; // =&gt; "Your balance is: $100"</span>
+account.deposit(<span class="hljs-number">50</span>)<span class="hljs-comment">;</span>
+account.checkBalance()<span class="hljs-comment">; // =&gt; "Your balance is: $150"</span>
+</code></pre>
+</li>
+<li><p>Let&#39;s revisit the <code>counter</code> exercise. Currently, <code>makeCounter</code> only allows us
+to count <strong>up</strong> -- what if we want to count down too? Modify <code>makeCounter</code> so
+that it returns an <em>object</em> that contains two keys: <code>up</code> and <code>down</code>, each of
+which have functions as values. <code>up</code> should make the count <em>increase</em>, and
+<em>down</em> should make the count <em>decrease</em>:</p>
+<pre><code class="lang-js"><span class="hljs-variable"><span class="hljs-keyword">var</span> counter</span> = makeCounter(<span class="hljs-number">0</span>);
+counter.up(); <span class="hljs-comment">// =&gt; 1</span>
+counter.up(); <span class="hljs-comment">// =&gt; 2</span>
+counter.down(); <span class="hljs-comment">// =&gt; 1</span>
+counter.down(); <span class="hljs-comment">// =&gt; 0</span>
+</code></pre>
+</li>
+<li><p>Give your counter a <code>reset</code> capability as well, that resets the count back to
+its initial value.</p>
+<pre><code class="lang-js"><span class="hljs-variable"><span class="hljs-keyword">var</span> counter</span> = makeCounter(<span class="hljs-number">5</span>);
+counter.up(); <span class="hljs-comment">// =&gt; 6</span>
+counter.up(); <span class="hljs-comment">// =&gt; 7</span>
+counter.reset(); <span class="hljs-comment">// =&gt; 5</span>
+</code></pre>
+</li>
+</ol>
+<h3 id="more-practice">More Practice</h3>
+<h4 id="closures">Closures</h4>
+<p>Remember the guessing game from the first week? When we wrote the first version
+of the game, we didn&#39;t know about closures and stored all of our state
+(variables) in the <em>global scope</em>. Rewrite the guessing game to take advantage
+of closures so that you can create multiple games. Here is some starter code:</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">randInt</span>(<span class="hljs-params">n</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * (n + <span class="hljs-number">1</span>));
+}
+
+<span class="hljs-keyword">var</span> upperBound = <span class="hljs-number">5</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">guessMyNumber</span>(<span class="hljs-params">n</span>) </span>{
+  <span class="hljs-keyword">if</span> (n &gt; upperBound) {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"Out of bounds! Please try a number between 0 and "</span> + upperBound + <span class="hljs-string">"."</span>;
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (n === randInt(upperBound)) {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"You guessed my number!"</span>;
+  }
+  <span class="hljs-keyword">return</span> <span class="hljs-string">"Nope! That wasn't it!"</span>;
+}
+</code></pre>
+<p>You will need to define a function <code>makeGame</code>, and at the minimum, you should be
+able to play the game like this:</p>
+<pre><code class="lang-js">var game = makeGame<span class="hljs-comment">(10)</span>; <span class="hljs-comment">// 10 is the upper bound</span>
+game<span class="hljs-comment">(2)</span>; <span class="hljs-comment">// =&gt; "Nope! That wasn't it!"</span>
+game<span class="hljs-comment">(7)</span>; <span class="hljs-comment">// =&gt; "Nope! That wasn't it!"</span>
+game<span class="hljs-comment">(5)</span>; <span class="hljs-comment">// =&gt; "You guessed my number!"</span>
+</code></pre>
+<p>Ways to improve the game include:</p>
+<ul>
+<li>A way to &quot;give up&quot; and have the game reset, <em>e.g.</em> <code>game.giveUp()</code>.</li>
+<li>Keep track of how many guesses have been made, and provide a way to access
+them, <em>e.g.</em> <code>game.numGuesses()</code>.</li>
+<li>See the original exercise for the rest of the improvements!</li>
+</ul>
+<h4 id="higher-order-functions">Higher Order Functions</h4>
+<ol>
+<li><p>Write a function <code>someEven</code> that, given an array of numbers as an argument,
+returns <code>true</code> if <strong>at least one</strong> of the numbers is even. Use <code>reduce</code> to
+complete this exercise.</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">someEven</span><span class="hljs-params">(numbers)</span> </span>{
+  <span class="hljs-comment">// YOUR CODE HERE</span>
+}
+someEven([<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>]); <span class="hljs-comment">// =&gt; true</span>
+someEven([<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>]); <span class="hljs-comment">// =&gt; false</span>
+</code></pre>
+</li>
+<li><p>Write the functions <code>someOdd</code>, <code>somePositive</code>, and <code>someNegative</code> that work
+similarly to <code>someEven</code>.</p>
+</li>
+<li><p>Using <code>reduce</code>, write a function <code>some</code> that accepts an array as its first
+parameter, and a <em>predicate</em> (a function that returns <code>true</code> or <code>false</code>) as
+its second parameter. If the predicate returns <code>true</code> for <em>any</em> of the
+elements in the array, <code>some</code> should return <code>true</code>.</p>
+</li>
+<li><p>Using <code>some</code>, determine if <em>some</em> of the words in the following string have a
+length greater than <code>4</code>:</p>
+<pre><code class="lang-js"><span class="hljs-comment">"The quick brown fox jumps over the lazy dog."</span>
+</code></pre>
+</li>
+</ol>
+<h3 id="advanced">Advanced</h3>
+<p>Most banks keep records of the transactions that take place in an account.
+Implement a <em>transaction log</em> that keeps track of all transactions that occur in
+a given account.</p>
+<p>A single <em>transaction</em> should probably be represented by an object, for instance:</p>
+<pre><code class="lang-js">{<span class="hljs-string">type:</span> <span class="hljs-string">"deposit"</span>, <span class="hljs-string">amount:</span> <span class="hljs-number">100</span>, <span class="hljs-string">before:</span> <span class="hljs-number">110</span>, <span class="hljs-string">after:</span> <span class="hljs-number">210</span>, <span class="hljs-string">status:</span> <span class="hljs-string">"approved"</span>}
+{<span class="hljs-string">type:</span> <span class="hljs-string">"withdrawal"</span>, <span class="hljs-string">amount:</span> <span class="hljs-number">5000</span>, <span class="hljs-string">before:</span> <span class="hljs-number">210</span>, <span class="hljs-string">after:</span> <span class="hljs-number">210</span>, <span class="hljs-string">status:</span> <span class="hljs-string">"denied"</span>}
+</code></pre>
+<p>Modify the return value of your <code>makeAccount</code> function to include the capability
+to view the last <code>n</code> transactions with a function called <code>transactionHistory</code>:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> account = makeAccount(<span class="hljs-number">100</span>);
+// ...
+account.transactionHistory(<span class="hljs-number">2</span>); // =&gt; [<span class="hljs-meta">{...}</span>, <span class="hljs-meta">{...}</span>]
+</code></pre>
+<p>Other ideas to try include:</p>
+<ul>
+<li>Implement a way to get the last <code>n</code> <em>withdrawals</em> or <em>deposits</em></li>
+<li>Implement a function that determines the average withdrawal and deposit
+amounts.</li>
+<li>Learn about the JavaScript <code>Date</code> object (try typing <code>new Date()</code> into a
+console) and incorporate <em>time</em> into the transactions.</li>
+</ul>

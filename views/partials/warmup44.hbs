@@ -1,0 +1,53 @@
+<h1 id="warmup">Warmup</h1>
+<h2 id="instructions">Instructions</h2>
+<ol>
+<li>Start a new project for today by right-clicking
+<a href="https://github.com/jalehman/rp-starter/archive/master.zip">this link</a> and
+&quot;Save Link As...&quot; to your Desktop (or somewhere else). Don&#39;t forget to rename
+the folder to something meaningful!</li>
+<li>Find a partner (preferably one that you have not yet worked with), and work
+through the following exercises as a pair.</li>
+</ol>
+<h2 id="exercises">Exercises</h2>
+<ol>
+<li><p>Write a function called <code>findFirstOdd</code> that, when given an array of numbers
+as a parameter, returns the <em>first</em> odd number in the array if there are any
+-- otherwise it returns <code>undefined</code>.</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">findFirstOdd</span><span class="hljs-params">(numbers)</span> </span>{
+  <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> your code here</span>
+}
+findFirstOdd([<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>, <span class="hljs-number">5</span>]); <span class="hljs-comment">// =&gt; 5</span>
+findFirstOdd([<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>]); <span class="hljs-comment">// =&gt; undefined</span>
+</code></pre>
+</li>
+<li><p>Write a function <code>findOlderThanThirty</code> that, given an array of objects
+representing people (as shown below), returns the first person that is older
+than 30:</p>
+<pre><code class="lang-js"><span class="hljs-built_in">var</span> people = [
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Alyssa"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"P."</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Hacker"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">26</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Louis"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Reasoner"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">21</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Ben"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Bitdiddle"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">34</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Eva"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"Lu"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Ator"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">40</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Lem"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"E."</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Tweakit"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">45</span>}
+];
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">findOlderThanThirty</span>(<span class="hljs-params">people</span>) </span>{
+  <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> your code here</span>
+}
+findOlderThanThirty(people);
+<span class="hljs-comment">// =&gt; {name: {first: "Ben", last: "Bitdiddle"}, age: 34}</span>
+</code></pre>
+</li>
+<li><p>Write a function called <code>findEvenLengthThatStartsWithA</code> that, when given an
+array of <em>strings</em> as a parameter, returns the first string with an even
+length <em>that starts with the letter &quot;a&quot;</em>.</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">findEvenLengthThatStartsWithA</span><span class="hljs-params">(strings)</span> </span>{
+  <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> your code here</span>
+}
+findEvenLengthThatStartsWithA([<span class="hljs-string">"dog"</span>, <span class="hljs-string">"apple"</span>, <span class="hljs-string">"aardvark"</span>, <span class="hljs-string">"aquarium"</span>]); <span class="hljs-comment">// =&gt; "aardvark"</span>
+</code></pre>
+</li>
+<li><p>Can you spot the pattern? Write a function called <code>find</code> that can be used to
+implement any of the above functions.</p>
+</li>
+</ol>

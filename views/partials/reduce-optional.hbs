@@ -1,0 +1,58 @@
+<h1 id="improved-reduce-optional-starting-point-optional-parameters">Improved <code>reduce</code>: Optional Starting Point &amp; Optional Parameters</h1>
+<h2 id="lesson">Lesson</h2>
+<iframe src="https://docs.google.com/presentation/d/1kt6NI97HrZ4nKrUbXqDI2eHsN7wutuJ2VVjF1T1Rzxs/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+<h2 id="exercises">Exercises</h2>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">each</span><span class="hljs-params">(coll, f)</span> </span>{
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">Array</span>.isArray(coll)) {
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; coll.length; i++) {
+      f(coll[i], i);
+    }
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> key in coll) {
+      f(coll[key], key);
+    }
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">reduce</span><span class="hljs-params">(array, f, acc)</span> </span>{
+  <span class="hljs-keyword">if</span> (acc === undefined) {
+    acc = <span class="hljs-keyword">array</span>[<span class="hljs-number">0</span>];
+    <span class="hljs-keyword">array</span> = <span class="hljs-keyword">array</span>.slice(<span class="hljs-number">1</span>);
+  }
+  each(<span class="hljs-keyword">array</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(element, i)</span> </span>{
+    acc = f(acc, element, i);
+  });
+  <span class="hljs-keyword">return</span> acc;
+}
+</code></pre>
+<h3 id="basic-requirements">Basic Requirements</h3>
+<ol>
+<li><p>The <code>factorial</code> function can be written using <code>reduce</code> and <code>range</code>; and
+furthermore, this is a case where the initial value can be omitted. Write
+<code>factorial</code> using our updated version of <code>reduce</code> and omit the third
+argument.</p>
+<p><strong>HINT:</strong> Remember that the <code>factorial</code> of a number <code>n</code> is the <em>product</em> of
+all of the numbers from <code>1</code> to <code>n</code>, and the <code>range</code> function (shown below in
+problem 3) produces an array of numbers from <code>start</code> to <code>end</code>...</p>
+</li>
+<li><p>Use the updated version of <code>reduce</code> to write a function <code>max</code> that computes
+the maximum number in an array of numbers. Be sure to <strong>not</strong> include the
+third argument (the starting point).</p>
+</li>
+<li><p>The <code>range</code> function that we&#39;ve explored so far looks like this:</p>
+<pre><code class="lang-js">function range(start, <span class="hljs-keyword">end</span>) {
+  var acc = []<span class="hljs-comment">;</span>
+  <span class="hljs-keyword">for</span> (var i = start<span class="hljs-comment">; i &lt; end; i++) {</span>
+    acc.push(i)<span class="hljs-comment">;</span>
+  }
+  <span class="hljs-keyword">return</span> acc<span class="hljs-comment">;</span>
+}
+</code></pre>
+<p>Modify <code>range</code> so that the <code>end</code> parameter is optional, and in the event that
+it is not supplied, <code>range</code> computes a range from <code>0</code> to <code>start</code>.</p>
+</li>
+</ol>
+<h3 id="advanced">Advanced</h3>
+<p>There is a way to implement <code>reduce</code> such that it works on both arrays <strong>and</strong>
+objects. You&#39;ll likely want to make use of <code>Object.keys</code> function.</p>

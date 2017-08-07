@@ -1,0 +1,72 @@
+<h1 id="self-challenge">Self Challenge</h1>
+<h2 id="instructions">Instructions</h2>
+<ol>
+<li>First, start a new project for the warmup by right-clicking
+<a href="https://github.com/jalehman/rp-starter/archive/master.zip">this link</a> and &quot;Save
+Link As...&quot; to your Desktop (or somewhere else).</li>
+<li>Complete this exercise <strong>individually, not in pairs</strong>.</li>
+<li><strong>If you need help understanding the instructions, please ask for help! The
+instructor and TA(s) are happy to help clarify the instructions.</strong></li>
+<li><strong>Attempt to complete each exercise -- if you are working on an exercise for
+longer than ten minutes, move on to the next one.</strong></li>
+<li>Afterwards, please <strong>submit your answers</strong> via Slack (we&#39;ll cover how to do
+this after the time is up)!</li>
+</ol>
+<h2 id="exercises">Exercises</h2>
+<ol>
+<li><p>Using your knowledge of JavaScript data types (<em>i.e.</em> numbers, strings,
+booleans, arrays and objects), represent <a href="https://en.wikipedia.org/wiki/Solar_System">our solar system</a> as data (<strong>hint:</strong>
+the link is to a Wikipedia article &#x2013; you should use it). You can include as
+many attributes as you like, but the following are required:</p>
+<ul>
+<li>Age of the Solar System</li>
+<li>Distance from the center of the galaxy</li>
+<li>Number of known comets</li>
+<li><a href="https://en.wikipedia.org/wiki/Solar_System#Inner_Solar_System">The Planets</a><ul>
+<li>Name</li>
+<li>Size (in Earth-masses)</li>
+<li>Distance of each from sun</li>
+<li>Number of known satellites (orbiting bodies, <em>e.g</em> moons)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Complete the below function called <code>range</code> that takes two integers as parameters,
+<code>start</code> and <code>end</code>, and returns an <em>array</em> containing all the whole numbers between
+them <strong>starting</strong> with <code>start</code> and <strong>up to</strong> <code>end</code> (you can use a <code>for</code> loop,
+<code>while</code> loop, <code>each</code>, or repetition with function invocation). The function
+definition should look like this:</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">range</span><span class="hljs-params">(start, end)</span> </span>{
+  <span class="hljs-comment">// YOUR CODE HERE</span>
+}
+</code></pre>
+<p>You should be able to use it like so:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">range</span>(<span class="hljs-number">0</span>, <span class="hljs-number">4</span>); <span class="hljs-comment">// =&gt; [0, 1, 2, 3]</span>
+<span class="hljs-keyword">range</span>(<span class="hljs-number">2</span>, <span class="hljs-number">7</span>); <span class="hljs-comment">// =&gt; [2, 3, 4, 5, 6]</span>
+<span class="hljs-keyword">range</span>(<span class="hljs-number">10</span>, <span class="hljs-number">10</span>); <span class="hljs-comment">// =&gt; []</span>
+<span class="hljs-keyword">range</span>(<span class="hljs-number">10</span>, <span class="hljs-number">2</span>); <span class="hljs-comment">// =&gt; []</span>
+</code></pre>
+<p>After you write your function, you can test it using the above inputs to
+make sure that it behaves correctly.</p>
+</li>
+<li><p>Given the following array of <code>people</code>, write a function that, when passed
+<code>people</code> as a parameter, returns the <strong>person</strong> (that is, your function
+should return an object) with the <em>longest name</em> (first, middle &amp; last).</p>
+<pre><code class="lang-js"><span class="hljs-built_in">var</span> people = [
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Alyssa"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"P."</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Hacker"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">26</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Ben"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Bitdiddle"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">34</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Eva"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"Lu"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Ator"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">40</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Lem"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"E."</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Tweakit"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">45</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Louis"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Reasoner"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">21</span>}
+];
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">longestName</span>(<span class="hljs-params">people</span>) </span>{
+  <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> Your code here</span>
+}
+longestName(people);
+<span class="hljs-comment">// =&gt; {name: {first: "Alyssa", middle: "P.", last: "Hacker"}, age: 26}</span>
+</code></pre>
+<p><strong>HINT:</strong> It might be helpful to have a <code>fullName</code> function that, when given
+a person as a parameter, returns a person&#39;s full name.</p>
+</li>
+</ol>

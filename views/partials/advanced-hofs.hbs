@@ -1,0 +1,184 @@
+<h1 id="advanced-higher-order-functions">Advanced Higher Order Functions</h1>
+<h2 id="lesson">Lesson</h2>
+<iframe src="https://docs.google.com/presentation/d/1G1SbBimDsIf-MrOELlFi5_NnrYTwrtTgsdrH-TjtB5A/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+<h2 id="exercises">Exercises</h2>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">each</span>(<span class="hljs-params">coll, f</span>) </span>{
+  <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Array</span>.isArray(coll)) {
+    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">var</span> i = <span class="hljs-number">0</span>; i &lt; coll.length; i++) {
+      f(coll[i], i);
+    }
+  } <span class="hljs-decorator"><span class="hljs-keyword">else</span></span> {
+    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">var</span> key <span class="hljs-keyword">in</span> coll) {
+      f(coll[key], key);
+    }
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">map</span>(<span class="hljs-params">coll, f</span>) </span>{
+  <span class="hljs-built_in">var</span> acc = [];
+  <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">Array</span>.isArray(coll)) {
+    acc = {};
+  }
+  each(coll, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value, key</span>) </span>{
+    acc[key] = f(value, key);
+  });
+  <span class="hljs-keyword">return</span> acc;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">reduce</span>(<span class="hljs-params">coll, f, acc</span>)</span>{
+  <span class="hljs-keyword">if</span> (acc === <span class="hljs-literal">undefined</span>){
+    acc = coll[<span class="hljs-number">0</span>];
+    coll = coll.slice(<span class="hljs-number">1</span>);
+  }
+​
+  each(coll, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">val, i</span>)</span>{
+    acc = f(acc, val, i);
+  });
+​
+  <span class="hljs-keyword">return</span> acc;
+}
+</code></pre>
+<h3 id="basic-requirements">Basic Requirements</h3>
+<ol>
+<li><p>Using our updated version of <code>each</code>, write the following functions:</p>
+<ul>
+<li><code>values</code>: accepts an object as a parameter, and outputs an array of the
+object&#39;s <em>values</em>.</li>
+<li><code>keys</code>: accepts an object as a parameter, and outputs an array of the
+object&#39;s <em>keys</em>.</li>
+</ul>
+</li>
+<li><p>Write a function called <code>incrementValues</code> that accepts an object as a
+parameter, and outputs an object with all of its numeric values incremented
+by one. You&#39;ll want to use the updated version of <code>map</code> for this, and you
+will need to check the type of each value to determine whether or not it
+should be incremented.</p>
+<p><strong>HINT:</strong> Try entering the following expressions in to your console:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">typeof</span> <span class="hljs-string">"hello"</span>; <span class="hljs-comment">// =&gt; "string"</span>
+<span class="hljs-keyword">typeof</span> <span class="hljs-number">1</span>; <span class="hljs-comment">// =&gt; "number"</span>
+<span class="hljs-keyword">typeof</span> <span class="hljs-literal">true</span>; <span class="hljs-comment">// =&gt; "boolean"</span>
+</code></pre>
+</li>
+<li><p>The <code>factorial</code> function can be written using <code>reduce</code>; and furthermore, this
+is a case where the initial value can be omitted. Write <code>factorial</code> using our
+updated version of <code>reduce</code> and omit the third argument.</p>
+</li>
+<li><p>Write a version of <code>filter</code> that works on arrays <strong>and</strong> objects; then, use
+your updated version of <code>filter</code> to filter an object with values of mixed
+types to an object with <em>only</em> numeric values. You should be able to use your
+modified version of <code>filter</code> as follows:</p>
+<pre><code class="lang-js">filter({<span class="hljs-attribute">a</span>: <span class="hljs-number">1</span>, <span class="hljs-attribute">b</span>: <span class="hljs-string">"dog"</span>, <span class="hljs-attribute">c</span>: <span class="hljs-literal">true</span>}, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">typeof</span> value === <span class="hljs-string">"number"</span>;
+});
+<span class="hljs-comment">// =&gt; {a: 1}</span>
+</code></pre>
+</li>
+</ol>
+<h3 id="more-practice">More Practice</h3>
+<ol>
+<li><p>Write a function called <code>select</code> that, given an object and an array of
+strings representing keys, returns a new object consisting of just the keys
+(and values) specified in the array of strings.</p>
+<pre><code class="lang-js"><span class="hljs-selector-tag">function</span> <span class="hljs-selector-tag">select</span>(object, keys) {
+  <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> your code here</span>
+}
+<span class="hljs-selector-tag">select</span>({<span class="hljs-attribute">a</span>: <span class="hljs-number">1</span>, <span class="hljs-attribute">b</span>: <span class="hljs-number">2</span>, <span class="hljs-attribute">c</span>: <span class="hljs-number">3</span>}, [<span class="hljs-string">"a"</span>, <span class="hljs-string">"b"</span>]); <span class="hljs-comment">// =&gt; {a: 1, b: 2}</span>
+</code></pre>
+</li>
+<li><p>Write a function called <code>pluck</code> that, given an <strong>array of objects</strong> as its
+first parameter and a <em>string</em> representing a key as its second parameter,
+returns an array of all the values found in each object in the array by using
+<em>string</em> as a key.</p>
+<pre><code class="lang-js"><span class="hljs-built_in">var</span> people = [
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Alyssa"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"P."</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Hacker"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">26</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Louis"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Reasoner"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">21</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Ben"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Bitdiddle"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">34</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Eva"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"Lu"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Ator"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">40</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Lem"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"E."</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Tweakit"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">45</span>}
+];
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">pluck</span>(<span class="hljs-params">array, key</span>) </span>{
+  <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> your code here</span>
+}
+pluck(people, <span class="hljs-string">"age"</span>); <span class="hljs-comment">// =&gt; [26, 21, 34, 40, 45]</span>
+</code></pre>
+</li>
+<li><p>Write a function called <code>extend</code> that accepts two parameters, a <em>destination</em>
+object and a <em>source</em> object. <code>extend</code> should copy all of the keys and values
+from the <em>source</em> object (the second parameter) to the <em>destination</em> object
+(the first parameter), and return the <em>destination</em> object afterwards. You&#39;ll
+want to use our new version of <code>each</code> for this.</p>
+</li>
+<li><p>Write a function called <code>evenIndexedEvenLengths</code> (yeah, a bit of a mouthful)
+that accepts an array of strings as a parameter, and returns only the strings
+that are found at an even index that <em>also</em> have an even length, <em>e.g.</em>:</p>
+<pre><code class="lang-js">function evenIndexedEvenLengths(strings) {
+  // <span class="hljs-symbol">TODO</span>: your code here
+}
+evenIndexedEvenLengths([<span class="hljs-string">"lion"</span>, <span class="hljs-string">"monkey"</span>, <span class="hljs-string">"aardvaark"</span>, <span class="hljs-string">"cat"</span>, <span class="hljs-string">"doge"</span>]);
+// =&gt; [<span class="hljs-string">"lion"</span>, <span class="hljs-string">"doge"</span>]
+evenIndexedEvenLengths([<span class="hljs-string">"red"</span>, <span class="hljs-string">"green"</span>, <span class="hljs-string">"purple"</span>, <span class="hljs-string">"blue"</span>, <span class="hljs-string">"yellow"</span>]);
+// =&gt; [<span class="hljs-string">"purple"</span>, <span class="hljs-string">"yellow"</span>]
+</code></pre>
+<p><strong>HINT:</strong> You&#39;ll need to ensure that your version of <code>filter</code> also passes
+each elements&#39; <em>index</em> (or <em>key</em> in the case of objects) to the predicate.</p>
+</li>
+</ol>
+<h3 id="advanced">Advanced</h3>
+<ol>
+<li><p>There is a way to implement <code>reduce</code> such that it works on both arrays
+<strong>and</strong> objects. You&#39;ll likely want to make use of your <code>keys</code> function from
+the <strong>Basic Requirements</strong> section.</p>
+</li>
+<li><p>Modify <code>incrementValues</code> so that it performs a <em>deep</em> increment -- that is,
+if it encounters an array or an object as a value, it increments all of the
+numeric elements in array values and all of the values in nested objects (you
+may want to consider recursion here...):</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">deepIncrementValues</span>(<span class="hljs-params">object</span>) </span>{
+  <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> Your code here</span>
+}
+
+deepIncrementValues({
+  <span class="hljs-attribute">a</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attribute">b</span>: [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>],
+  <span class="hljs-attribute">c</span>: <span class="hljs-string">"Hello!"</span>,
+  <span class="hljs-attribute">d</span>: {
+    <span class="hljs-attribute">e</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attribute">f</span>: <span class="hljs-number">6</span>
+  }
+});
+
+<span class="hljs-comment">/* should produce...
+{
+  a: 2,
+  b: [4, 5, 6],
+  c: "Hello!",
+  d: {
+    e: true,
+    f: 7
+  }
+}
+*/</span>
+</code></pre>
+</li>
+<li><p>Write a function <code>deepPluck</code>, where its <code>key</code> parameter can be written in
+<em>dot notation</em> -- if the key is written this way, <code>deepPluck</code> will perform a
+nested lookup, <em>e.g.</em></p>
+<pre><code class="lang-js"><span class="hljs-built_in">var</span> people = [
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Alyssa"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"P."</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Hacker"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">26</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Louis"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Reasoner"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">21</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Ben"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Bitdiddle"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">34</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Eva"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"Lu"</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Ator"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">40</span>},
+  {<span class="hljs-attribute">name</span>: {<span class="hljs-attribute">first</span>: <span class="hljs-string">"Lem"</span>, <span class="hljs-attribute">middle</span>: <span class="hljs-string">"E."</span>, <span class="hljs-attribute">last</span>: <span class="hljs-string">"Tweakit"</span>}, <span class="hljs-attribute">age</span>: <span class="hljs-number">45</span>}
+];
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">deepPluck</span>(<span class="hljs-params">array, key</span>) </span>{
+  <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> your code here</span>
+}
+pluck(people, <span class="hljs-string">"name.first"</span>); <span class="hljs-comment">// =&gt; ["Alyssa", "Louis", "Ben", "Eva", "Lem"]</span>
+</code></pre>
+</li>
+<li><p>Modify <code>reduce</code> to work on objects as well as arrays.</p>
+</li>
+</ol>

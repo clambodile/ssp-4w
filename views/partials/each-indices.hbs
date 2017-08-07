@@ -1,0 +1,44 @@
+<h1 id="improved-each-passing-element-indices">Improved <code>each</code>: Passing Element Indices</h1>
+<h2 id="lesson">Lesson</h2>
+<iframe src="https://docs.google.com/presentation/d/1ooNPlndMft8pn5aSV0NBHcVQWBz1HtgQUugv-CKCNcY/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+<h2 id="exercises">Exercises</h2>
+<pre><code class="lang-js">function each(array, <span class="hljs-function"><span class="hljs-keyword">func</span>) {</span>
+  <span class="hljs-keyword">for</span> (var i = <span class="hljs-number">0</span><span class="hljs-comment">; i &lt; array.length; i++) {</span>
+    <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">(array[i], i)</span>;</span>
+  }
+}
+</code></pre>
+<h3 id="basic-requirements">Basic Requirements</h3>
+<ol>
+<li><p>Using our new version of each, write a function called <code>indexedExponentials</code>
+that, when given an array of numbers as an argument, returns a <em>new</em> array of
+numbers where each number has been raised to the power of its index, <em>e.g.</em>:</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">indexedExponentials</span><span class="hljs-params">(numbers)</span> </span>{
+  <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> your code here</span>
+}
+indexedExponentials([<span class="hljs-number">2</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">4</span>]); <span class="hljs-comment">// =&gt; [2^0, 5^1, 7^2, 4^3] =&gt; [1, 5, 49, 64]</span>
+</code></pre>
+</li>
+<li><p>Write a function called <code>evenIndexedOddNumbers</code> that, when given an array of
+numbers as an argument, returns an array of only the <em>odd</em> numbers with <em>even</em>
+indices.</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">evenIndexedOddNumbers</span><span class="hljs-params">(numbers)</span> </span>{
+  <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> Your code here</span>
+}
+evenIndexedOddNumbers([<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">7</span>, <span class="hljs-number">10</span>]); <span class="hljs-comment">// =&gt; [1, 3, 7]</span>
+</code></pre>
+</li>
+<li><p>Write a function called <code>evenIndexedEvenLengths</code> (yeah, a bit of a mouthful)
+that accepts an array of strings as a parameter, and returns only the strings
+that are found at an even index that <em>also</em> have an even length, <em>e.g.</em>:</p>
+<pre><code class="lang-js">function evenIndexedEvenLengths(strings) {
+  // <span class="hljs-symbol">TODO</span>: your code here
+}
+evenIndexedEvenLengths([<span class="hljs-string">"lion"</span>, <span class="hljs-string">"monkey"</span>, <span class="hljs-string">"aardvaark"</span>, <span class="hljs-string">"cat"</span>, <span class="hljs-string">"doge"</span>]);
+// =&gt; [<span class="hljs-string">"lion"</span>, <span class="hljs-string">"doge"</span>]
+evenIndexedEvenLengths([<span class="hljs-string">"red"</span>, <span class="hljs-string">"green"</span>, <span class="hljs-string">"purple"</span>, <span class="hljs-string">"blue"</span>, <span class="hljs-string">"yellow"</span>]);
+// =&gt; [<span class="hljs-string">"purple"</span>, <span class="hljs-string">"yellow"</span>]
+</code></pre>
+</li>
+</ol>

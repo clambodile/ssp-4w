@@ -1,0 +1,77 @@
+<h1 id="introduction-to-closures">Introduction to Closures</h1>
+<h2 id="lesson">Lesson</h2>
+<iframe src="https://docs.google.com/presentation/d/16u1XAV0c2QyOT2GEF7LgUE8jfSXqHdRhx9er0NK2Yxg/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+<h2 id="exercises">Exercises</h2>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makeAccount</span><span class="hljs-params">(initial)</span> </span>{
+  <span class="hljs-keyword">var</span> balance = initial;
+
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(amount)</span> </span>{
+    <span class="hljs-keyword">if</span> (balance - amount &gt;= <span class="hljs-number">0</span>) {
+      balance = balance - amount;
+      <span class="hljs-keyword">return</span> <span class="hljs-string">"Here’s your money: $"</span> + amount;
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"Insufficient funds."</span>;
+  };
+}
+</code></pre>
+<h3 id="basic-requirements">Basic Requirements</h3>
+<ol>
+<li><p>Let&#39;s make a counter using closures. For our purposes, a <em>counter</em> is simply
+a function that, when invoked, returns a number that is one higher than it
+used to be. For example, this is the behavior that we want:</p>
+<pre><code class="lang-js">counter(); <span class="hljs-comment">// =&gt; 1</span>
+counter(); <span class="hljs-comment">// =&gt; 2</span>
+counter(); <span class="hljs-comment">// =&gt; 3</span>
+</code></pre>
+<p>We could implement this using the global scope like this:</p>
+<pre><code class="lang-js">var <span class="hljs-built_in">count</span> = <span class="hljs-number">0</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span></span> counter() {
+  <span class="hljs-built_in">count</span> = <span class="hljs-built_in">count</span> + <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">count</span>;
+}
+</code></pre>
+<p>But now that we know about closures, we can do something way cooler. Finish
+the implementation of <code>makeCounter</code> below so that we can make <em>multiple</em>
+counters, each with their own internal <code>count</code> using <strong>closures</strong>.</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makeCounter</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-comment">// YOUR CODE HERE</span>
+}
+
+<span class="hljs-keyword">var</span> counter1 = makeCounter();
+<span class="hljs-keyword">var</span> counter2 = makeCounter();
+counter1(); <span class="hljs-comment">// =&gt; 1</span>
+counter1(); <span class="hljs-comment">// =&gt; 2</span>
+counter2(); <span class="hljs-comment">// =&gt; 1</span>
+counter1(); <span class="hljs-comment">// =&gt; 3</span>
+counter2(); <span class="hljs-comment">// =&gt; 2</span>
+</code></pre>
+</li>
+<li><p>Update <code>makeCounter</code> so that, instead of always starting from zero, you can
+start from <em>any number, e.g.:</em></p>
+<pre><code class="lang-js"><span class="hljs-variable"><span class="hljs-keyword">var</span> counter</span> = makeCounter(<span class="hljs-number">100</span>);
+counter(); <span class="hljs-comment">// =&gt; 101;</span>
+</code></pre>
+</li>
+<li><p>One way we can use closures is as functions that construct other functions.
+Consider the numerous examples of exponentiation functions that we&#39;ve
+created, <em>e.g.</em> <code>square</code> and <code>cube</code>. The following function <code>pow</code> is
+incomplete:</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">pow</span><span class="hljs-params">(exponent)</span> </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(???)</span> </span>{
+    <span class="hljs-keyword">return</span> ???
+  }
+}
+</code></pre>
+<p>Fill in the <code>???</code> so that it works like this:</p>
+<pre><code class="lang-js">var <span class="hljs-built_in">square</span> = <span class="hljs-built_in">pow</span>(<span class="hljs-number">2</span>);
+var <span class="hljs-built_in">cube</span> = <span class="hljs-built_in">pow</span>(<span class="hljs-number">3</span>);
+var power4 = <span class="hljs-built_in">pow</span>(<span class="hljs-number">4</span>);
+
+<span class="hljs-built_in">square</span>(<span class="hljs-number">5</span>); <span class="hljs-comment">// =&gt; 25</span>
+<span class="hljs-built_in">cube</span>(<span class="hljs-number">3</span>); <span class="hljs-comment">// =&gt; 27</span>
+power4(<span class="hljs-number">4</span>); <span class="hljs-comment">// =&gt; 256</span>
+</code></pre>
+</li>
+</ol>
