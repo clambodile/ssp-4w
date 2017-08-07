@@ -1,0 +1,10 @@
+Mental model of what the interviewer wants
+Avoiding assumptions
+Talking out loud at the right level of abstraction
+Rapport with your interviewer
+-- Bringing your interviewer along for the ride
+-- Using your interviewer as a coding pair partner, not as a judge, jury, and executioner
+Choose a data structure and make a plan first 
+Testing during the interview
+Time management 
+How to get unstuck 

@@ -1,3 +1,3 @@
-# Welcome to Hack Reactor Structured Study Program!
+Welcome to Reactor Prep.
 
-## This is where a screenshot of the syllabus/pacing will go
+Please refer to the navigation bar on the left to find the material you need.
