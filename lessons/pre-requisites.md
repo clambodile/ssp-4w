@@ -14,6 +14,9 @@ To do this, we ask you to:
 
 Haven't finished 100% of the pre-requisite yet? It's alright, go ahead and fill out the survey anyway, then read below to learn what to do next.
 
+### Next steps
+Your next step will depend on what you answered on the survey. Read below to learn what to do next!
+
 * You have finished 100% of the pre-requisite
  * Nice job!
  * Click on the next lesson in the left side bar, "Using the Learn App" and keep going!
@@ -45,9 +48,14 @@ If we notice you underperforming in attendance or responsiveness, it's likely th
   * Fortunately, this round also targets the October Immersive start dates
   * 4-week program instead of a 7-week
   * Covers same content
+  * You will be expected to complete some additional work before starting SSP again
 
 ## Classroom behavior
 
-SSP is a collaborative environment where you will quickly make friends and contribute to a positive community. We exist on the border of school and industry so students can sometimes behave casually with one another or staff. This is a reminder that you must conduct yourself professionally at all times. Any behavior that would not be ok at a job is not ok here. If you find yourself in a situation where you feel a line has been crossed, please talk to your Class Counselor immediately. If we determine that you have crossed a line, we may remove you from SSP and prohibit you from participating in any Hack Reactor program in the future.
+SSP is a collaborative environment where you will quickly make friends and contribute to a positive community. We exist on the border of school and industry so students can sometimes behave casually with one another or staff. 
+
+This is a reminder that you must conduct yourself professionally at all times. Any behavior that would not be ok at a job is not ok here. 
+
+If you find yourself in a situation where you feel a line has been crossed, please talk to your Class Counselor immediately. If we determine that you have crossed a line, we may remove you from SSP and prohibit you from participating in any Hack Reactor program in the future.
 
  
