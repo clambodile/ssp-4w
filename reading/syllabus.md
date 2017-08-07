@@ -10,8 +10,8 @@ Here's an outline of approximately what sections you need to have done by when i
 * If you are accelerating beyond the recommended pacing, congrats! There is no speed limit. Keep working at your pace and let us know when you run out of content. We have plenty of resources to point you towards to keep your learning going.
 * We wanted to remind you that SSP is an experimental program that's undergoing changes. The schedule you see below may shift depending on a number of different of factors. We ask you to expect and embrace the changes. 
 
-![Content Pacing1](http://imgur.com/PWLtIVZ)
-![Content Pacing2](http://imgur.com/h1HJP3m)
+<img src="http://i.imgur.com/vGvAly7.png" width="100%">
+<img src="http://i.imgur.com/h1HJP3m.png" width="100%">
 
 
 ### Pre-requisite work
