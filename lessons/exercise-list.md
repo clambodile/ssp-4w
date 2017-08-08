@@ -1,3 +1,3 @@
 ## Exercise List
 
-<iframe src="https://challenge.makerpass.com/?output=embed" frameborder="0" width="100%" height="569"></iframe>
+###<a href="https://challenge.makerpass.com/" target="_blank">Click here to view the entire problem list.</a>

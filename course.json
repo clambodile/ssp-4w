@@ -14,7 +14,7 @@
       "reading/coding-Style-Guide.md"
     ],
     "Building Blocks Mastery: Exercises": [
-      "lessons/all-exercises.md"
+      "lessons/exercise-list.md"
     ],
     "Writing Code Well: Reading": [
       "reading/instructions/writing-code-well-intro.md",
@@ -26,7 +26,7 @@
       "reading/tdd.md"
     ],
     "Writing Code Well: Exercises": [
-      "lessons/all-exercises.md"
+      "lessons/exercise-list.md"
     ],
     "Live Performance: Reading": [
       "reading/instructions/live-performance-intro.md",
@@ -40,7 +40,7 @@
       "reading/module3/how-To-Run-Your-Interview.md"
     ],
     "Live Performance: Exercises": [
-      "lessons/all-exercises.md"
+      "lessons/exercise-list.md"
     ]
   }
 }
