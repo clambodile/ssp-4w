@@ -16,7 +16,7 @@
     ],
     "Building Blocks Mastery: Exercises": [
       "lessons/exercise-list.md",
-      "reading/"
+      "lessons/nesting.md"
     ],
     "Higher Order Functions": [
       "lessons/hof/intro-to-hofs.md",
