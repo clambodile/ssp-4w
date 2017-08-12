@@ -15,7 +15,14 @@
       "reading/coding-Style-Guide.md"
     ],
     "Building Blocks Mastery: Exercises": [
-      "lessons/exercise-list.md"
+      "lessons/exercise-list.md",
+      "reading/"
+    ],
+    "Higher Order Functions": [
+      "lessons/hof/intro-to-hofs.md",
+      "lessons/hof/hofs-2.md",
+      "lessons/hof/hofs-3.md",
+      "lessons/hof/hofs-4.md"
     ],
     "Writing Code Well: Reading": [
       "reading/instructions/writing-code-well-intro.md",
