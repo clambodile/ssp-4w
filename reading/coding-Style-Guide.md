@@ -1,10 +1,10 @@
-# Coding Style Guide for Reactor Prep 
+# Coding Style Guide for Reactor Prep
 
 ### What is readability?
 
 Code readability refers to writing code whose purpose is clear and self-explanatory, and whose syntax, layout, and structure are consistent and unsurprising.
 
-Code with lots of inconsistencies requires more mental effort from the code reader, who must parse through random visual differences to determine what differences are actually meaningful. 
+Code with lots of inconsistencies requires more mental effort from the code reader, who must parse through random visual differences to determine what differences are actually meaningful.
 
 Often that confused code reader is **you**.
 
@@ -37,7 +37,7 @@ action();
 ```
 
 When a line closes a block, that line starts at the same level as the line that opened the block
-     
+
 Good:
 ```
 if (condition) {
@@ -167,7 +167,7 @@ Good:
 
 ```
 var countWaterBlocks = function() {
-  // do stuff 
+  // do stuff
 }
 ```
 
@@ -175,7 +175,7 @@ Good:
 
 ```
 var counterWaterBlocksBetweenTowers = function() {
-  // do stuff 
+  // do stuff
 }
 ```
 
@@ -298,7 +298,7 @@ var greet = function () {
 
 ## Operators and keywords
 
-### Use strict comparison operators 
+### Use strict comparison operators
 Always use `===` and `!==`, since `==` and `!=` will automatically convert types in ways you're unlikely to expect.
 
 Good:
@@ -473,7 +473,7 @@ function square(n) {
 }
 ```
 
-The principle is to write just enough code to be self-describing. The aim is for any reasonable code reader to be able to glance at a given piece of code and understand what it's doing, with no comments, without asking anybody for an explanation, and without having to pore over the surrounding code for clues. 
+The principle is to write just enough code to be self-describing. The aim is for any reasonable code reader to be able to glance at a given piece of code and understand what it's doing, with no comments, without asking anybody for an explanation, and without having to pore over the surrounding code for clues.
 
 ### Avoid negation
 
@@ -493,7 +493,7 @@ if(!equalSizes || !equalValues) {
 }
 ```
 
-More straightforward: 
+More straightforward:
 
 ```
 if(equalSizes && equalValues) {
@@ -716,7 +716,7 @@ var result = array.map(function(element) {
 });
 ```
 
-### Avoid for...in
+### When to avoid for...in
 
 Do not use `for...in` statements with the intent of iterating over a list of numeric keys. Use a for-with-semicolons statement in stead.
 
