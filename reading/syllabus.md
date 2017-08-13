@@ -65,8 +65,6 @@ Including, but not limited to:
  * Attitude towards friction and feedback
  * Reading everything thoroughly
 
-If we notice you underperforming in completion velocity, but you are present and responsive, we will route you to one of our staff members who is equipped to support students who are showing early technical struggles.
-
 If we notice you underperforming in attendance or responsiveness, it's likely that you picked bad timing to take this class. Here's what may happen:
 
  * We withdraw you from the program (full refund if you withdraw yourself during the first week)
