@@ -1,6 +1,6 @@
 # Testing
 
-[Slides](https://docs.google.com/presentation/d/1y4x_Z14jnmovDwDAzNEpzOxsam_hPoBqyk5Gbd84C60/)
+[Slides](https://docs.google.com/presentation/d/1SMFhiRQLSTfXtQiQ65MU9u_m3Jt6liVPuG2eZwWoz8o/edit#slide=id.g1cb5f52775_0_5)
 
 1.  Write a function called `average` that takes an array of numbers as a
     parameter and returns the *average* of those numbers.
