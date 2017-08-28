@@ -2,17 +2,15 @@
 
 We're excited to have you as part of the Hack Reactor family! Here's some important information about the course that you should read carefully.
 
-### Content Pacing
-
-Here's an outline of approximately what sections you need to have done by when in order to have a good chance of being prepared for the Readiness Assessment. Some important notes:
-
-* If you start to fall behind the recommended pacing, don't stress out! Everyone learns at different rates and the worst thing you could do is to quit. Continue coming to class and work through the content at whatever pace you can. In a worst case scenario, you can re-enroll in a future round of SSP.
-* If you are accelerating beyond the recommended pacing, congrats! There is no speed limit. Keep working at your pace and let us know when you run out of content. We have plenty of resources to point you towards to keep your learning going.
-* We wanted to remind you that SSP is an experimental program that's undergoing changes. The schedule you see below may shift depending on a number of different of factors. We ask you to expect and embrace the changes. 
-
-
 ### <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSo5oBFWx8iMxiR95NSe8IIEvBALTQfrbXQGCPoiSZ4JPeNsATH6IUIg4VRHWFBsDP7VTLbnRV6f2UV/pubhtml?gid=745761445&single=true" target="_blank">Program Schedule/Syllabus</a>
 
+### Content Pacing
+
+Please keep in mind that the pacing laid out in the Program Schedule/Syllabus linked above is an outline of approximately what sections you need to have done by when in order to have a good chance of being prepared for the Readiness Assessment. Some important notes:
+
+* If you start to fall behind the recommended pacing, don't stress out! Everyone learns at different rates and the worst thing you could do is to quit. Continue coming to class and work through the content at whatever pace you can. In a worst case scenario, you can re-enroll in a future round of SSP. Please contact your Class Coach
+* If you are accelerating beyond the recommended pacing, congrats! There is no speed limit. Keep working at your pace and let us know when you run out of content. We have plenty of resources to point you towards to keep your learning going.
+* We wanted to remind you that SSP is an experimental program that's undergoing changes. The schedule you see below may shift depending on a number of different of factors. We ask you to expect and embrace the changes. 
 
 ### Pre-requisite work
 
@@ -30,7 +28,7 @@ It's time for your first exercise doing something you will do almost daily as a 
      * <a href="http://imgur.com/a/wMako" target="_blank">Here's a sample screenshot</a> of what the page should finally look like
  * Upload the image to an image hosting server
   * There are many free image hosting sites. We recommend <a href="http://imgur.com/upload" target="_blank">Imgur</a>.
- * Fill out <a href="https://goo.gl/forms/m8jg6poVJhMv9DPg2" target="_blank">this survey</a>
+ * Fill out <a href="https://goo.gl/forms/HFm7EMlMjdaWtsdC3" target="_blank">this survey</a>
 
 Haven't finished 100% of the pre-requisite yet? It's alright, go ahead and fill out the survey anyway, then read below to learn what to do next.
 
