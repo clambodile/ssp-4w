@@ -288,5 +288,5 @@ function map(coll, f) {
      // TODO: Your code here
    }
    countNestedKeys({a: {b: 1, c: 7}, f: {h: 22, g: 12, i: 24}});
-   // => {a: 2, b: 3}
+   // => {a: 2, f: 3}
    ```

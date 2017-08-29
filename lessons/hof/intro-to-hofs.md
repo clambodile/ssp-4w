@@ -122,7 +122,9 @@ var square = function(x) {
     }
     var numbers = [1, 2, 3, 4];
     sumBy(numbers, square); // => 30
+      //Note: you will have to create a function "square" that returns the square of an input number.
     sumBy(numbers, cube); // => 100
+      //Note: you will have to create a function "cube" that returns the cube of an input number.
     sumBy(numbers, function(number) {
       return number * 4;
     });
@@ -133,12 +135,6 @@ var square = function(x) {
     numbers (just the plain sum)?
 
 4.  Write a function `productBy` that works like `sumBy`, but for **products**.
-
-#### Refactoring
-
-As an extended exercise, run back through your data modeling code from the past
-few days and look for opportunities to refactor your use of `for` loops using
-`each`, `map` and `filter`.
 
 ### Advanced
 
@@ -260,3 +256,9 @@ few days and look for opportunities to refactor your use of `for` loops using
     startsWithChar(words, "q"); // => ["quick"]
     startsWithChar(words, "t"); // => ["the", "the"]
     ```
+
+#### Refactoring
+
+As an extended exercise, run back through your data modeling code from the past
+few days and look for opportunities to refactor your use of `for` loops using
+`each` (not the native `forEach` method), `map` and `filter`.
