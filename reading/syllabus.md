@@ -8,7 +8,7 @@ Here's an outline of approximately what sections you need to have done by when i
 
 * If you start to fall behind the recommended pacing, don't stress out! Everyone learns at different rates and the worst thing you could do is to quit. Continue coming to class and work through the content at whatever pace you can. In a worst case scenario, you can jump into the next SSP class starting 08/28 (still targeting October Immersive start date) or even the one after that (targeting November Immersive start date).
 * If you are accelerating beyond the recommended pacing, congrats! There is no speed limit. Keep working at your pace and let us know when you run out of content. We have plenty of resources to point you towards to keep your learning going.
-* We wanted to remind you that SSP is an experimental program that's undergoing changes. The schedule you see below may shift depending on a number of different of factors. We ask you to expect and embrace the changes. 
+* We wanted to remind you that SSP is an experimental program that's undergoing changes. The schedule you see below may shift depending on a number of different of factors. We ask you to expect and embrace the changes.
 
 <img src="http://i.imgur.com/vGvAly7.png" width="100%">
 <img src="http://i.imgur.com/h1HJP3m.png" width="100%">
@@ -48,7 +48,7 @@ Haven't finished 100% of the pre-requisite yet? It's alright, go ahead and fill 
 * Note - if you have a low problem completion velocity, we will probably recommend that you go back to the pre-requisite and finish it.
 
 ##### If you are a repeat from last round of SSP and were unaware of the change in pre-requisite
-* Good to see you again! 
+* Good to see you again!
 * Codecademy changed their Intro to JavaScript course (less free content), but fortunately Udacity has an excellent program available. In fact, we think it's better than the Codecademy version and if you need to brush up on some basics we highly recommend you do <a href="https://classroom.udacity.com/courses/ud803" target="_blank">the course</a> before repeating the toy problems.
 
 ### How will you be assessed?
@@ -72,7 +72,7 @@ If we notice you underperforming in attendance or responsiveness, it's likely th
  * We withdraw you from the program (full refund if you withdraw yourself during the first week)
  * Push you to the next SSP round starting on 08/28/2017
   * Fortunately, this round also targets the October Immersive start dates
-  * 4-week program instead of a 7-week
+  * 5-week program instead of a 7-week
   * Covers same content
   * You will be expected to complete some additional work before starting SSP again
 
@@ -86,8 +86,8 @@ This is the final gating assessment before your admission the Hack Reactor Immer
 
 ### Classroom behavior
 
-SSP is a collaborative environment where you will quickly make friends and contribute to a positive community. We exist on the border of school and industry so students can sometimes behave casually with one another or staff. 
+SSP is a collaborative environment where you will quickly make friends and contribute to a positive community. We exist on the border of school and industry so students can sometimes behave casually with one another or staff.
 
-This is a reminder that you must conduct yourself professionally at all times. Any behavior that would not be ok at a job is not ok here. 
+This is a reminder that you must conduct yourself professionally at all times. Any behavior that would not be ok at a job is not ok here.
 
 If you find yourself in a situation where you feel a line has been crossed, please talk to your Class Counselor immediately. If we determine that you have crossed a line, we may remove you from SSP and prohibit you from participating in any Hack Reactor program in the future.

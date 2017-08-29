@@ -1,10 +1,10 @@
-# Coding Style Guide for Reactor Prep 
+# Coding Style Guide for Reactor Prep
 
 ### What is readability?
 
 Code readability refers to writing code whose purpose is clear and self-explanatory, and whose syntax, layout, and structure are consistent and unsurprising.
 
-Code with lots of inconsistencies requires more mental effort from the code reader, who must parse through random visual differences to determine what differences are actually meaningful. 
+Code with lots of inconsistencies requires more mental effort from the code reader, who must parse through random visual differences to determine what differences are actually meaningful.
 
 Often that confused code reader is **you**.
 
@@ -37,7 +37,7 @@ action();
 ```
 
 When a line closes a block, that line starts at the same level as the line that opened the block
-     
+
 Good:
 ```
 if (condition) {
@@ -167,7 +167,7 @@ Good:
 
 ```
 var countWaterBlocks = function() {
-  // do stuff 
+  // do stuff
 }
 ```
 
@@ -175,7 +175,7 @@ Good:
 
 ```
 var counterWaterBlocksBetweenTowers = function() {
-  // do stuff 
+  // do stuff
 }
 ```
 
@@ -270,7 +270,7 @@ if (condition) {
 }
 ```
 
-Bad:;
+Bad:
 
 ```
 if (condition) {
@@ -298,7 +298,7 @@ var greet = function () {
 
 ## Operators and keywords
 
-### Use strict comparison operators 
+### Use strict comparison operators
 Always use `===` and `!==`, since `==` and `!=` will automatically convert types in ways you're unlikely to expect.
 
 Good:
@@ -473,7 +473,7 @@ function square(n) {
 }
 ```
 
-The principle is to write just enough code to be self-describing. The aim is for any reasonable code reader to be able to glance at a given piece of code and understand what it's doing, with no comments, without asking anybody for an explanation, and without having to pore over the surrounding code for clues. 
+The principle is to write just enough code to be self-describing. The aim is for any reasonable code reader to be able to glance at a given piece of code and understand what it's doing, with no comments, without asking anybody for an explanation, and without having to pore over the surrounding code for clues.
 
 ### Avoid negation
 
@@ -493,7 +493,7 @@ if(!equalSizes || !equalValues) {
 }
 ```
 
-More straightforward: 
+More straightforward:
 
 ```
 if(equalSizes && equalValues) {
@@ -670,7 +670,7 @@ if (actual === expected) {
 
 ## Code comments
 
-* Code comments are usually less effective than a good variable names and function names.
+* Code comments are usually less effective than good variable names and function names.
 * Having to write comments suggests that your code structure and naming are not sufficient to convey the "story" (the flow of data and processing) of your code by themselves. That's a bad sign.
 * Comments make a file longer and drift out of sync with the code they annotate.
 * If you do comment, then comment on the purpose of the code (the "why"), not the mechanics of implementing it (the "how").
@@ -718,7 +718,7 @@ var result = array.map(function(element) {
 
 ### Avoid for...in
 
-Do not use `for...in` statements with the intent of iterating over a list of numeric keys. Use a for-with-semicolons statement in stead.
+Do not use `for...in` statements with the intent of iterating over a list of numeric keys. Use a for-with-semicolons statement instead.
 
 Good:
 
