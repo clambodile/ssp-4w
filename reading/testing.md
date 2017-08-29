@@ -299,8 +299,8 @@ HOWEVER this isn't completely reliable in all cases where you might want to comp
 ```
 JSON.stringify({foo: 1, bar: 2})
 "{"foo":1,"bar":2}"
-JSON.stringify({bar: 1, foo: 2})
-"{"bar":1,"foo":2}"
+JSON.stringify({bar: 2, foo: 1})
+"{"bar":2,"foo":1}"
 ```
 
 That said, a full implementation of "deep equality" check is way out of scope of this course.

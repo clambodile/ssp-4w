@@ -174,7 +174,7 @@ var countWaterBlocks = function() {
 Good:
 
 ```
-var counterWaterBlocksBetweenTowers = function() {
+var countWaterBlocksBetweenTowers = function() {
   // do stuff
 }
 ```
