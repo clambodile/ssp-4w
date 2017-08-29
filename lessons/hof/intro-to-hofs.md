@@ -90,14 +90,14 @@ var square = function(x) {
     }
     ```
 
-3.  Write a function called `product` that calculates the product of an array of
+4.  Write a function called `product` that calculates the product of an array of
     numbers using a `for` loop; then, refactor it to use `each`.
 
-4.  Write a function called `cubeAll` that cubes each number in an array, and
+5.  Write a function called `cubeAll` that cubes each number in an array, and
     returns an array of all the numbers *cubed* using a `for` loop; then,
     refactor it to use `each`.
 
-5.  Write a function called `odds` that accepts an array as a parameter and
+6.  Write a function called `odds` that accepts an array as a parameter and
     returns an array of just the odd numbers. If you wrote it using `each`,
     great! If you used anything else, refactor it to use a `for` loop.
 
@@ -160,7 +160,6 @@ var square = function(x) {
     ```js
     "hello, world".toUpperCase(); // => "HELLO, WORLD"
     ```
-
 
 4.  You should at this point notice a similarity between all of the above
     functions, as well as the `cubeAll` function from the warmup. These functions
@@ -261,4 +260,4 @@ var square = function(x) {
 
 As an extended exercise, run back through your data modeling code from the past
 few days and look for opportunities to refactor your use of `for` loops using
-`each` (not the native `forEach` method), `map` and `filter`.
+`each` (as defined above), `map` and `filter`.

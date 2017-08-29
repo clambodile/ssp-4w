@@ -14,7 +14,7 @@ When we say "testing" here, we do NOT mean manual testing where a person clicks 
 
 We are talking about AUTOMATED TESTS, in particular the style called a UNIT TEST.
 
-An automated test, as the name suggests, runs automatically. 
+An automated test, as the name suggests, runs automatically.
 
 The point of an automated test is to capture the manual steps and human discernment that would be applied by a human tester and run them at high speed and with perfect fidelity over and over.
 
@@ -22,13 +22,13 @@ In a modern, professionally-built software system, there are typically hundreds 
 
 ## What's a "unit test"?
 
-A reliable system is composed of reliable components. A Lego block doesn't suddenly change shape on you. It maintains a clear and unchanging interface. You can rely on that interface as you snap that Lego block together with other Lego blocks, and thereby build up a very complex block structure. 
+A reliable system is composed of reliable components. A Lego block doesn't suddenly change shape on you. It maintains a clear and unchanging interface. You can rely on that interface as you snap that Lego block together with other Lego blocks, and thereby build up a very complex block structure.
 
 The components of your program need to behave similarly to Lego blocks. If they honor their contracts with each other, then you can build up a very complex software system with them. If they don't, however, then everything will turn into an unmaintainable mess.
 
 How do you know that each component in your software system (your program) is honoring its interface properly?
 
-That's what unit tests do. Each "unit" is a component of your system. It's a Lego block. 
+That's what unit tests do. Each "unit" is a component of your system. It's a Lego block.
 
 For our purposes here, the most fundamental UNIT in your programs right now is a FUNCTION.
 
@@ -69,7 +69,7 @@ console.log(square(5) === 25);
 
 It's not a problem to write small assertions about your code in this informal manner, via `console.log`, when you are first starting out. It's a lot better than not exercising your code at all, and having to debug a bunch of code when you finally do run your program.
 
-However, professional programmers use a testing framework that formalizes the concept of assertion, and provides well-formatted test output so you can quickly see where problems have arisen in your code.  
+However, professional programmers use a testing framework that formalizes the concept of assertion, and provides well-formatted test output so you can quickly see where problems have arisen in your code.
 
 A typical such assertion might look like this:
 
@@ -100,7 +100,7 @@ An assertion is a statement that something is true or false about the behavior o
 
 However, in order to be able to make an assertion, you usually have some setup to do.
 
-You prepare some input, and an expected output. If there are classes involved then you usually have to instantiate an instance of that class. You may have other context to set up before you can make the assertion -- let's say you're asserting something about step #3 of a 4-step flow. Then you have to run through steps 1 and 2 to prepare to evaluate the result of running step 3. 
+You prepare some input, and an expected output. If there are classes involved then you usually have to instantiate an instance of that class. You may have other context to set up before you can make the assertion -- let's say you're asserting something about step #3 of a 4-step flow. Then you have to run through steps 1 and 2 to prepare to evaluate the result of running step 3.
 
 All that setup, outside of the assertion itself, is still part of your test.
 
@@ -113,7 +113,7 @@ That's why we're being careful here to distinguish assertions from the unit test
 Here is a fuller set of assertions we might make about the `square` function:
 
 1. Given `-5` as input, it should return `25` as output.
-1. Given `0` as input, it should return `0` as output. 
+1. Given `0` as input, it should return `0` as output.
 1. Given `5` as input, it should return `25` as output.
 1. Given `0.25` as input, it should return `0.0625` as output.
 
@@ -128,7 +128,7 @@ Whenever you are testing one of your functions, you want to similarly apply CATE
 
 ### Note: Your tests go _outside_ the code that you're testing
 
-You should never put your test *inside* the code that you are testing (aka "the code under test"). 
+You should never put your test *inside* the code that you are testing (aka "the code under test").
 
 Your tests should treat each function as a "black box".
 
@@ -154,7 +154,7 @@ There are a few different styles you can use in this phase of your learning, and
 
 ### "Inline console logs", no assert helpers style
 
-You can just drop a direct `console.log` statement if you are really pressed for time. No `assertEquals` type of helper functions, just raw logging. 
+You can just drop a direct `console.log` statement if you are really pressed for time. No `assertEquals` type of helper functions, just raw logging.
 
 This is not as tidy as using a formal assert function, but will do in a pinch.
 
@@ -227,7 +227,7 @@ Good:
 assertEqual(findLongestPalindrome('racecar hannah'), 'racecar', 'finds longest of two palindromes');
 ```
 
-Note that one can easily determine what this test does by prefixing the name of the test with `it`; making the sentece that describes the test read as: "It (i.e., the function being tested) finds the longest of two palindromes."
+Note that one can easily determine what this test does by prefixing the name of the test with `it`; making the sentence that describes the test read as: "It (i.e., the function being tested) finds the longest of two palindromes."
 
 You can explicitly say "it" in your test name, if you want:
 
@@ -303,7 +303,7 @@ JSON.stringify({bar: 1, foo: 2})
 "{"bar":1,"foo":2}"
 ```
 
-That said, a full implementation of "deep equality" check is way out of scope of this course. 
+That said, a full implementation of "deep equality" check is way out of scope of this course.
 
 You can glance here at a real, complete implementation, if you are curious:
 [https://github.com/substack/node-deep-equal/blob/master/index.js](https://github.com/substack/node-deep-equal/blob/master/index.js).
