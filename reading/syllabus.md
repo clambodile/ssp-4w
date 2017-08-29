@@ -10,7 +10,7 @@ Please keep in mind that the pacing laid out in the Program Schedule/Syllabus li
 
 * If you start to fall behind the recommended pacing, don't stress out! Everyone learns at different rates and the worst thing you could do is to quit. Continue coming to class and work through the content at whatever pace you can. In a worst case scenario, you can re-enroll in a future round of SSP. Please contact your Class Coach
 * If you are accelerating beyond the recommended pacing, congrats! There is no speed limit. Keep working at your pace and let us know when you run out of content. We have plenty of resources to point you towards to keep your learning going.
-* We wanted to remind you that SSP is an experimental program that's undergoing changes. The schedule you see below may shift depending on a number of different of factors. We ask you to expect and embrace the changes. 
+* We wanted to remind you that SSP is an experimental program that's undergoing changes. The schedule you see below may shift depending on a number of different of factors. We ask you to expect and embrace the changes.
 
 ### Pre-requisite work
 
@@ -46,7 +46,7 @@ Haven't finished 100% of the pre-requisite yet? It's alright, go ahead and fill 
 * Note - if you have a low problem completion velocity, we will probably recommend that you go back to the pre-requisite and finish it.
 
 ##### If you are a repeat from last round of SSP and were unaware of the change in pre-requisite
-* Good to see you again! 
+* Good to see you again!
 * Codecademy changed their Intro to JavaScript course (less free content), but fortunately Udacity has an excellent program available. In fact, we think it's better than the Codecademy version and if you need to brush up on some basics we highly recommend you do <a href="https://classroom.udacity.com/courses/ud803" target="_blank">the course</a> before repeating the toy problems.
 
 ### How will you be assessed?
@@ -70,7 +70,15 @@ If we notice you underperforming in completion velocity, but you are present and
 If we notice you underperforming in attendance or responsiveness, it's likely that you picked bad timing to take this class. Here's what may happen:
 
  * We withdraw you from the program (full refund if you withdraw yourself during the first week)
+<<<<<<< HEAD
+ * Push you to the next SSP round starting on 08/28/2017
+  * Fortunately, this round also targets the October Immersive start dates
+  * 5-week program instead of a 7-week
+  * Covers same content
+  * You will be expected to complete some additional work before starting SSP again
+=======
  * Push you to the next SSP round
+>>>>>>> 13b251070e4e197695dc5df60a5bdc1ee597fb06
 
 #### Self Assessments
 
@@ -84,8 +92,8 @@ Note: Students interested in San Francisco will likely have a 2-step Readiness A
 
 ### Classroom behavior
 
-SSP is a collaborative environment where you will quickly make friends and contribute to a positive community. We exist on the border of school and industry so students can sometimes behave casually with one another or staff. 
+SSP is a collaborative environment where you will quickly make friends and contribute to a positive community. We exist on the border of school and industry so students can sometimes behave casually with one another or staff.
 
-This is a reminder that you must conduct yourself professionally at all times. Any behavior that would not be ok at a job is not ok here. 
+This is a reminder that you must conduct yourself professionally at all times. Any behavior that would not be ok at a job is not ok here.
 
 If you find yourself in a situation where you feel a line has been crossed, please talk to your Class Counselor immediately. If we determine that you have crossed a line, we may remove you from SSP and prohibit you from participating in any Hack Reactor program in the future.

@@ -6,11 +6,11 @@ One of the most effective ways to plan a program is to judiciously use two techn
 
 ## Outlining your strategy
 
-The essence of your program is your STRATEGY for CONVERTING the INPUT into the OUTPUT. 
+The essence of your program is your STRATEGY for CONVERTING the INPUT into the OUTPUT.
 
-If you design that strategy well, you set yourself up to implement the raw code much more straightforwardly. It doesn't matter how solid your JavaScript knowledge is, if only have a muddled, vague strategy for converting your expected input into your required output, then you'll confuse yourself quickly. You will have to rewrite your code over and over as you struggle to clarify what you're really doing.
+If you design that strategy well, you set yourself up to implement the raw code much more straightforwardly. It doesn't matter how solid your JavaScript knowledge is, if you have only a muddled, vague strategy for converting your expected input into your required output, then you'll confuse yourself quickly. You will have to rewrite your code over and over as you struggle to clarify what you're really doing.
 
-Outlining your strategy in plain but precise English makes it easier to evaluate your strategy on its actual merits. Whereas if you go straight to raw code, you run a high risk of immediately getting immersed in syntactical details and not properly evaluating what you're planning to write. 
+Outlining your strategy in plain but precise English makes it easier to evaluate your strategy on its actual merits. Whereas if you go straight to raw code, you run a high risk of immediately getting immersed in syntactical details and not properly evaluating what you're planning to write.
 
 If you keep your plan of attack at a higher level of abstraction, your written program "skeleton" will really help you keep your mind straight about what code to write next, and why.
 
@@ -84,14 +84,14 @@ function findFirstWordWithMostRepeatedChars(text) {
       //  If that max repeat count is higher than the overall max repeat count, then
       //    update maxRepeatCountOverall
       //    update wordWithMaxRepeatCount
-      
+
   return wordWithMaxRepeatCount;
 }
 ```
 
 ### Things to note about this outline
 
-This outline mixes stubbed-out variables and functions along with English-language commentary about the intended approach. 
+This outline mixes stubbed-out variables and functions along with English-language commentary about the intended approach.
 
 * A couple of key variables have been written directly as clearly-named code, rather than describing them in English.
 * Similarly, some clearly-named functions have been written as code, not English.

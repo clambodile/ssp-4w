@@ -28,17 +28,17 @@ Naturally you have to be able to learn things quickly in order to make it throug
 
 ## You are flexible and tenacious in the face of ambiguity
 
-Hack Reactor throws a lot of new things at you. 
+Hack Reactor throws a lot of new things at you.
 
 Hack Reactor doesn't give you academic grades, as such. You get feedback, but you won't have the conventional-schooling model of getting an 'A' in one topic before moving on to the next. You won't know if you've mastered a topic before having to move on to the next. In fact, you won't totally **master** any topics, really. How can you, at this pace?
 
-At any given moment, should you "go wide" or "go deep"? There's never enough time in the day to do all the things you want to do. 
+At any given moment, should you "go wide" or "go deep"? There's never enough time in the day to do all the things you want to do.
 
 But of course, it doesn't solve anything to give up. It doesn't solve anything to complain that you weren't given everything you need.
 
 The real world of professional development is far more open-ended and ambiguous than Hack Reactor. Hack Reactor consciously models that, to toughen you up and help you assemble the toolkit you need for success in the wider world.
 
-Remember, it's called a "bootcamp". That doesn't conjure up images of taking tests so you can get straight A's on a report card, right?  It sounds more intense and real. 
+Remember, it's called a "bootcamp". That doesn't conjure up images of taking tests so you can get straight A's on a report card, right?  It sounds more intense and real.
 
 So it is.
 
@@ -46,9 +46,9 @@ A successful candidate looks like they can handle this, before admissions.
 
 ### What to do before and during the interview?
 
-In the interview, **don't give up**. 
+In the interview, **don't give up**.
 
-Don't even implicitly hint at giving up by being down on yourself. **Don't say little self-deprecating things**. 
+Don't even implicitly hint at giving up by being down on yourself. **Don't say little self-deprecating things**.
 
 Keep it calm and **professional and results-oriented**. You don't have to be delusionally self-confident, but you do have to show that you can handle yourself under pressure.
 
@@ -68,7 +68,7 @@ You are comfortable "going wide".
 
 In the interview, demonstrate that you know how to build small programs, and furthermore can do so under pressure.
 
-Before the interview, **just practice -- a lot!** Build many small programs that work, first of all. (That's what you practiced in the first two modules of this course) Then build them under deadline and live-audience pressure. (That's what you're practicing in the thirds module of this course.)
+Before the interview, **just practice -- a lot!** Build many small programs that work, first of all. (That's what you practiced in the first two modules of this course) Then build them under deadline and live-audience pressure. (That's what you're practicing in the third module of this course.)
 
 ## You care about how and why things really work
 
@@ -82,7 +82,7 @@ You are comfortable "going deep".
 
 In the interview, talk about your choice of strategy and your implementation details in a manner that suggests you understand how things work. **Use the specific technical names that describe what you are doing.**
 
-Before the interview, look over the [glossary of terms](http://hackreactor.teachable.com/courses/hack-reactor-prep/lectures/1732105) that come up in Codecademy's introduction to JavaScript. Do you know what all these terms mean? **Can you use many of these terms when talking about your own code?** If not, look them up and practice using them!
+Before the Readiness Assessment, look over this [skills check list](https://docs.google.com/document/d/1NFwCaRz2itq7Gix1Bnz-_VwzZgC7ZCeBEmPh0sszO54/edit). Do you know what all the bulleted terms mean? **Can you use many of these terms when talking about your own code?** If not, look them up and practice using them!
 
 
 ## You care about the details, you are professional
