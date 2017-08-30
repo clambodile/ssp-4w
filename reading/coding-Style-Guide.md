@@ -174,7 +174,7 @@ var countWaterBlocks = function() {
 Good:
 
 ```
-var counterWaterBlocksBetweenTowers = function() {
+var countWaterBlocksBetweenTowers = function() {
   // do stuff
 }
 ```
@@ -270,7 +270,7 @@ if (condition) {
 }
 ```
 
-Bad:;
+Bad:
 
 ```
 if (condition) {
@@ -670,7 +670,7 @@ if (actual === expected) {
 
 ## Code comments
 
-* Code comments are usually less effective than a good variable names and function names.
+* Code comments are usually less effective than good variable names and function names.
 * Having to write comments suggests that your code structure and naming are not sufficient to convey the "story" (the flow of data and processing) of your code by themselves. That's a bad sign.
 * Comments make a file longer and drift out of sync with the code they annotate.
 * If you do comment, then comment on the purpose of the code (the "why"), not the mechanics of implementing it (the "how").
@@ -718,7 +718,7 @@ var result = array.map(function(element) {
 
 ### When to avoid for...in
 
-Do not use `for...in` statements with the intent of iterating over a list of numeric keys. Use a for-with-semicolons statement in stead.
+Do not use `for...in` statements with the intent of iterating over a list of numeric keys. Use a for-with-semicolons statement instead.
 
 Good:
 

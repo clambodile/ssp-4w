@@ -127,8 +127,8 @@ function each(coll, f) {
 
 function filter(array, predicate) {
   var acc = [];
-  each(array, function(element, i) {
-    if (predicate(element, i)) {
+  each(array, function(element) {
+    if (predicate(element)) {
       acc.push(element);
     }
   });

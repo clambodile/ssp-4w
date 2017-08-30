@@ -90,14 +90,14 @@ var square = function(x) {
     }
     ```
 
-3.  Write a function called `product` that calculates the product of an array of
+4.  Write a function called `product` that calculates the product of an array of
     numbers using a `for` loop; then, refactor it to use `each`.
 
-4.  Write a function called `cubeAll` that cubes each number in an array, and
+5.  Write a function called `cubeAll` that cubes each number in an array, and
     returns an array of all the numbers *cubed* using a `for` loop; then,
     refactor it to use `each`.
 
-5.  Write a function called `odds` that accepts an array as a parameter and
+6.  Write a function called `odds` that accepts an array as a parameter and
     returns an array of just the odd numbers. If you wrote it using `each`,
     great! If you used anything else, refactor it to use a `for` loop.
 
@@ -122,7 +122,9 @@ var square = function(x) {
     }
     var numbers = [1, 2, 3, 4];
     sumBy(numbers, square); // => 30
+      //Note: you will have to create a function "square" that returns the square of an input number.
     sumBy(numbers, cube); // => 100
+      //Note: you will have to create a function "cube" that returns the cube of an input number.
     sumBy(numbers, function(number) {
       return number * 4;
     });
@@ -133,12 +135,6 @@ var square = function(x) {
     numbers (just the plain sum)?
 
 4.  Write a function `productBy` that works like `sumBy`, but for **products**.
-
-#### Refactoring
-
-As an extended exercise, run back through your data modeling code from the past
-few days and look for opportunities to refactor your use of `for` loops using
-`each`, `map` and `filter`.
 
 ### Advanced
 
@@ -164,7 +160,6 @@ few days and look for opportunities to refactor your use of `for` loops using
     ```js
     "hello, world".toUpperCase(); // => "HELLO, WORLD"
     ```
-
 
 4.  You should at this point notice a similarity between all of the above
     functions, as well as the `cubeAll` function from the warmup. These functions
@@ -260,3 +255,9 @@ few days and look for opportunities to refactor your use of `for` loops using
     startsWithChar(words, "q"); // => ["quick"]
     startsWithChar(words, "t"); // => ["the", "the"]
     ```
+
+#### Refactoring
+
+As an extended exercise, run back through your data modeling code from the past
+few days and look for opportunities to refactor your use of `for` loops using
+`each` (as defined above), `map` and `filter`.
