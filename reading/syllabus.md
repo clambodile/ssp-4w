@@ -65,18 +65,12 @@ Including, but not limited to:
  * Attitude towards friction and feedback
  * Reading everything thoroughly
 
-If we notice you underperforming in attendance or responsiveness, it's likely that you picked bad timing to take this class. Here's what may happen:
+If we notice you under-performing in attendance or responsiveness, it's likely that you picked bad timing to take this class. Here's what may happen:
 
  * We withdraw you from the program (full refund if you withdraw yourself during the first week)
-<<<<<<< HEAD
- * Push you to the next SSP round starting on 08/28/2017
-  * Fortunately, this round also targets the October Immersive start dates
-  * 5-week program instead of a 7-week
+ * Push you to the next SSP round
   * Covers same content
   * You will be expected to complete some additional work before starting SSP again
-=======
- * Push you to the next SSP round
->>>>>>> 13b251070e4e197695dc5df60a5bdc1ee597fb06
 
 #### Self Assessments
 
