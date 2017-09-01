@@ -15,7 +15,8 @@
       "reading/coding-Style-Guide.md"
     ],
     "Building Blocks Mastery: Exercises": [
-      "lessons/exercise-list.md"
+      "lessons/exercise-list.md",
+      "lessons/nesting.md"
     ],
     "Writing Code Well: Reading": [
       "reading/instructions/writing-code-well-intro.md",
