@@ -1,5 +1,5 @@
 # each indices, each objects, filter
-## This lesson is optional to supplement your knowledge of `each` and introduce `filter`
+This lesson is ** optional ** to supplement your knowledge of `each` and introduce `filter`
 
 ## Lesson
 
