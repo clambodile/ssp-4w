@@ -17,6 +17,9 @@
     "Building Blocks Mastery: Exercises": [
       "lessons/exercise-list.md",
       "lessons/nesting.md"
+    ], "Higher Order Functions" : [
+        "lessons/hof/intro-to-hofs.md",
+        "hofs-3.md"
     ],
     "Writing Code Well: Reading": [
       "reading/instructions/writing-code-well-intro.md",
@@ -28,7 +31,8 @@
       "reading/tdd.md"
     ],
     "Writing Code Well: Exercises": [
-      "lessons/exercise-list.md"
+      "lessons/exercise-list.md",
+      "lessons/testing-exercises"
     ],
     "Live Performance: Reading": [
       "reading/instructions/live-performance-intro.md",

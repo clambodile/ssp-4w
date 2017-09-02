@@ -2,6 +2,22 @@
 
 [Slides](https://docs.google.com/presentation/d/1SMFhiRQLSTfXtQiQ65MU9u_m3Jt6liVPuG2eZwWoz8o/edit#slide=id.g1cb5f52775_0_5)
 
+For the purposes of these exercises, and testing within the Writing Code Well section, use the following assert function:
+
+    ```
+    function assertEqual(actual, expected, testName) {
+        actual = JSON.stringify(actual);
+        expected = JSON.stringify(expected);
+
+        if (actual === expected) {
+            console.log("Passed");
+        } else {
+            console.log("FAILED [" + testName + "] expected: " + expected + "; but got: " + actual);
+        }
+    }
+    ```
+
+
 1.  Write a function called `average` that takes an array of numbers as a
     parameter and returns the *average* of those numbers.
 
