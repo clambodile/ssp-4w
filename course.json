@@ -19,7 +19,8 @@
       "lessons/nesting.md"
     ], "Higher Order Functions" : [
         "lessons/hof/intro-to-hofs.md",
-        "hofs-3.md"
+        "lessons/hof/hofs-2.md",
+        "lessons/hof/hofs-3.md"
     ],
     "Writing Code Well: Reading": [
       "reading/instructions/writing-code-well-intro.md",

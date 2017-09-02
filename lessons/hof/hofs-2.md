@@ -1,4 +1,5 @@
-# HoF Part 2 - each indices, each objects, filter
+# each indices, each objects, filter
+## This lesson is optional to supplement your knowledge of `each` and introduce `filter`
 
 ## Lesson
 
