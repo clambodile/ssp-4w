@@ -16,7 +16,7 @@ Please keep in mind that the pacing laid out in the Program Schedule/Syllabus li
 
 It's time for your first exercise doing something you will do almost daily as a software developer -- using screenshots. Let's practice a screenshot workflow on the required pre-requisite work for SSP.
 
- * Take a screenshot of your entire <a href="https://classroom.udacity.com/courses/ud803" target="_blank">Udacity Intro to JavaScript</a> page.
+ * If you have finished 100% of the Udacity pre-requisite: take a screenshot of your entire <a href="https://classroom.udacity.com/courses/ud803" target="_blank">Udacity Intro to JavaScript</a> page.
   * There are many tools that take screenshots. We recommend <a href="https://evernote.com/products/skitch" target="_blank">Skitch</a> because it has convenient annotation features, as well as saving a history of your screenshots.
   * Screenshot tools are also good for your future in the Immersive program and beyond. You will use them to help other people understand what you are seeing on your screen -- in support tickets, sharing on Slack channels, technical documentation, etc. Getting used to professional tools now is a theme of the Hack Reactor Experience.
   * It's unlikely that you can fit your entire page in a single screenshot unless you zoom out a bit. You can zoom out in Chrome using `⌘ and -` on Mac or `Ctrl and -` on PC and Linux.
