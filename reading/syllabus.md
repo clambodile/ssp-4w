@@ -28,7 +28,7 @@ It's time for your first exercise doing something you will do almost daily as a 
      * <a href="http://imgur.com/a/wMako" target="_blank">Here's a sample screenshot</a> of what the page should finally look like
  * Upload the image to an image hosting server
   * There are many free image hosting sites. We recommend <a href="http://imgur.com/upload" target="_blank">Imgur</a>.
- * Fill out <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQ6cC6SiZ-KyvZfrIZJ3ZF33-4QGR7v0uDghTuvGC31LZgxw/viewform" target="_blank">this survey</a>
+ * Fill out <a href="https://goo.gl/forms/qqdE7nfzOC1l8Jcl1" target="_blank">this survey</a>
 
 Haven't finished 100% of the pre-requisite yet? It's alright, go ahead and fill out the survey anyway, then read below to learn what to do next.
 
