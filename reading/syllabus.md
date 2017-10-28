@@ -2,7 +2,7 @@
 
 We're excited to have you as part of the Hack Reactor family! Here's some important information about the course that you should read carefully.
 
-### <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vROkCYXeEDHE_4XS6RMakFfl7VPj5ZKAtNJ8AvJ3uV1e7X7r4p46j_o0MI6MWxFek_LYqpO4ys8wfBn/pubhtml?gid=745761445&single=true">Program Schedule/Syllabus</a>
+### <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRFtB--dUy6YfQusAosPz2cpvUBc7Ys4Q-NpP3AHmBSQTEkTOpANoYEaoazo2n1r7dOdWUqbhxN_QGr/pubhtml?gid=745761445&single=true">Program Schedule/Syllabus</a>
 
 ### Content Pacing
 
