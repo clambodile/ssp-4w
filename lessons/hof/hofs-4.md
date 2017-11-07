@@ -1,4 +1,6 @@
-# This lesson has slides and exercises for "Filter", "Reduce", and "Reduce Optional"
+# Extra HOF Content
+
+**This lesson has additional slides and exercises for "Filter". Also introduces "Reduce" and reduce with objects: "Reduce Optional"**
 
 # Filter
 
