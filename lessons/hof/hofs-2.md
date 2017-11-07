@@ -1,11 +1,11 @@
 # each indices, each objects, filter
-This lesson is ** optional ** to supplement your knowledge of `each` and introduce `filter`
+This lesson is built to complement your knowledge of `each` and introduce `filter`
 
 ## Lesson
 
 [Slides - Each Indices](https://docs.google.com/presentation/d/1ooNPlndMft8pn5aSV0NBHcVQWBz1HtgQUugv-CKCNcY/embed?start=false&loop=false&delayms=3000)
 
-[Slides - Each Objects](https://docs.google.com/presentation/d/1IfC_KHc2kZNUeHcTMJPhfGGs6kgI4vMOA53EVwDPEFY/embed?start=false&loop=false&delayms=3000)
+[Slides - Each Objects (Optional -- for more HOF practice)](https://docs.google.com/presentation/d/1IfC_KHc2kZNUeHcTMJPhfGGs6kgI4vMOA53EVwDPEFY/embed?start=false&loop=false&delayms=3000)
 
 [Slides - Filter](https://docs.google.com/presentation/d/16lqFtoGd41QgkclAwS6VeOsvJhZ3qmUT4kJfJ33nXAU/embed?start=false&loop=false&delayms=3000)
 
