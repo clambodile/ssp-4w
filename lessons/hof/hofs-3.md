@@ -4,7 +4,7 @@
 
 [Slides - Map](https://docs.google.com/presentation/d/19kN2z2amdb8vPU31qd7_YU9Kz0OdG-YvdKpEhCmmj5Q/embed?start=false&loop=false&delayms=3000)
 
-[Slides - Map Objects](https://docs.google.com/presentation/d/1Bwp5yuCV70PiGBB2wqK7ZJ5u2LU6et2JEMQ9pPODASA/embed?start=false&loop=false&delayms=3000)
+[Slides - Map Objects (Optional -- for more HOF Practice)](https://docs.google.com/presentation/d/1Bwp5yuCV70PiGBB2wqK7ZJ5u2LU6et2JEMQ9pPODASA/embed?start=false&loop=false&delayms=3000)
 
 ## Exercises - Map
 
