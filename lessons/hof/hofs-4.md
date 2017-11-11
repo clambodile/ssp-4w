@@ -1,112 +1,14 @@
 # Extra HOF Content
 
-**This lesson has additional slides and exercises for "Filter". Also introduces "Reduce" and reduce with objects: "Reduce Optional"**
+**This lesson introduces "Reduce" and reduce with objects: "Reduce Optional"**
 
-# Filter
-
-## Lesson
-
-[Filter Slides](https://docs.google.com/presentation/d/16lqFtoGd41QgkclAwS6VeOsvJhZ3qmUT4kJfJ33nXAU/embed?start=false&loop=false&delayms=3000)
-
-## Exercises
-
-```js
-function each(coll, f) {
-  if (Array.isArray(coll)) {
-    for (var i = 0; i < coll.length; i++) {
-      f(coll[i], i);
-    }
-  } else {
-    for (var key in coll) {
-      f(coll[key], key);
-    }
-  }
-}
-
-function filter(array, predicate) {
-  var acc = [];
-  each(array, function(element) {
-    if (predicate(element)) {
-      acc.push(element);
-    }
-  });
-  return acc;
-}
-```
-
-### Basic Requirements
-
-Use `filter` to write the following functions:
-
-1. Write a function called `evens` that takes an array of **numbers** as a
-   parameter, and returns **an array of only the even numbers** in the parameter.
-
-2. Write a function called `multiplesOfThree` that takes an array of **numbers** as a
-   parameter, and returns an array of only the numbers that are multiples of
-   three.
-
-3. Write a function called `positives` that takes an array of **numbers** as a
-   parameter, and returns an array of only the numbers that are positive.
-
-4. Write a function called `evenLength` that takes an array of **strings** and
-   returns an array of only the strings with an even length.
-
-### More Practice
-
-1. Use `filter` to write the following functions:
-   - `odds`: Accepts an array of numbers, and returns the *odd* ones.
-   - `negatives`: Like `positives`, but with negatives!
-   - `largerThanSix`: given an array of numbers, returns those larger than 6.
-
-2. Using `filter`, write a function `startsWithChar` that accepts two parameters:
-   an array of strings, and a character (*e.g.* "a"), and returns an array of
-   only the strings that start with that character:
-
-   ```js
-   function startsWithChar(strings, character) {
-     // ...
-   }
-   var words = "the quick brown fox jumps over the lazy dog".split(" ");
-   startsWithChar(words, "q"); // => ["quick"]
-   startsWithChar(words, "t"); // => ["the", "the"]
-   ```
-
-3. Extend the `filter` function to pass the *index* of each element to the
-   predicate; then, complete the following:
-
-   Write a function called `evenIndexedEvenLengths` (yeah, a bit of a mouthful)
-   that accepts an array of strings as a parameter, and returns only the strings
-   that are found at an even index that *also* have an even length, *e.g.*:
-
-   ```js
-   function evenIndexedEvenLengths(strings) {
-     // TODO: your code here
-   }
-   evenIndexedEvenLengths(["lion", "monkey", "aardvaark", "cat", "doge"]);
-   // => ["lion", "doge"]
-   evenIndexedEvenLengths(["red", "green", "purple", "blue", "yellow"]);
-   // => ["purple", "yellow"]
-   ```
-
-   **HINT:** You'll need to ensure that your version of `filter` also passes
-   each elements' *index* (or *key* in the case of objects) to the predicate.
-
-4. Write a version of `filter` that works on arrays **and** objects; then, use
-   your updated version of `filter` to filter an object with values of mixed
-   types to an object with *only* numeric values. You should be able to use your
-   modified version of `filter` as follows:
-
-   ```js
-   filter({a: 1, b: "dog", c: true}, function(value) {
-     return typeof value === "number";
-   });
-   // => {a: 1}
-   ```
-
-   # Reduce
+# Reduce
 
 ## Lesson
 [Reduce Slides](https://docs.google.com/presentation/d/1yu633rF1dKzorxKEw3IiVTTveDR0e9fXMtv4avtftd4/embed?start=false&loop=false&delayms=3000)
+
+[Reduce Optional Slides](https://docs.google.com/presentation/d/1kt6NI97HrZ4nKrUbXqDI2eHsN7wutuJ2VVjF1T1Rzxs/embed?start=false&loop=false&delayms=3000)
+
 ## Exercises
 
 ```js
@@ -317,8 +219,7 @@ function reduce(array, f, start) {
 
      # Improved `reduce`: Optional Starting Point & Optional Parameters
 
-## Lesson
-[Reduce Optional Slides](https://docs.google.com/presentation/d/1kt6NI97HrZ4nKrUbXqDI2eHsN7wutuJ2VVjF1T1Rzxs/embed?start=false&loop=false&delayms=3000)
+# Reduce Optional
 
 ## Exercises
 
