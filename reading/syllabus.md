@@ -2,7 +2,7 @@
 
 We're excited to have you as part of the Hack Reactor family! Here's some important information about the course that you should read carefully.
 
-### <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vROkCYXeEDHE_4XS6RMakFfl7VPj5ZKAtNJ8AvJ3uV1e7X7r4p46j_o0MI6MWxFek_LYqpO4ys8wfBn/pubhtml?gid=745761445&single=true">Program Schedule/Syllabus</a>
+### <a href="#">Program Schedule/Syllabus</a>
 
 ### Content Pacing
 
@@ -28,7 +28,7 @@ It's time for your first exercise doing something you will do almost daily as a 
      * <a href="http://imgur.com/a/wMako" target="_blank">Here's a sample screenshot</a> of what the page should finally look like
  * Upload the image to an image hosting server
   * There are many free image hosting sites. We recommend <a href="http://imgur.com/upload" target="_blank">Imgur</a>.
- * Fill out <a href="https://goo.gl/forms/Mp978Kr2NTjrAobx2">this survey</a>
+ * Fill out <a href="#">this survey</a>
 
 Haven't finished 100% of the pre-requisite yet? It's alright, go ahead and fill out the survey anyway, then read below to learn what to do next.
 
@@ -39,7 +39,7 @@ Haven't finished 100% of the pre-requisite yet? It's alright, go ahead and fill 
 ##### If you have done less than 100% of the course and you will plan on finishing it
 * Awesome! We're glad you've decided to follow through. You will not be asked for your screenshot link.
 * Your goal should be to finish the Udacity course before the start of Week 1 Day 3 (W1D3). There will be a Self Assessment on that day that covers the content of the pre-requisite.
-* If you finish before W1D3, great! Re-submit <a href=https://goo.gl/forms/Mp978Kr2NTjrAobx2" target="_blank">the survey</a> then read on to the next section, "How will you be assessed?"
+* If you finish before W1D3, great! Re-submit <a href="#" target="_blank">the survey</a> then read on to the next section, "How will you be assessed?"
 
 ##### If you have done less than 100% of the pre-requisite and you don't plan on finishing it
 * We recommend that you finish the entire pre-requisite, but you are free to continue reading the next section.
